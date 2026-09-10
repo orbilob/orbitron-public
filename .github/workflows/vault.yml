@@ -1,0 +1,25 @@
+name: vault
+
+# This vault argues, in "05 — HOW WE WORK", that documentation is kept honest
+# by a guard rather than by good intentions. This is that guard, applied to
+# the vault itself — otherwise the argument is advertising.
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: [main]
+
+jobs:
+  guard:
+    name: the vault guard
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Links, wiki links, callout format
+        run: python3 scripts/check_vault.py
