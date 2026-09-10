@@ -1,4 +1,34 @@
-# 🛰️ ORBITRON — public vault
+<div align="center">
+
+<img src="assets/logo.png" alt="ORBITRON" width="380">
+
+# ORBITRON — public vault
+
+**Understanding market mechanics. Trading is the instrument, not the goal.**
+
+[![Vault guard](https://github.com/orbilob/orbitron-public/actions/workflows/vault.yml/badge.svg)](https://github.com/orbilob/orbitron-public/actions/workflows/vault.yml)
+[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-2ecc71?style=flat-square)](LICENSE)
+[![Research project](https://img.shields.io/badge/research-not%20a%20trading%20bot-f39c12?style=flat-square)](01%20%E2%80%94%20THE%20IDEA/Why%20this%20exists.md)
+[![Obsidian vault](https://img.shields.io/badge/Obsidian-vault-7c3aed?style=flat-square&logo=obsidian&logoColor=white)](https://obsidian.md)
+
+**The stack**
+
+[![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org)
+[![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white)](https://sqlite.org)
+[![pandas](https://img.shields.io/badge/pandas-150458?style=flat-square&logo=pandas&logoColor=white)](https://pandas.pydata.org)
+[![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white)](https://numpy.org)
+[![SciPy](https://img.shields.io/badge/SciPy-8CAAE6?style=flat-square&logo=scipy&logoColor=white)](https://scipy.org)
+[![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white)](https://streamlit.io)
+[![freqtrade](https://img.shields.io/badge/freqtrade-detachable-64748b?style=flat-square)](04%20%E2%80%94%20THE%20ENGINEERING/The%20detachable%20tool.md)
+
+**Written with**
+
+[![Claude Code](https://img.shields.io/badge/built%20with-Claude%20Code-D97757?style=flat-square)](https://claude.com/claude-code)
+[![Under written rules](https://img.shields.io/badge/under-written%20rules-2ecc71?style=flat-square)](05%20%E2%80%94%20HOW%20WE%20WORK/Working%20with%20an%20AI%20agent.md)
+
+</div>
+
+---
 
 ### **This is not a trading bot.**
 
