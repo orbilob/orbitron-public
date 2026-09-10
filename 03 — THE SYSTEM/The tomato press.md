@@ -85,4 +85,4 @@ having built anything special for it.
 
 ## 🔗 Related
 
-[The chain](The%20chain.md) · [Contracts and formats](../04%20%E2%80%94%20THE%20ENGINEERING/Contracts%20and%20formats.md) · [The v2 backtest engine](../04%20%E2%80%94%20THE%20ENGINEERING/The%20v2%20backtest%20engine.md) · [The golden archive](../02%20%E2%80%94%20THE%20RESEARCH/The%20golden%20archive.md)
+[The chain](The%20chain.md) · [Contracts and formats](../04%20%E2%80%94%20THE%20ENGINEERING/Contracts%20and%20formats.md) · [The v2 validation engine](../04%20%E2%80%94%20THE%20ENGINEERING/The%20v2%20validation%20engine.md) · [The golden archive](../02%20%E2%80%94%20THE%20RESEARCH/The%20golden%20archive.md)

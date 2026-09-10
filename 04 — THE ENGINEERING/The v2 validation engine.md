@@ -1,6 +1,6 @@
 ← [START HERE](../START%20HERE.md)
 
-# 🔬 The v2 backtest engine
+# 🔬 The v2 validation engine
 
 > [!NOTE]
 > **The instrument that decides whether a pattern is worth anything**
@@ -67,7 +67,7 @@ would actually have entered.
 >
 > A historical scan keeps the strongest, because there you are looking back and
 > asking which move was most pronounced. Here you keep the first, because you are
-> simulating trading: in the real moment you do not know whether it will get stronger
+> simulating market: in the real moment you do not know whether it will get stronger
 > five minutes later.
 
 ---
@@ -85,7 +85,7 @@ strategies die — their edge is smaller than the price of capturing it.
 > **The baseline deliberately does NOT pay costs**
 >
 > The comment in the code is exact: *"what would have happened without me"*. You
-> compare a real trade with costs against the market backdrop without costs. Harsh
+> compare a real outcome with costs against the market backdrop without costs. Harsh
 > towards yourself — the correct direction for strictness.
 >
 > The price of that choice: `edge` is no longer a purely statistical quantity but an
@@ -197,7 +197,7 @@ Hor      N   Base    Win%    AvgRet      Edge   R/Risk        p    p_adj
   does not block, but it makes you think.
 - **`ddof=1`** — sample standard deviation, not population. The correct one when you
   are measuring a sample.
-- **Signals too close to the end are discarded** — otherwise the last trades would be
+- **Signals too close to the end are discarded** — otherwise the last outcomes would be
   measured against incomplete windows.
 
 ---
@@ -246,4 +246,4 @@ Boring. That is exactly why it works.
 
 ## 🔗 Related
 
-[Why this exists](../01%20%E2%80%94%20THE%20IDEA/Why%20this%20exists.md) · [Principles](../01%20%E2%80%94%20THE%20IDEA/Principles.md) · [The tomato press](../03%20%E2%80%94%20THE%20SYSTEM/The%20tomato%20press.md) · [Repositories](Repositories.md) · [The detachable tool](The%20detachable%20tool.md)
+[Why this exists](../01%20%E2%80%94%20THE%20IDEA/Why%20this%20exists.md) · [Principles](../01%20%E2%80%94%20THE%20IDEA/Principles.md) · [The tomato press](../03%20%E2%80%94%20THE%20SYSTEM/The%20tomato%20press.md) · [Repositories](Repositories.md)

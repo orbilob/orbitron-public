@@ -1,11 +1,11 @@
 # 🛰️ START HERE
 
 > [!IMPORTANT]
-> **ORBITRON is not a trading bot.**
+> **We are looking for answers.** Why did the trend move in this direction, in this
+> market regime — and what was happening behind the scenes?
 >
-> It is an attempt to understand **how markets actually work** — why a trend moves
-> in the direction it does, and what is happening behind the scenes. Trading is the
-> instrument that keeps the attempt honest, not the purpose it serves.
+> And we write the answer down. Day after day, building a history that did not exist
+> before.
 >
 > **→ [Why this exists](01%20%E2%80%94%20THE%20IDEA/Why%20this%20exists.md) — read this first.**
 
@@ -18,7 +18,7 @@
 >
 > So every passing day is recorded as a **single image** — not only what the price
 > did, but what the world looked like while it did it — and kept **forever**. Raw
-> candles can be re-downloaded from the exchange at any time; the explanation of a
+> candles can be re-downloaded from the venue at any time; the explanation of a
 > day cannot.
 >
 > Patterns are then tested against that record by an instrument built so it **can
@@ -51,7 +51,7 @@ No technical background needed. What this project is chasing, and why.
 - [What ORBITRON is](01%20%E2%80%94%20THE%20IDEA/What%20ORBITRON%20is.md)
 - [What ORBITRON is not](01%20%E2%80%94%20THE%20IDEA/What%20ORBITRON%20is%20not.md)
 - [Principles](01%20%E2%80%94%20THE%20IDEA/Principles.md) — the independent picture, real data only
-- [The SCALP philosophy](01%20%E2%80%94%20THE%20IDEA/The%20SCALP%20philosophy.md) — the trading part, in its proper size
+- — the market part, in its proper size
 
 ### 🔬 Layer two — what is being studied
 
@@ -68,18 +68,18 @@ How observation becomes a testable claim.
 
 - [The chain](03%20%E2%80%94%20THE%20SYSTEM/The%20chain.md) — from a one-minute candle to a recorded outcome
 - [The tomato press](03%20%E2%80%94%20THE%20SYSTEM/The%20tomato%20press.md) — the analogy the architecture rests on
-- [The head and the hand](03%20%E2%80%94%20THE%20SYSTEM/The%20head%20and%20the%20hand.md) — what we build, what we borrow
-- [The three machines](03%20%E2%80%94%20THE%20SYSTEM/The%20three%20machines.md) — where each part runs, and why
+- — what we build, what we borrow
+- — where each part runs, and why
 
 ### 🧑‍💻 Layer four — the engineering
 
 For people who build things. Contracts, statistics, and the boundaries that keep the
 project honest.
 
-- [The v2 backtest engine](04%20%E2%80%94%20THE%20ENGINEERING/The%20v2%20backtest%20engine.md) ⭐ how a claim is allowed to fail
-- [STRATEGY ENGINE](04%20%E2%80%94%20THE%20ENGINEERING/STRATEGY%20ENGINE.md) — four named stages from signal to outcome
+- [The v2 validation engine](04%20%E2%80%94%20THE%20ENGINEERING/The%20v2%20validation%20engine.md) ⭐ how a claim is allowed to fail
+- — four named stages from signal to outcome
 - [Contracts and formats](04%20%E2%80%94%20THE%20ENGINEERING/Contracts%20and%20formats.md) — why formats are frozen before logic
-- [The detachable tool](04%20%E2%80%94%20THE%20ENGINEERING/The%20detachable%20tool.md) — no third-party software is load-bearing
+- — no third-party software is load-bearing
 - [Shared code, one number](04%20%E2%80%94%20THE%20ENGINEERING/Shared%20code%2C%20one%20number.md) — one input, one number, from anywhere
 - [Repositories](04%20%E2%80%94%20THE%20ENGINEERING/Repositories.md) — three repos, and why exactly three
 
@@ -97,7 +97,7 @@ AI agent working on this project must follow.
 
 ## 🔤 A note on names
 
-Some words here are the project's own vocabulary — *the press*, *lost in space*,
+Some words here are the project's own vocabulary — *the press*, *the written day*,
 *the golden archive*. They are not jargon for its own sake; each exists because a
 nameless thing turned out to be unmeasurable.
 [GLOSSARY](GLOSSARY.md) collects them.

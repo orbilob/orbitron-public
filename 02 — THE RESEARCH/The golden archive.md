@@ -12,7 +12,7 @@
 
 ## The sentence the whole idea rests on
 
-> **Raw candles can be re-downloaded from the exchange at any time.
+> **Raw candles can be re-downloaded from the venue at any time.
 > The explanation of a day cannot.**
 
 The explanation is written once, in the moment, and can never be reconstructed after
@@ -77,7 +77,7 @@ that the expensive version becomes possible later **without rewriting anything**
 > Missing values are carried forward, never backward.
 
 Without that rule an archive slowly fills with information from the future, and every
-backtest run against it becomes a lie that nothing detects.
+historical validation run against it becomes a lie that nothing detects.
 
 It pairs with the regime rule from [Market regimes](Market%20regimes.md): a regime is recorded as a
 **dated field, before it is known what happened next** — never assigned retroactively.

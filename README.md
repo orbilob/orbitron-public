@@ -4,11 +4,11 @@
 
 # ORBITRON — public vault
 
-**Understanding market mechanics. Trading is the instrument, not the goal.**
+**We look for answers. We ask why. We write the day down — permanently.**
 
 [![Vault guard](https://github.com/orbilob/orbitron-public/actions/workflows/vault.yml/badge.svg)](https://github.com/orbilob/orbitron-public/actions/workflows/vault.yml)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-2ecc71?style=flat-square)](LICENSE)
-[![Research project](https://img.shields.io/badge/research-not%20a%20trading%20bot-f39c12?style=flat-square)](01%20%E2%80%94%20THE%20IDEA/Why%20this%20exists.md)
+[![We ask why](https://img.shields.io/badge/we%20ask-why-f39c12?style=flat-square)](01%20%E2%80%94%20THE%20IDEA/Why%20this%20exists.md)
 [![Obsidian vault](https://img.shields.io/badge/Obsidian-vault-7c3aed?style=flat-square&logo=obsidian&logoColor=white)](https://obsidian.md)
 
 **The stack**
@@ -18,8 +18,6 @@
 [![pandas](https://img.shields.io/badge/pandas-150458?style=flat-square&logo=pandas&logoColor=white)](https://pandas.pydata.org)
 [![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white)](https://numpy.org)
 [![SciPy](https://img.shields.io/badge/SciPy-8CAAE6?style=flat-square&logo=scipy&logoColor=white)](https://scipy.org)
-[![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white)](https://streamlit.io)
-[![freqtrade](https://img.shields.io/badge/freqtrade-detachable-64748b?style=flat-square)](04%20%E2%80%94%20THE%20ENGINEERING/The%20detachable%20tool.md)
 
 **Made by**
 
@@ -31,26 +29,29 @@
 
 ---
 
-### **This is not a trading bot.**
+### **We are looking for answers.**
 
-It is an attempt to understand **how markets actually work** — why a trend moves in
-the direction it does, and what is happening behind the scenes.
+Not for predictions, and not for a system that acts on anyone's behalf. For an answer
+to one question, asked again every single day:
 
-Markets never stop changing. The thing that worked last quarter stops working, and
-usually nobody can say exactly when it stopped or why. Explanations arrive
+> ## Why did the trend move in this direction, in this market regime — and what was happening behind the scenes?
+
+Markets never stop changing. What explained last quarter stops explaining this one,
+and usually nobody can say exactly when it stopped or why. Explanations arrive
 afterwards, confidently, and cannot be checked.
 
-So this project does two things instead:
+So this project does two things instead.
 
-> **It keeps a permanent, honest record of what markets did and what the world looked
-> like while they did it — and it builds instruments for asking that record hard
-> questions.**
+**It asks why** — what makes a move start, what sustains it, what kills it, which
+levers are being pulled, and where capital goes when it leaves somewhere else.
 
-Trading is one of those instruments. Paper trading turns a claim about mechanism into
-something that can come back **negative** — measured against chance, after costs,
-corrected for testing many things at once. A pattern that earns money is *evidence
-that some mechanism was understood correctly*. That is the only reason profit
-interests this project at all.
+**And it writes the answer down.** Day after day, building a history that did not
+exist before: not only what the price did, but what the world looked like while it
+did it. Written once, in the moment, and kept permanently.
+
+That record is the actual product. Not a conclusion — **a history**, honestly kept,
+against which future answers can be tested by an instrument built so that it **can
+come back negative**.
 
 **→ [Why this exists](01%20%E2%80%94%20THE%20IDEA/Why%20this%20exists.md)** — the full
 argument, in five minutes.
@@ -59,7 +60,7 @@ argument, in five minutes.
 
 ## 🏆 The part that matters most
 
-> **Raw candles can be re-downloaded from the exchange at any time.
+> **Raw candles can be re-downloaded from the venue at any time.
 > The explanation of a day cannot.**
 
 Every day is recorded as a single image — the macro backdrop, the flows, the mood,
@@ -86,7 +87,7 @@ and every link works in both.
 | You are | Start here | Time |
 |---|---|---|
 | 🧑 Curious, non-technical | [Why this exists](01%20%E2%80%94%20THE%20IDEA/Why%20this%20exists.md) | 5 min |
-| 🔬 Interested in method | **02 — THE RESEARCH** and [The v2 backtest engine](04%20%E2%80%94%20THE%20ENGINEERING/The%20v2%20backtest%20engine.md) | 15 min |
+| 🔬 Interested in method | **02 — THE RESEARCH** and [The v2 validation engine](04%20%E2%80%94%20THE%20ENGINEERING/The%20v2%20validation%20engine.md) | 15 min |
 | 🧑‍💻 A developer | **04 — THE ENGINEERING** and **05 — HOW WE WORK** | 20 min |
 
 Full map: **[START HERE](START%20HERE.md)**
@@ -105,7 +106,7 @@ Full map: **[START HERE](START%20HERE.md)**
 
 **ORBITRON is personal research. Nothing here is financial advice.**
 
-- It does not sell signals, subscriptions, copy-trading or a course.
+- It does not sell signals, subscriptions, copy-market or a course.
 - It does not manage anyone else's money, and never will.
 - **No claim of profitability is made anywhere in this vault.** The measure of
   success at this stage is honesty, not return.
@@ -124,7 +125,7 @@ still — welcome.
 Infrastructure details, network layout, hostnames, credentials, calibrated
 thresholds, scoring weights, and the pattern code itself.
 
-**What is shown is how the project thinks. What is withheld is what it trades on.**
+**What is shown is how the project thinks. What is withheld is what it outcomes on.**
 
 ---
 

@@ -88,7 +88,7 @@ It is slower. Writing a decision record for something you already "just know" fe
 like ceremony, and roughly one in four turns out never to be read again.
 
 The other three pay for all of them the first time somebody — human or AI — starts
-re-opening a settled question. That is the trade, and it is only worth it for
+re-opening a settled question. That is the outcome, and it is only worth it for
 decisions that are **expensive to reverse**. Everything else gets a commit message.
 
 ---

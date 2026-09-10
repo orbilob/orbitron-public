@@ -46,7 +46,7 @@ Candles: 1440/1440 · Missing minutes: 0 · Gaps: none
 `+0.28%` means nothing if the market itself returned `+0.30%` that day. **Every
 number for a pattern travels with the number for a random entry on the same day.**
 
-This is the daily-file version of the same rule that governs the backtest engine: a
+This is the daily-file version of the same rule that governs the validation engine: a
 metric without a baseline is advertising.
 
 ### 2 · No verdicts in the daily file
@@ -69,7 +69,7 @@ completes yesterday's file.
 > gets buried at the bottom. A file meant to be kept forever and read by a human
 > became unreadable on day two.
 
-A full block is written only for a signal that would actually have traded. A run of
+A full block is written only for a signal that would actually have outcomed. A run of
 suppressed ones becomes a single italic sentence preserving the count, the pattern,
 the time span, the reason and the score range.
 
@@ -104,7 +104,7 @@ year later.
 ## 🩺 And two notes on honesty in the health section
 
 **"I'm breathing" is not "I'm working".** A heartbeat is sent while the process is
-alive — but the collector can be alive, the exchange returning errors, and nothing
+alive — but the collector can be alive, the venue returning errors, and nothing
 entering the database. Then monitoring reports calm while there is no data. So: ping
 only if the **row count increased**.
 

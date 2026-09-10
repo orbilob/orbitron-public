@@ -1,9 +1,9 @@
 ← [START HERE](../START%20HERE.md)
 
-# 🔗 The chain — from a candle to a trade
+# 🔗 The chain — from a candle to a written day
 
-Everything in ORBITRON is one chain with named parts. This page walks it end to end
-in plain language. Each part has its own page for the details.
+Everything here is one chain with named parts. This page walks it end to end in
+plain language.
 
 ---
 
@@ -11,21 +11,16 @@ in plain language. Each part has its own page for the details.
 
 ```mermaid
 flowchart TD
-    EX["🌍 Exchange, news feeds,<br/>macro and on-chain sources"]
-    COL["📡 COLLECTOR<br/><i>downloads, computes nothing</i>"]
+    SRC["🌍 Market data, news feeds,<br/>macro and on-chain sources"]
+    COL["📡 COLLECTOR<br/><i>fetches, computes nothing</i>"]
     DB[("🗄️ Raw candles<br/>+ headlines + daily values")]
     PRESS["🔧 The press<br/><i>patterns in, one record out</i>"]
-    ENG["⚙️ STRATEGY ENGINE<br/>4 named stages"]
-    JSON{{"📜 JSON — the boundary<br/>between head and hand"}}
-    BOT["🔥 freqtrade<br/><i>order · stop · monitor · close</i>"]
-    ARCH["🏆 Daily file<br/><i>kept forever</i>"]
-    VIEW["👁️ Dashboard<br/><i>read-only</i>"]
+    CTX["🏠 Context<br/><i>in what kind of world</i>"]
+    ARCH["✍️ The written day<br/><i>kept permanently</i>"]
+    TEST["🧪 The test<br/><i>against the whole record</i>"]
 
-    EX --> COL --> DB --> PRESS --> ENG --> JSON --> BOT
-    BOT --> ARCH
-    ENG --> ARCH
-    BOT --> VIEW
-    ARCH --> VIEW
+    SRC --> COL --> DB --> PRESS --> CTX --> ARCH --> TEST
+    TEST -.->|"sharper questions"| PRESS
 ```
 
 ---
@@ -34,92 +29,83 @@ flowchart TD
 
 ### 1 · 📡 Collect — and compute nothing
 
-A collector runs in the cloud and pulls, once a minute: spot and futures candles
-from the exchange, RSS from news outlets and central banks, and the daily macro and
-on-chain values.
+A collector runs in the cloud and pulls, once a minute: price candles, RSS from news
+outlets and central banks, and the daily macro and on-chain values.
 
 Its job description is one sentence, and the second half matters more than the first:
 
-> **It downloads and writes. It does not calculate anything.**
+> **It fetches and writes. It does not calculate anything.**
 
 Why that discipline? Because the collector lives on the machine most exposed to the
-internet. A machine that only fetches and stores has nothing valuable to steal and
-is *acceptable to lose*. Anything more expensive than "fetch and write" runs
-elsewhere. See [The three machines](The%20three%20machines.md).
+internet. A machine that only fetches and stores has nothing valuable on it and is
+*acceptable to lose*. Anything more expensive than "fetch and write" runs elsewhere.
 
 ### 2 · 🔧 The press — patterns become one record
 
 Raw candles reach **the press** (internally: *the slot*) — one fixed machine that
 accepts any number of patterns and produces records in exactly one format.
 
-This is the project's founding analogy and it earns its own page: [The tomato press](The%20tomato%20press.md).
+This is the project's founding analogy and it earns its own page:
+[The tomato press](The%20tomato%20press.md).
 
-The output of this stage is a bare signal: *which pattern, when, direction, price,
-strength*. Nothing about the world it happened in.
+The output of this stage is a bare observation: *which pattern, when, direction,
+price, strength*. Nothing yet about the world it happened in.
 
-### 3 · ⚙️ The engine — four named stages
+### 3 · 🏠 Context — in what kind of world did it happen
 
-The signal now enters the **STRATEGY ENGINE**, which is the heart of the project.
-It has four stages, and they have names rather than numbers, for a reason explained
-on its own page:
+The bare observation is then dressed in the context of the day: the macro regime,
+the risk appetite, the scheduled releases, the news, where capital was flowing.
 
-| Stage | The question it answers |
-|---|---|
-| 🛰️ **lost in space** | did something happen? |
-| 🏠 **found home** | in what kind of world did it happen? |
-| 🎓 **back to school** | **trade or not — and what kind?** |
-| 🔥 **in fire** | what happened to it? |
+This is the step that turns a number into an event, and it is the whole reason the
+project bothers with fundamentals at all:
 
-Full detail: [STRATEGY ENGINE](../04%20%E2%80%94%20THE%20ENGINEERING/STRATEGY%20ENGINE.md).
+> **The same technical state means different things under different liquidity, a
+> different macro backdrop, a different mood.**
 
-### 4 · 📜 JSON — the boundary
+See [Market regimes](../02%20%E2%80%94%20THE%20RESEARCH/Market%20regimes.md) and
+[Smart money track](../02%20%E2%80%94%20THE%20RESEARCH/Smart%20money%20track.md).
 
-Stage 3 outputs **JSON**. Not a function call, not an in-memory object — a
-writable, readable, comparable format.
-
-This is the single most consequential design choice in the project, and
-[The detachable tool](../04%20%E2%80%94%20THE%20ENGINEERING/The%20detachable%20tool.md) explains why: a different executing bot means a different
-*reader of the same JSON*. The engine does not know who executes it and has no way
-to find out.
-
-### 5 · 🔥 Execution — borrowed, on purpose
-
-**[freqtrade](https://www.freqtrade.io)** — an open-source trading bot — sends the
-order, keeps the stop at the exchange, monitors the position and closes it. That
-software is **not ours and is not touched** — we extend it only through the extension points it provides.
-
-Why borrow this part specifically: [The head and the hand](The%20head%20and%20the%20hand.md).
-
-### 6 · 🏆 The day is written down — forever
+### 4 · ✍️ The day is written down — permanently
 
 At the end of every day, one Markdown file records what the market did, the
-strongest moves, every signal with its follow-up result, a per-pattern summary, and
-a system-health section.
+strongest moves, every observation with its follow-up result, a per-pattern summary,
+and a system-health section.
 
 Those files are never rotated and never deleted.
 
-> Raw candles can be re-downloaded from the exchange at any time.
+> Price data can be re-downloaded at any time.
 > **The explanation of a day cannot.**
 
-That is [The golden archive](../02%20%E2%80%94%20THE%20RESEARCH/The%20golden%20archive.md), and it is the part of this project most likely to
-matter in five years.
+That is [The golden archive](../02%20%E2%80%94%20THE%20RESEARCH/The%20golden%20archive.md),
+and it is the part of this project most likely to matter in five years.
+
+### 5 · 🧪 The test — and the loop closes
+
+Once enough days have accumulated, a proposed answer can be measured against the
+whole record: compared with what chance alone produces, after costs, corrected for
+asking many questions at once.
+
+An answer that survives sharpens the next question. An answer that does not is
+recorded as a negative result and the belief is dropped — see
+[The v2 validation engine](../04%20%E2%80%94%20THE%20ENGINEERING/The%20v2%20validation%20engine.md).
 
 ---
 
-## The one boundary people get wrong
+## Where the truth lives
 
-Three different actors decide three different things, and collapsing them is the
-most common misreading of the whole design:
+One boundary worth stating, because it explains a lot of the design:
 
-| Who | Decides |
+| Who | Holds |
 |---|---|
-| **the pattern** | *whether* something happened at all |
-| **the engine** | *whether there is a trade, and what kind* |
-| **freqtrade** | sending it, holding the stop, watching, closing |
-| **the operator** | and only the operator — turning a paper trade into a real one |
+| **the collector** | nothing but what it fetched |
+| **the database** | the raw observations, permanently |
+| **the written day** | the explanation, written once and never regenerated |
+| **the operator** | every decision, without exception |
+
+The last row does not move. **No part of this system acts on its own.**
 
 ---
 
 ## 🔗 Related
 
-[The head and the hand](The%20head%20and%20the%20hand.md) · [The tomato press](The%20tomato%20press.md) · [STRATEGY ENGINE](../04%20%E2%80%94%20THE%20ENGINEERING/STRATEGY%20ENGINE.md) · [The three machines](The%20three%20machines.md) · [The golden archive](../02%20%E2%80%94%20THE%20RESEARCH/The%20golden%20archive.md)
+[The tomato press](The%20tomato%20press.md) · [The golden archive](../02%20%E2%80%94%20THE%20RESEARCH/The%20golden%20archive.md) · [The daily file](../02%20%E2%80%94%20THE%20RESEARCH/The%20daily%20file.md) · [Repositories](../04%20%E2%80%94%20THE%20ENGINEERING/Repositories.md)
