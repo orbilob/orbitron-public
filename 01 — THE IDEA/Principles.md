@@ -1,4 +1,4 @@
-← [[START HERE]]
+← [START HERE](../START%20HERE.md)
 
 # 🧭 Principles
 
@@ -31,7 +31,9 @@ the hard way.
 quantity we stand on has a written definition** — what it measures, which rows it
 is computed from, when it is invalid.
 
-> [!warning] The trap, written down in advance
+> [!WARNING]
+> **The trap, written down in advance**
+>
 > Independence is not isolation. A systematic difference between our picture and the
 > consensus is **a finding that demands explanation**, not a reason for pride. If
 > everyone sees one thing and we see another, the first hypothesis is that we are
@@ -58,7 +60,7 @@ two exchanges are identical"* is a valid result if it was measured.
 
 The engineering consequence is real: the measurement tool is built so it **can**
 say no, and its own limitations are documented next to its results. See
-[[The v2 backtest engine]].
+[The v2 backtest engine](../04%20%E2%80%94%20THE%20ENGINEERING/The%20v2%20backtest%20engine.md).
 
 ---
 
@@ -84,7 +86,7 @@ This applies to news headlines, third-party APIs, vendor research — and to rep
 written by another AI. A major bank's analysis is exactly as foreign as an RSS
 headline; the difference is prestige, not status.
 
-The engineering form of that rule is in [[The detachable tool]] and in the security
+The engineering form of that rule is in [The detachable tool](../04%20%E2%80%94%20THE%20ENGINEERING/The%20detachable%20tool.md) and in the security
 model: foreign text enters in its own field, never glued to an instruction; a model
 that reads it may return **only a fixed JSON**, validated against a schema; and that
 model has no permission to write anywhere.
@@ -93,4 +95,4 @@ model has no permission to write anywhere.
 
 ## 🔗 Related
 
-[[What ORBITRON is]] · [[The v2 backtest engine]] · [[Evidence labels]] · [[The detachable tool]]
+[Why this exists](Why%20this%20exists.md) · [What ORBITRON is](What%20ORBITRON%20is.md) · [The v2 backtest engine](../04%20%E2%80%94%20THE%20ENGINEERING/The%20v2%20backtest%20engine.md) · [Evidence labels](../05%20%E2%80%94%20HOW%20WE%20WORK/Evidence%20labels.md) · [The detachable tool](../04%20%E2%80%94%20THE%20ENGINEERING/The%20detachable%20tool.md)

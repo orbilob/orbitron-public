@@ -1,8 +1,10 @@
-← [[START HERE]]
+← [START HERE](../START%20HERE.md)
 
 # 🧭 Market regimes
 
-> [!info] The idea
+> [!NOTE]
+> **The idea**
+>
 > Instead of asking *"what is the price doing"*, ask **"what regime is the market in,
 > and where is money flowing"**.
 
@@ -40,7 +42,9 @@ Growth × inflation, the canonical two-by-two:
 
 They are kept as **separate fields**, never fused.
 
-> [!success] Because the disagreement is the information
+> [!TIP]
+> **Because the disagreement is the information**
+>
 > When the slow measure and the fast measure disagree, that is not an error to
 > reconcile — **that is where a scalp lives.** Merge them into one score and that
 > information vanishes silently, with nothing in the logs to show it ever existed.
@@ -81,7 +85,7 @@ This is the same instinct as an earlier lesson the project paid for:
 
 ## ⚠️ The trap, written down in advance
 
-> [!danger]
+> [!CAUTION]
 > A regime is **a narrative over numbers** — and narrative is exactly what killed an
 > earlier pattern: choosing an explanation after the fact, from among five things that
 > happened to occur.
@@ -109,4 +113,4 @@ down before it needs them.
 
 ## 🔗 Related
 
-[[Smart money track]] · [[STRATEGY ENGINE]] · [[The daily file]] · [[Principles]]
+[Smart money track](Smart%20money%20track.md) · [STRATEGY ENGINE](../04%20%E2%80%94%20THE%20ENGINEERING/STRATEGY%20ENGINE.md) · [The daily file](The%20daily%20file.md) · [Principles](../01%20%E2%80%94%20THE%20IDEA/Principles.md)

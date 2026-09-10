@@ -1,4 +1,4 @@
-← [[START HERE]]
+← [START HERE](../START%20HERE.md)
 
 # 🐋 Smart money track
 
@@ -89,4 +89,4 @@ places is two names for one thing.
 
 ## 🔗 Related
 
-[[Market regimes]] · [[The daily file]] · [[STRATEGY ENGINE]]
+[Market regimes](Market%20regimes.md) · [The daily file](The%20daily%20file.md) · [STRATEGY ENGINE](../04%20%E2%80%94%20THE%20ENGINEERING/STRATEGY%20ENGINE.md)

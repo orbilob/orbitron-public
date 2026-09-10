@@ -1,8 +1,10 @@
-← [[START HERE]]
+← [START HERE](../START%20HERE.md)
 
 # 🚫 What ORBITRON is not
 
-> [!warning] ⚠️ Disclaimer
+> [!WARNING]
+> **⚠️ Disclaimer**
+>
 > **ORBITRON is personal research. Nothing in this vault is financial advice.**
 > No profitability is claimed. No number here is a track record.
 
@@ -42,7 +44,7 @@ future time.
 It has already happened more than once. A pattern that looked "validated" was
 re-run through the corrected engine and turned out to have zero edge — the edge had
 been an artifact of a broken measuring instrument. That story is kept in the vault
-on purpose. See [[The v2 backtest engine]].
+on purpose. See [The v2 backtest engine](../04%20%E2%80%94%20THE%20ENGINEERING/The%20v2%20backtest%20engine.md).
 
 ---
 
@@ -54,7 +56,7 @@ but "described" is not "running".
 
 Where something does not exist yet, the project's internal documents say so
 explicitly, in a section literally titled *"what is not being claimed"*. That habit
-is described in [[Evidence labels]] and it is one of the few things here worth
+is described in [Evidence labels](../05%20%E2%80%94%20HOW%20WE%20WORK/Evidence%20labels.md) and it is one of the few things here worth
 copying regardless of what you build.
 
 ---
@@ -71,4 +73,4 @@ partly for security, partly because they are the actual work product.
 
 ## 🔗 Related
 
-[[What ORBITRON is]] · [[Principles]] · [[The v2 backtest engine]] · [[Evidence labels]]
+[Why this exists](Why%20this%20exists.md) · [What ORBITRON is](What%20ORBITRON%20is.md) · [Principles](Principles.md) · [The v2 backtest engine](../04%20%E2%80%94%20THE%20ENGINEERING/The%20v2%20backtest%20engine.md) · [Evidence labels](../05%20%E2%80%94%20HOW%20WE%20WORK/Evidence%20labels.md)

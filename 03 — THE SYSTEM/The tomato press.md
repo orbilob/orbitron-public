@@ -1,8 +1,10 @@
-← [[START HERE]]
+← [START HERE](../START%20HERE.md)
 
 # 🍅 The tomato press
 
-> [!quote] The operator's analogy
+> [!NOTE]
+> **The operator's analogy**
+>
 > *"We buy ten different tomatoes from the market. We put them in the press. One
 > squeeze — and out comes tomato purée, regardless of whether the tomato was big or
 > small."*
@@ -67,7 +69,7 @@ accumulated history is worthless.
 > afterwards.**
 
 This principle repeats across the project — the decision passport, the daily file,
-the database schema. It has its own page: [[Contracts and formats]].
+the database schema. It has its own page: [Contracts and formats](../04%20%E2%80%94%20THE%20ENGINEERING/Contracts%20and%20formats.md).
 
 ---
 
@@ -83,4 +85,4 @@ having built anything special for it.
 
 ## 🔗 Related
 
-[[The chain]] · [[Contracts and formats]] · [[The v2 backtest engine]] · [[The golden archive]]
+[The chain](The%20chain.md) · [Contracts and formats](../04%20%E2%80%94%20THE%20ENGINEERING/Contracts%20and%20formats.md) · [The v2 backtest engine](../04%20%E2%80%94%20THE%20ENGINEERING/The%20v2%20backtest%20engine.md) · [The golden archive](../02%20%E2%80%94%20THE%20RESEARCH/The%20golden%20archive.md)

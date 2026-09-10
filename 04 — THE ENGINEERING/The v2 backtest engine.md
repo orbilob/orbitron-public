@@ -1,8 +1,10 @@
-← [[START HERE]]
+← [START HERE](../START%20HERE.md)
 
 # 🔬 The v2 backtest engine
 
-> [!info] The instrument that decides whether a pattern is worth anything
+> [!NOTE]
+> **The instrument that decides whether a pattern is worth anything**
+>
 > Everything in the research lab rests on its verdict. This page explains what it
 > does and why, assuming no prior knowledge.
 
@@ -60,7 +62,9 @@ right to be.
 **The fix:** from each cluster of nearby signals, keep the **first** — the moment you
 would actually have entered.
 
-> [!note] Why the first and not the strongest
+> [!NOTE]
+> **Why the first and not the strongest**
+>
 > A historical scan keeps the strongest, because there you are looking back and
 > asking which move was most pronounced. Here you keep the first, because you are
 > simulating trading: in the real moment you do not know whether it will get stronger
@@ -77,7 +81,9 @@ returns = returns - self.cost      # fee + slippage
 Costs come out **before** the test, not after. This is where most "profitable"
 strategies die — their edge is smaller than the price of capturing it.
 
-> [!warning] The baseline deliberately does NOT pay costs
+> [!WARNING]
+> **The baseline deliberately does NOT pay costs**
+>
 > The comment in the code is exact: *"what would have happened without me"*. You
 > compare a real trade with costs against the market backdrop without costs. Harsh
 > towards yourself — the correct direction for strictness.
@@ -117,7 +123,9 @@ often would chance alone produce a difference at least this large?"**
 That answer is `p`. `equal_var=False` means equal spread is not assumed — the more
 cautious variant.
 
-> [!tip] Why everything before this mattered
+> [!TIP]
+> **Why everything before this mattered**
+>
 > The t-test **believes** what you hand it. Tell it 500 observations and it computes
 > with 500. If those 500 are really 25 events counted twenty times each, it computes
 > a confidence it has no basis for. Steps 1 and 3 exist for the sole purpose of not
@@ -238,4 +246,4 @@ Boring. That is exactly why it works.
 
 ## 🔗 Related
 
-[[Principles]] · [[The tomato press]] · [[Repositories]] · [[The detachable tool]]
+[Why this exists](../01%20%E2%80%94%20THE%20IDEA/Why%20this%20exists.md) · [Principles](../01%20%E2%80%94%20THE%20IDEA/Principles.md) · [The tomato press](../03%20%E2%80%94%20THE%20SYSTEM/The%20tomato%20press.md) · [Repositories](Repositories.md) · [The detachable tool](The%20detachable%20tool.md)

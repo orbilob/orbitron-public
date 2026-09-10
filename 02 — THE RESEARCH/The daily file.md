@@ -1,4 +1,4 @@
-← [[START HERE]]
+← [START HERE](../START%20HERE.md)
 
 # 📅 The daily file
 
@@ -61,7 +61,9 @@ completes yesterday's file.
 
 ### 4 · Suppressed sequences collapse to one line
 
-> [!warning] Why this rule exists — with numbers from a real day
+> [!WARNING]
+> **Why this rule exists — with numbers from a real day**
+>
 > One pattern produced **139 signals**, of which **125 were suppressed** by cooldown.
 > At five lines per block that is ~625 lines of noise, and the per-pattern summary
 > gets buried at the bottom. A file meant to be kept forever and read by a human
@@ -83,7 +85,9 @@ the time span, the reason and the score range.
 `daily info & smart money track` is **manual**, and it sits immediately after "the
 market today".
 
-> [!danger] It is written once and never regenerated
+> [!CAUTION]
+> **It is written once and never regenerated**
+>
 > The daily report can regenerate the last few days. If the human summary were
 > produced at generation time, the text from the 19th would quietly become today's
 > reading of that day — and an archive that "cannot be reconstructed after the fact"
@@ -111,4 +115,4 @@ actually known, rather than defaulting to "uninterrupted".
 
 ## 🔗 Related
 
-[[The golden archive]] · [[Smart money track]] · [[Market regimes]] · [[The chain]]
+[Why this exists](../01%20%E2%80%94%20THE%20IDEA/Why%20this%20exists.md) · [The golden archive](The%20golden%20archive.md) · [Smart money track](Smart%20money%20track.md) · [Market regimes](Market%20regimes.md) · [The chain](../03%20%E2%80%94%20THE%20SYSTEM/The%20chain.md)

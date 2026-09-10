@@ -7,11 +7,41 @@
   "showOrphans": true,
   "collapse-color-groups": false,
   "colorGroups": [
-    { "query": "path:\"01 — THE IDEA\"",        "color": { "a": 1, "rgb": 14776870 } },
-    { "query": "path:\"02 — THE SYSTEM\"",      "color": { "a": 1, "rgb": 5431378  } },
-    { "query": "path:\"03 — THE ENGINEERING\"", "color": { "a": 1, "rgb": 5419488  } },
-    { "query": "path:\"04 — THE RESEARCH\"",    "color": { "a": 1, "rgb": 11621088 } },
-    { "query": "path:\"05 — HOW WE WORK\"",     "color": { "a": 1, "rgb": 14701138 } }
+    {
+      "query": "path:\"01 \u2014 THE IDEA\"",
+      "color": {
+        "a": 1,
+        "rgb": 14776870
+      }
+    },
+    {
+      "query": "path:\"02 \u2014 THE RESEARCH\"",
+      "color": {
+        "a": 1,
+        "rgb": 5431378
+      }
+    },
+    {
+      "query": "path:\"03 \u2014 THE SYSTEM\"",
+      "color": {
+        "a": 1,
+        "rgb": 5419488
+      }
+    },
+    {
+      "query": "path:\"04 \u2014 THE ENGINEERING\"",
+      "color": {
+        "a": 1,
+        "rgb": 11621088
+      }
+    },
+    {
+      "query": "path:\"05 \u2014 HOW WE WORK\"",
+      "color": {
+        "a": 1,
+        "rgb": 14701138
+      }
+    }
   ],
   "collapse-display": false,
   "showArrow": true,

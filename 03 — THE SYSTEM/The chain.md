@@ -1,4 +1,4 @@
-← [[START HERE]]
+← [START HERE](../START%20HERE.md)
 
 # 🔗 The chain — from a candle to a trade
 
@@ -45,14 +45,14 @@ Its job description is one sentence, and the second half matters more than the f
 Why that discipline? Because the collector lives on the machine most exposed to the
 internet. A machine that only fetches and stores has nothing valuable to steal and
 is *acceptable to lose*. Anything more expensive than "fetch and write" runs
-elsewhere. See [[The three machines]].
+elsewhere. See [The three machines](The%20three%20machines.md).
 
 ### 2 · 🔧 The press — patterns become one record
 
 Raw candles reach **the press** (internally: *the slot*) — one fixed machine that
 accepts any number of patterns and produces records in exactly one format.
 
-This is the project's founding analogy and it earns its own page: [[The tomato press]].
+This is the project's founding analogy and it earns its own page: [The tomato press](The%20tomato%20press.md).
 
 The output of this stage is a bare signal: *which pattern, when, direction, price,
 strength*. Nothing about the world it happened in.
@@ -70,7 +70,7 @@ on its own page:
 | 🎓 **back to school** | **trade or not — and what kind?** |
 | 🔥 **in fire** | what happened to it? |
 
-Full detail: [[STRATEGY ENGINE]].
+Full detail: [STRATEGY ENGINE](../04%20%E2%80%94%20THE%20ENGINEERING/STRATEGY%20ENGINE.md).
 
 ### 4 · 📜 JSON — the boundary
 
@@ -78,7 +78,7 @@ Stage 3 outputs **JSON**. Not a function call, not an in-memory object — a
 writable, readable, comparable format.
 
 This is the single most consequential design choice in the project, and
-[[The detachable tool]] explains why: a different executing bot means a different
+[The detachable tool](../04%20%E2%80%94%20THE%20ENGINEERING/The%20detachable%20tool.md) explains why: a different executing bot means a different
 *reader of the same JSON*. The engine does not know who executes it and has no way
 to find out.
 
@@ -88,7 +88,7 @@ to find out.
 order, keeps the stop at the exchange, monitors the position and closes it. That
 software is **not ours and is not touched** — we extend it only through the extension points it provides.
 
-Why borrow this part specifically: [[The head and the hand]].
+Why borrow this part specifically: [The head and the hand](The%20head%20and%20the%20hand.md).
 
 ### 6 · 🏆 The day is written down — forever
 
@@ -101,7 +101,7 @@ Those files are never rotated and never deleted.
 > Raw candles can be re-downloaded from the exchange at any time.
 > **The explanation of a day cannot.**
 
-That is [[The golden archive]], and it is the part of this project most likely to
+That is [The golden archive](../02%20%E2%80%94%20THE%20RESEARCH/The%20golden%20archive.md), and it is the part of this project most likely to
 matter in five years.
 
 ---
@@ -122,4 +122,4 @@ most common misreading of the whole design:
 
 ## 🔗 Related
 
-[[The head and the hand]] · [[The tomato press]] · [[STRATEGY ENGINE]] · [[The three machines]] · [[The golden archive]]
+[The head and the hand](The%20head%20and%20the%20hand.md) · [The tomato press](The%20tomato%20press.md) · [STRATEGY ENGINE](../04%20%E2%80%94%20THE%20ENGINEERING/STRATEGY%20ENGINE.md) · [The three machines](The%20three%20machines.md) · [The golden archive](../02%20%E2%80%94%20THE%20RESEARCH/The%20golden%20archive.md)

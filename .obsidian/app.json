@@ -3,5 +3,5 @@
   "showUnsupportedFiles": true,
   "attachmentFolderPath": "./",
   "newLinkFormat": "shortest",
-  "useMarkdownLinks": false
+  "useMarkdownLinks": true
 }

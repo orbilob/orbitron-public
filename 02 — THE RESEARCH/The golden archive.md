@@ -1,8 +1,10 @@
-← [[START HERE]]
+← [START HERE](../START%20HERE.md)
 
 # 🏆 The golden archive
 
-> [!success] The rule
+> [!TIP]
+> **The rule**
+>
 > **The daily files are kept forever.** No rotation. No deletion of old files.
 > One day = one file, permanently.
 
@@ -56,7 +58,9 @@ The key idea is the one that runs through the whole project:
 So each passing day is recorded as a **single image** — not only what the price did,
 but what the world around it looked like.
 
-> [!danger] None of the far end goes into code now
+> [!CAUTION]
+> **None of the far end goes into code now**
+>
 > This describes a **direction, not a task**. The heavy part — a different database,
 > vector representations, a language-model pipeline — arrives the day the project has
 > grown enough to require it. Until then a simple embedded database is enough, and the
@@ -75,7 +79,7 @@ that the expensive version becomes possible later **without rewriting anything**
 Without that rule an archive slowly fills with information from the future, and every
 backtest run against it becomes a lie that nothing detects.
 
-It pairs with the regime rule from [[Market regimes]]: a regime is recorded as a
+It pairs with the regime rule from [Market regimes](Market%20regimes.md): a regime is recorded as a
 **dated field, before it is known what happened next** — never assigned retroactively.
 
 ---
@@ -94,4 +98,4 @@ replaceable.
 
 ## 🔗 Related
 
-[[The daily file]] · [[Market regimes]] · [[Contracts and formats]] · [[What ORBITRON is]]
+[Why this exists](../01%20%E2%80%94%20THE%20IDEA/Why%20this%20exists.md) · [The daily file](The%20daily%20file.md) · [Market regimes](Market%20regimes.md) · [Contracts and formats](../04%20%E2%80%94%20THE%20ENGINEERING/Contracts%20and%20formats.md) · [What ORBITRON is](../01%20%E2%80%94%20THE%20IDEA/What%20ORBITRON%20is.md)
