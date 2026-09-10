@@ -1,4 +1,4 @@
-← [[START HERE]]
+← [START HERE](../START%20HERE.md)
 
 # 🏛️ The three machines
 
@@ -36,7 +36,9 @@ flowchart LR
 | 🏠 **Home server** | all computation: analysis, the engine, the database, freqtrade | **everything valuable**, including the trading key |
 | 💻 **Command centre** | development, the research lab, control | the developer's keys |
 
-> [!success] The principle that drives the whole split
+> [!TIP]
+> **The principle that drives the whole split**
+>
 > **Nothing sensitive and nothing expensive runs in the cloud.** Anything costlier
 > than "fetch and store" runs on the home server. The cloud machine stays keyless
 > and *acceptable to lose*.
@@ -55,7 +57,9 @@ exchange   ←  server       THE SERVER dials the exchange — single outbound r
 server     ←  laptop       over a private network
 ```
 
-> [!danger] Nobody dials the server
+> [!CAUTION]
+> **Nobody dials the server**
+>
 > The consequence is large: **even if the cloud machine were fully compromised, the
 > attacker has no path inward.** There is no key there, no open door, and nothing to
 > dial. The worst it can do is fill its own database with garbage — which the server
@@ -87,7 +91,9 @@ ranges; send failing rows to a **quarantine table** rather than dropping them
 silently; parameterised SQL only; a size cap and a timeout on every outbound
 request; TLS verification never disabled.
 
-> [!note] One family of attacks worth knowing about
+> [!NOTE]
+> **One family of attacks worth knowing about**
+>
 > RSS parsing has its own: **nested entities** — a small XML file that expands to
 > gigabytes in memory and kills the machine — and **external entities**, where the
 > parser is tricked into reading a local file and sending it out. The defence is one
@@ -109,4 +115,4 @@ The **model** above is public because the model is worth discussing. The
 
 ## 🔗 Related
 
-[[The chain]] · [[The head and the hand]] · [[Repositories]] · [[Principles]]
+[The chain](The%20chain.md) · [The head and the hand](The%20head%20and%20the%20hand.md) · [Repositories](../04%20%E2%80%94%20THE%20ENGINEERING/Repositories.md) · [Principles](../01%20%E2%80%94%20THE%20IDEA/Principles.md)

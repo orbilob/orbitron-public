@@ -1,4 +1,4 @@
-← [[START HERE]]
+← [START HERE](../START%20HERE.md)
 
 # 📦 Repositories — three, not more
 
@@ -49,7 +49,7 @@ formats.** Its product is patterns that meet a single standard.
 Only two things, both of them contracts rather than calls:
 
 - **The shared package** — one input, one number, imported by everyone who computes.
-  See [[Shared code, one number]].
+  See [Shared code, one number](Shared%20code%2C%20one%20number.md).
 - **The data schema** — a versioned contract for the tables that two repositories on
   two machines both read.
 
@@ -61,4 +61,4 @@ compatible with the rest. No translation anywhere along the path.
 
 ## 🔗 Related
 
-[[The three machines]] · [[Shared code, one number]] · [[Contracts and formats]] · [[The chain]]
+[The three machines](../03%20%E2%80%94%20THE%20SYSTEM/The%20three%20machines.md) · [Shared code, one number](Shared%20code%2C%20one%20number.md) · [Contracts and formats](Contracts%20and%20formats.md) · [The chain](../03%20%E2%80%94%20THE%20SYSTEM/The%20chain.md)

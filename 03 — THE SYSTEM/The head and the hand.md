@@ -1,8 +1,10 @@
-← [[START HERE]]
+← [START HERE](../START%20HERE.md)
 
 # 🧠 The head and the hand
 
-> [!success] The load-bearing decision
+> [!TIP]
+> **The load-bearing decision**
+>
 > **The hand is [freqtrade](https://www.freqtrade.io). The head is ours.**
 
 ---
@@ -66,7 +68,7 @@ The same boundary, arrived at from a completely different direction:
 > it was a foundation, and the rule is broken.**
 
 This is a general rule about all third-party software, not a special arrangement for
-freqtrade. It has its own page: [[The detachable tool]].
+freqtrade. It has its own page: [The detachable tool](../04%20%E2%80%94%20THE%20ENGINEERING/The%20detachable%20tool.md).
 
 ---
 
@@ -93,4 +95,4 @@ no commands.
 
 ## 🔗 Related
 
-[[The chain]] · [[The detachable tool]] · [[STRATEGY ENGINE]] · [[The three machines]]
+[The chain](The%20chain.md) · [The detachable tool](../04%20%E2%80%94%20THE%20ENGINEERING/The%20detachable%20tool.md) · [STRATEGY ENGINE](../04%20%E2%80%94%20THE%20ENGINEERING/STRATEGY%20ENGINE.md) · [The three machines](The%20three%20machines.md)

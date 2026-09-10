@@ -1,8 +1,10 @@
-← [[START HERE]]
+← [START HERE](../START%20HERE.md)
 
 # 🧱 Contracts and formats
 
-> [!info] The rule
+> [!NOTE]
+> **The rule**
+>
 > **Formats are frozen before the logic that fills them.**
 
 Three contracts are fixed ahead of any pattern logic: the **pattern passport**, the
@@ -41,7 +43,7 @@ the **status**.
 | `validated` | passed the v2 engine with significant edge |
 
 The status is mandatory for the reason the tomato analogy gives:
-**a jar without a label is a mystery a year later.** See [[The tomato press]].
+**a jar without a label is a mystery a year later.** See [The tomato press](../03%20%E2%80%94%20THE%20SYSTEM/The%20tomato%20press.md).
 
 ---
 
@@ -110,4 +112,4 @@ An example from the project, kept because it is a small decision with a big shap
 
 ## 🔗 Related
 
-[[The tomato press]] · [[STRATEGY ENGINE]] · [[The detachable tool]] · [[The golden archive]]
+[The tomato press](../03%20%E2%80%94%20THE%20SYSTEM/The%20tomato%20press.md) · [STRATEGY ENGINE](STRATEGY%20ENGINE.md) · [The detachable tool](The%20detachable%20tool.md) · [The golden archive](../02%20%E2%80%94%20THE%20RESEARCH/The%20golden%20archive.md)

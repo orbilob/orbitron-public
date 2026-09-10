@@ -1,8 +1,10 @@
-← [[START HERE]]
+← [START HERE](../START%20HERE.md)
 
 # 🧩 Shared code, one number
 
-> [!success] The rule
+> [!TIP]
+> **The rule**
+>
 > **The same input yields the same number, no matter who calls it.**
 
 Indicators, scoring, passports, regimes and signal generation live in **one shared
@@ -93,4 +95,4 @@ them is meaningless in a way that no error message will ever reveal.
 
 ## 🔗 Related
 
-[[Repositories]] · [[Contracts and formats]] · [[The detachable tool]] · [[The v2 backtest engine]]
+[Repositories](Repositories.md) · [Contracts and formats](Contracts%20and%20formats.md) · [The detachable tool](The%20detachable%20tool.md) · [The v2 backtest engine](The%20v2%20backtest%20engine.md)

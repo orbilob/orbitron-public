@@ -1,4 +1,4 @@
-← [[START HERE]]
+← [START HERE](../START%20HERE.md)
 
 # 🛰️ What ORBITRON is
 
@@ -30,7 +30,7 @@ watch the market  →  notice something  →  ask what kind of day it is
       →  decide: trade or not  →  hand it to a bot  →  write the day down forever
 ```
 
-Six steps, each with a name and a boundary. [[The chain]] walks through them.
+Six steps, each with a name and a boundary. [The chain](../03%20%E2%80%94%20THE%20SYSTEM/The%20chain.md) walks through them.
 
 ---
 
@@ -48,7 +48,7 @@ not to follow one fixed model forever.
 One person — **Joro the Best** — with an AI agent doing the reading, drafting and
 implementation under written rules. The operator decides; the agent proposes and
 executes after approval. That arrangement is documented in
-[[Working with an AI agent]], because it is a real part of how this project is
+[Working with an AI agent](../05%20%E2%80%94%20HOW%20WE%20WORK/Working%20with%20an%20AI%20agent.md), because it is a real part of how this project is
 built and hiding it would make the rest less honest.
 
 ---
@@ -67,4 +67,4 @@ contradicts itself.
 
 ## 🔗 Related
 
-[[What ORBITRON is not]] · [[The SCALP philosophy]] · [[Principles]] · [[The chain]]
+[Why this exists](Why%20this%20exists.md) · [What ORBITRON is not](What%20ORBITRON%20is%20not.md) · [The SCALP philosophy](The%20SCALP%20philosophy.md) · [Principles](Principles.md) · [The chain](../03%20%E2%80%94%20THE%20SYSTEM/The%20chain.md)

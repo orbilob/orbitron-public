@@ -1,8 +1,10 @@
-← [[START HERE]]
+← [START HERE](../START%20HERE.md)
 
 # 🤖 Working with an AI agent
 
-> [!info] Why this page exists
+> [!NOTE]
+> **Why this page exists**
+>
 > This project is documented and largely implemented by an AI agent working under
 > **written rules**. Hiding that would make everything else in this vault less
 > honest — and the rules themselves turned out to be the more interesting artefact.
@@ -179,4 +181,4 @@ not conclusions — and it never writes files or makes decisions.
 
 ## 🔗 Related
 
-[[Decision records]] · [[Evidence labels]] · [[Guards and the generated map]] · [[Principles]]
+[Decision records](Decision%20records.md) · [Evidence labels](Evidence%20labels.md) · [Guards and the generated map](Guards%20and%20the%20generated%20map.md) · [Principles](../01%20%E2%80%94%20THE%20IDEA/Principles.md)

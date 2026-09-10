@@ -1,8 +1,10 @@
-← [[START HERE]]
+← [START HERE](../START%20HERE.md)
 
 # 🔌 The detachable tool
 
-> [!success] The decision
+> [!TIP]
+> **The decision**
+>
 > **The authored environment is not mixed with third-party software. We use tools —
 > but every one of them detaches at any moment.**
 
@@ -48,7 +50,9 @@ The second one is the interesting case, because it is where the rule almost brok
 The lab is described as *"powered by freqtrade backtest engine"* — and that phrasing
 is deliberate: powered by, not built on.
 
-> [!danger] The boundary this forces in the lab
+> [!CAUTION]
+> **The boundary this forces in the lab**
+>
 > freqtrade's backtester **does not replace the v2 engine** and does not become
 > the measure of truth.
 >
@@ -84,4 +88,4 @@ design review; it is a file you can open.
 
 ## 🔗 Related
 
-[[The head and the hand]] · [[STRATEGY ENGINE]] · [[Contracts and formats]] · [[The v2 backtest engine]]
+[The head and the hand](../03%20%E2%80%94%20THE%20SYSTEM/The%20head%20and%20the%20hand.md) · [STRATEGY ENGINE](STRATEGY%20ENGINE.md) · [Contracts and formats](Contracts%20and%20formats.md) · [The v2 backtest engine](The%20v2%20backtest%20engine.md)

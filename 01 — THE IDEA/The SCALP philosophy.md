@@ -1,8 +1,10 @@
-← [[START HERE]]
+← [START HERE](../START%20HERE.md)
 
 # ⚡ The SCALP philosophy
 
-> [!success] The core idea of the whole project, in one paragraph
+> [!TIP]
+> **The core idea of the whole project, in one paragraph**
+>
 > We do not look for long-term positions. We listen, watch, analyse — and at the
 > right moment we **ride the wave**: catch the volatility, determine direction, and
 > scalp with leverage inside a short window (an hour or two), under strict risk
@@ -74,4 +76,4 @@ whether a "bar" means a minute or a week.
 
 ## 🔗 Related
 
-[[What ORBITRON is]] · [[The chain]] · [[STRATEGY ENGINE]] · [[Market regimes]]
+[Why this exists](Why%20this%20exists.md) · [What ORBITRON is](What%20ORBITRON%20is.md) · [The chain](../03%20%E2%80%94%20THE%20SYSTEM/The%20chain.md) · [STRATEGY ENGINE](../04%20%E2%80%94%20THE%20ENGINEERING/STRATEGY%20ENGINE.md) · [Market regimes](../02%20%E2%80%94%20THE%20RESEARCH/Market%20regimes.md)

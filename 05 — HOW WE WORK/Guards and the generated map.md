@@ -1,4 +1,4 @@
-← [[START HERE]]
+← [START HERE](../START%20HERE.md)
 
 # 🛡️ Guards and the generated map
 
@@ -38,7 +38,9 @@ Neither is caught by reading. Both are caught by a script in under a second.
 Exit code 0 = clean. Exit code 1 = there is something to fix, and every line says
 where.
 
-> [!success] The guard is the enforcement of "one statement, one place"
+> [!TIP]
+> **The guard is the enforcement of "one statement, one place"**
+>
 > A red check means something is recorded in two places or points into nothing. It
 > gets fixed before the commit, not worked around.
 
@@ -104,4 +106,4 @@ built. A single live status board says how far each component has got.
 
 ## 🔗 Related
 
-[[Decision records]] · [[Evidence labels]] · [[Working with an AI agent]] · [[Contracts and formats]]
+[Decision records](Decision%20records.md) · [Evidence labels](Evidence%20labels.md) · [Working with an AI agent](Working%20with%20an%20AI%20agent.md) · [Contracts and formats](../04%20%E2%80%94%20THE%20ENGINEERING/Contracts%20and%20formats.md)

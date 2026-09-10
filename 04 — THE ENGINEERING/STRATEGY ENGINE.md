@@ -1,8 +1,10 @@
-← [[START HERE]]
+← [START HERE](../START%20HERE.md)
 
 # ⚙️ STRATEGY ENGINE
 
-> [!info] The heart of the project
+> [!NOTE]
+> **The heart of the project**
+>
 > The four stages between a bare signal and a live trade — and one output that is a
 > **format**, not a function call.
 
@@ -93,7 +95,9 @@ needs a measurement, not an approval. But three things do not bend:
 | **A metric without a baseline is advertising** | every number answers "compared to what". "Compared to nothing" voids it |
 | **A number that doesn't add up gets checked** | an arithmetically impossible result stops the work |
 
-> [!danger] And the boundary of the whole stage
+> [!CAUTION]
+> **And the boundary of the whole stage**
+>
 > **The engine decides whether there is a trade. It does not decide whether that
 > trade is real.** Every trade born here is a paper trade. Turning it real is the
 > operator's decision, and only the operator's.
@@ -159,7 +163,9 @@ Three inputs, and they deliberately do not collapse into one number:
 | **Risk axis** | a continuous score from published indices | **days** |
 | **Volatility** | the context the move happened in | **minutes–hours** |
 
-> [!danger] The disagreement between the slow and the fast is information, not error
+> [!CAUTION]
+> **The disagreement between the slow and the fast is information, not error**
+>
 > That is precisely where a scalp lives. Merge them into one number and that
 > information vanishes without a sound.
 
@@ -174,14 +180,18 @@ Three rules the table carries:
 3. **A hard block is its own field, not a very negative score.** A block carries a
    *reason*; a low score carries only a number.
 
-> [!success] Why a table and not nested conditionals
+> [!TIP]
+> **Why a table and not nested conditionals**
+>
 > A table is read by a human and compared against yesterday's. Sixteen cells inside
 > nested `if`s are read by nobody — including the person who wrote them.
 >
 > And second: a table is **data**. Data has a version, travels in the passport, and
 > changes without touching code.
 
-> [!warning] The easiest place in the project to invent a threshold
+> [!WARNING]
+> **The easiest place in the project to invent a threshold**
+>
 > A number written by eye looks exactly like a number extracted from data, and no
 > line of code complains. So the table enters the vault **empty of values and full
 > of structure**, and filling it is separate work involving measurement.
@@ -298,4 +308,4 @@ future, no metric without a baseline.
 
 ## 🔗 Related
 
-[[The chain]] · [[The detachable tool]] · [[Contracts and formats]] · [[Market regimes]] · [[Smart money track]]
+[The chain](../03%20%E2%80%94%20THE%20SYSTEM/The%20chain.md) · [The detachable tool](The%20detachable%20tool.md) · [Contracts and formats](Contracts%20and%20formats.md) · [Market regimes](../02%20%E2%80%94%20THE%20RESEARCH/Market%20regimes.md) · [Smart money track](../02%20%E2%80%94%20THE%20RESEARCH/Smart%20money%20track.md)

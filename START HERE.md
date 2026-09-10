@@ -1,14 +1,37 @@
 # 🛰️ START HERE
 
-> [!info] What this vault is
-> A public, honest look inside **ORBITRON** — a personal research project about
-> **market mechanics**: what moves prices, and how a trend is born, sustained and dies.
+> [!IMPORTANT]
+> **ORBITRON is not a trading bot.**
 >
-> It is not the project's working vault. The working vault carries live status,
-> open tasks and calibration numbers, and it stays private. This one carries the
-> **thinking**: the ideas, the architecture, the contracts, and the discipline.
+> It is an attempt to understand **how markets actually work** — why a trend moves
+> in the direction it does, and what is happening behind the scenes. Trading is the
+> instrument that keeps the attempt honest, not the purpose it serves.
+>
+> **→ [Why this exists](01%20%E2%80%94%20THE%20IDEA/Why%20this%20exists.md) — read this first.**
 
-> [!warning] Disclaimer
+---
+
+## 📌 The shortest possible summary
+
+> Markets never stop changing. The thing that worked last quarter stops working, and
+> usually nobody can say when it stopped or why.
+>
+> So every passing day is recorded as a **single image** — not only what the price
+> did, but what the world looked like while it did it — and kept **forever**. Raw
+> candles can be re-downloaded from the exchange at any time; the explanation of a
+> day cannot.
+>
+> Patterns are then tested against that record by an instrument built so it **can
+> come back negative** — measured against chance, after costs, corrected for testing
+> many things at once. A pattern that survives is evidence that some mechanism was
+> understood correctly. A pattern that doesn't is a saved year.
+
+If that interests you, [The golden archive](02%20%E2%80%94%20THE%20RESEARCH/The%20golden%20archive.md)
+is the next page.
+
+> [!WARNING]
+> **Disclaimer**
+>
 > Personal research. **Not financial advice.** No signals are sold, no money is
 > managed for anyone, no profitability is claimed. The measure of success at this
 > stage is honesty, not return.
@@ -20,60 +43,61 @@
 This vault is written in three layers. Everyone enters through the same door and
 goes as deep as they like.
 
-### 🧑 Layer one — the idea
+### 🔭 Layer one — the idea
 
-No technical background needed. What this project is, why it exists, and the one
-sentence that explains most of its decisions.
+No technical background needed. What this project is chasing, and why.
 
-- [[What ORBITRON is]]
-- [[What ORBITRON is not]]
-- [[The SCALP philosophy]]
-- [[Principles]]
+- [Why this exists](01%20%E2%80%94%20THE%20IDEA/Why%20this%20exists.md) ⭐ **start here**
+- [What ORBITRON is](01%20%E2%80%94%20THE%20IDEA/What%20ORBITRON%20is.md)
+- [What ORBITRON is not](01%20%E2%80%94%20THE%20IDEA/What%20ORBITRON%20is%20not.md)
+- [Principles](01%20%E2%80%94%20THE%20IDEA/Principles.md) — the independent picture, real data only
+- [The SCALP philosophy](01%20%E2%80%94%20THE%20IDEA/The%20SCALP%20philosophy.md) — the trading part, in its proper size
 
-### 🧑‍💻 Layer two — the system
+### 🔬 Layer two — what is being studied
 
-How data becomes a decision, told as a chain with named parts.
+The actual subject matter, and the record it accumulates into.
 
-- [[The chain]] — from a one-minute candle to a live trade
-- [[The head and the hand]] — what we build, what we borrow
-- [[The three machines]] — where each part runs, and why
-- [[The tomato press]] — the analogy the whole architecture rests on
+- [The golden archive](02%20%E2%80%94%20THE%20RESEARCH/The%20golden%20archive.md) ⭐ the permanent record — **the product**
+- [The daily file](02%20%E2%80%94%20THE%20RESEARCH/The%20daily%20file.md) — what one day looks like
+- [Market regimes](02%20%E2%80%94%20THE%20RESEARCH/Market%20regimes.md) — the same state means different things in different worlds
+- [Smart money track](02%20%E2%80%94%20THE%20RESEARCH/Smart%20money%20track.md) — where money goes when it leaves somewhere else
 
-### 🔬 Layer three — the engineering
+### ⚙️ Layer three — the machine
 
-For people who build things. Contracts, statistics, and the boundaries that keep
-the project honest.
+How observation becomes a testable claim.
 
-- [[STRATEGY ENGINE]] — four named stages from signal to trade
-- [[The v2 backtest engine]] — how a pattern is judged, and how it is allowed to fail
-- [[Contracts and formats]] — why formats are frozen before logic
-- [[The detachable tool]] — no third-party software is load-bearing
-- [[Shared code, one number]] — one input, one number, called from anywhere
-- [[Repositories]] — three repos, and why exactly three
+- [The chain](03%20%E2%80%94%20THE%20SYSTEM/The%20chain.md) — from a one-minute candle to a recorded outcome
+- [The tomato press](03%20%E2%80%94%20THE%20SYSTEM/The%20tomato%20press.md) — the analogy the architecture rests on
+- [The head and the hand](03%20%E2%80%94%20THE%20SYSTEM/The%20head%20and%20the%20hand.md) — what we build, what we borrow
+- [The three machines](03%20%E2%80%94%20THE%20SYSTEM/The%20three%20machines.md) — where each part runs, and why
 
-### 🧠 The research direction
+### 🧑‍💻 Layer four — the engineering
 
-- [[Market regimes]] · [[Smart money track]] · [[The daily file]] · [[The golden archive]]
+For people who build things. Contracts, statistics, and the boundaries that keep the
+project honest.
+
+- [The v2 backtest engine](04%20%E2%80%94%20THE%20ENGINEERING/The%20v2%20backtest%20engine.md) ⭐ how a claim is allowed to fail
+- [STRATEGY ENGINE](04%20%E2%80%94%20THE%20ENGINEERING/STRATEGY%20ENGINE.md) — four named stages from signal to outcome
+- [Contracts and formats](04%20%E2%80%94%20THE%20ENGINEERING/Contracts%20and%20formats.md) — why formats are frozen before logic
+- [The detachable tool](04%20%E2%80%94%20THE%20ENGINEERING/The%20detachable%20tool.md) — no third-party software is load-bearing
+- [Shared code, one number](04%20%E2%80%94%20THE%20ENGINEERING/Shared%20code%2C%20one%20number.md) — one input, one number, from anywhere
+- [Repositories](04%20%E2%80%94%20THE%20ENGINEERING/Repositories.md) — three repos, and why exactly three
 
 ### ⭐ And the part most projects skip
 
-- [[Working with an AI agent]] · [[Decision records]] · [[Evidence labels]] · [[Guards and the generated map]]
+How the documentation itself is kept from rotting — including the written rules the
+AI agent working on this project must follow.
 
----
-
-## 📌 The shortest possible summary
-
-> A pattern says *something happened*. Context says *in what kind of world*.
-> An engine decides *trade or not, and what kind*. **freqtrade** executes it.
-> Every day is then written down forever, because raw candles can be re-downloaded
-> and the explanation of a day cannot.
-
-If that sentence interests you, [[The chain]] is the next page.
+- [Working with an AI agent](05%20%E2%80%94%20HOW%20WE%20WORK/Working%20with%20an%20AI%20agent.md)
+- [Decision records](05%20%E2%80%94%20HOW%20WE%20WORK/Decision%20records.md)
+- [Evidence labels](05%20%E2%80%94%20HOW%20WE%20WORK/Evidence%20labels.md) — ✅ verified · 🟡 claimed · ⚫ unknown
+- [Guards and the generated map](05%20%E2%80%94%20HOW%20WE%20WORK/Guards%20and%20the%20generated%20map.md)
 
 ---
 
 ## 🔤 A note on names
 
-Some words in this vault are the project's own vocabulary — *the press*, *lost in
-space*, *the golden archive*. They are not jargon for its own sake; each one exists
-because a nameless thing turned out to be unmeasurable. [[GLOSSARY]] collects them.
+Some words here are the project's own vocabulary — *the press*, *lost in space*,
+*the golden archive*. They are not jargon for its own sake; each exists because a
+nameless thing turned out to be unmeasurable.
+[GLOSSARY](GLOSSARY.md) collects them.

@@ -1,4 +1,4 @@
-← [[START HERE]]
+← [START HERE](../START%20HERE.md)
 
 # ⚖️ Decision records
 
@@ -95,4 +95,4 @@ decisions that are **expensive to reverse**. Everything else gets a commit messa
 
 ## 🔗 Related
 
-[[Evidence labels]] · [[Working with an AI agent]] · [[Guards and the generated map]]
+[Evidence labels](Evidence%20labels.md) · [Working with an AI agent](Working%20with%20an%20AI%20agent.md) · [Guards and the generated map](Guards%20and%20the%20generated%20map.md)
