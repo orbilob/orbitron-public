@@ -45,9 +45,13 @@ not to follow one fixed model forever.
 
 ## Who runs it
 
-One person — **Joro the Best** — with an AI agent doing the reading, drafting and
-implementation under written rules. The operator decides; the agent proposes and
-executes after approval. That arrangement is documented in
+One person — **[orbilob](https://github.com/orbilob)** — whose idea, direction and
+supervision the whole thing runs on, with an AI agent (Claude Code) doing the
+reading, drafting and implementation under written rules.
+
+**The operator decides; the agent proposes and executes after approval.** Every
+question in this vault is his question, and every decision recorded here is his
+decision. That arrangement is documented in
 [Working with an AI agent](../05%20%E2%80%94%20HOW%20WE%20WORK/Working%20with%20an%20AI%20agent.md), because it is a real part of how this project is
 built and hiding it would make the rest less honest.
 
