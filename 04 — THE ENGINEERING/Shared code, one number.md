@@ -24,7 +24,7 @@ reimplement it from the description, you understood it.
 
 But the cost turned out to be larger than the benefit:
 
-> **You prove one number and you trade a different one, and the difference is
+> **You prove one number and you outcome a different one, and the difference is
 > invisible until it costs money.**
 
 The replacement rule is testable. "We rewrote it carefully" is not.
@@ -44,7 +44,7 @@ shared package/      ← imported by everything, knows about nobody
   press/             signal from passport + detect()
 
 lab/                 imports it · measures with the v2 engine
-strategy/            imports it · the glue to freqtrade (~50 lines)
+tools/               import it · never the other way round
 collector/           does NOT import it — it fetches and writes, it computes nothing
 ```
 
@@ -53,15 +53,13 @@ exposed machine, and it does not even *have* the analytical code to leak.
 
 ---
 
-## The one thing the shared package must never import
+## The direction of dependency never reverses
 
-> **The shared package imports nothing from freqtrade.**
+> **The shared package imports nothing from anything above it.**
 
-This is a legal boundary (freqtrade is GPL-3.0) and an architectural one at the same
-time: the head does not know which hand executes it.
-
-The two boundaries reinforcing each other is not a coincidence — a clean licensing
-story and a clean dependency story usually turn out to be the same story.
+It knows about indicators and definitions; it does not know who is calling it or
+why. That is what makes the rule testable at all — a package that reaches upward
+into its callers cannot promise the same number from every direction.
 
 ---
 
@@ -95,4 +93,4 @@ them is meaningless in a way that no error message will ever reveal.
 
 ## 🔗 Related
 
-[Repositories](Repositories.md) · [Contracts and formats](Contracts%20and%20formats.md) · [The detachable tool](The%20detachable%20tool.md) · [The v2 backtest engine](The%20v2%20backtest%20engine.md)
+[Repositories](Repositories.md) · [Contracts and formats](Contracts%20and%20formats.md) · [The v2 validation engine](The%20v2%20validation%20engine.md)

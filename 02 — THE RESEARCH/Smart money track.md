@@ -39,7 +39,7 @@ The answer was not to choose. It was:
 
 ---
 
-## ⭐ How it enters a trading decision — the interesting part
+## ⭐ How it enters a market decision — the interesting part
 
 This is where smart money differs from every other input in the system, and it is
 the project's favourite piece of design.
@@ -48,21 +48,22 @@ the project's favourite piece of design.
 
 When price is in a zone that institutional players defend in our direction, that does
 not make the signal *more true*. It makes the stop **cheaper** — a stop just beyond
-the zone risks less for the same trade.
+the zone risks less for the same outcome.
 
 Why this is better than "add some points":
 
 | Raising confidence | Tightening the stop |
 |---|---|
-| → larger position size | → the same risk over a shorter distance |
-| → **more risk** | → **a smaller loss when we are wrong** |
+| a factor becomes a **vote** on the answer | a factor becomes a **property of the observation** |
+| every input collapses into one number | each input keeps its own meaning |
 
-And the arithmetic agrees: leverage is a *result* of risk and stop distance. Tighten
-the stop at constant risk and leverage rises — so the lever is not free, and the
-risk-management ceiling still applies above it.
+The wider point is the one that matters for the record: **a factor can be highly
+informative without making an answer more likely to be right.** Collapsing every
+input into a single confidence score destroys exactly that distinction — and the
+distinction is the finding.
 
 That is why, in the decision order, smart money runs **last and outside the
-confidence calculation**. It is a parameter of the trade, not a vote on it.
+confidence calculation**. It is a parameter of the outcome, not a vote on it.
 
 ---
 
@@ -89,4 +90,4 @@ places is two names for one thing.
 
 ## 🔗 Related
 
-[Market regimes](Market%20regimes.md) · [The daily file](The%20daily%20file.md) · [STRATEGY ENGINE](../04%20%E2%80%94%20THE%20ENGINEERING/STRATEGY%20ENGINE.md)
+[Market regimes](Market%20regimes.md) · [The daily file](The%20daily%20file.md)

@@ -20,7 +20,7 @@ different macro backdrop, a different mood. This is the project's core principle
 
 Is yield being sought, or shelter?
 
-This is deliberately **not** a modifier bolted onto risk management. It is a property
+This is deliberately **not** a modifier bolted onto exposure discipline. It is a property
 of the market, and it belongs with the money-flow tracking — because "yield or
 shelter" is literally the question *where is money going*.
 
@@ -46,8 +46,9 @@ They are kept as **separate fields**, never fused.
 > **Because the disagreement is the information**
 >
 > When the slow measure and the fast measure disagree, that is not an error to
-> reconcile — **that is where a scalp lives.** Merge them into one score and that
-> information vanishes silently, with nothing in the logs to show it ever existed.
+> reconcile — **it is one of the most informative states the record can hold.**
+> Merge them into one score and that information vanishes silently, with nothing in
+> the logs to show it ever existed.
 
 ---
 
@@ -63,7 +64,7 @@ They are kept as **separate fields**, never fused.
 That last row is the honest one. Asset-rotation behaviour by regime exists in the
 literature for traditional assets. For bitcoin it does not, and one cycle proves
 nothing. So it is recorded as a hypothesis with a mechanism for accumulating
-evidence — every trade records its regime, and after a hundred trades *"do results
+evidence — every outcome records its regime, and after a hundred outcomes *"do results
 differ by quadrant"* becomes an ordinary query.
 
 ---
@@ -113,4 +114,4 @@ down before it needs them.
 
 ## 🔗 Related
 
-[Smart money track](Smart%20money%20track.md) · [STRATEGY ENGINE](../04%20%E2%80%94%20THE%20ENGINEERING/STRATEGY%20ENGINE.md) · [The daily file](The%20daily%20file.md) · [Principles](../01%20%E2%80%94%20THE%20IDEA/Principles.md)
+[Smart money track](Smart%20money%20track.md) · [The daily file](The%20daily%20file.md) · [Principles](../01%20%E2%80%94%20THE%20IDEA/Principles.md)

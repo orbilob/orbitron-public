@@ -5,8 +5,8 @@
 | Repository | Contains | Runs on | Why separate |
 |---|---|---|---|
 | 📡 **COLLECTOR** | everything that fetches from outside and computes nothing | ☁️ the cloud machine | **Security**: that machine physically cannot see the analysis code, even by mistake |
-| ⚙️ **CORE** | technical + fundamental analysis, the engine, the trade calculation, the dashboard | 🏠 the home server | They evolve together, with frequent cross-cutting changes |
-| 🧪 **LAB** | research, backtesting, history | 💻 the command centre | A completely different lifecycle |
+| ⚙️ **CORE** | technical and fundamental analysis, the context layer, the written day, the dashboard | 🏠 the home server | They evolve together, with frequent cross-cutting changes |
+| 🧪 **LAB** | research, historical validation, history | 💻 the command centre | A completely different lifecycle |
 
 Plus this vault and the private working vault, which carry no code and do not count.
 
@@ -23,7 +23,7 @@ compromise of that machine leaks nothing worth having.
 
 ### Why the core is one repository and not four
 
-The four logical areas inside it (technical analysis, fundamentals, the trade
+The four logical areas inside it (technical analysis, fundamentals, the outcome
 calculation, the dashboard) change together constantly. Splitting them would buy
 imaginary independence and pay for it in cross-repository version dances.
 
@@ -59,6 +59,4 @@ compatible with the rest. No translation anywhere along the path.
 
 ---
 
-## 🔗 Related
-
-[The three machines](../03%20%E2%80%94%20THE%20SYSTEM/The%20three%20machines.md) · [Shared code, one number](Shared%20code%2C%20one%20number.md) · [Contracts and formats](Contracts%20and%20formats.md) · [The chain](../03%20%E2%80%94%20THE%20SYSTEM/The%20chain.md)
+## 🔗 Related · [Shared code, one number](Shared%20code%2C%20one%20number.md) · [Contracts and formats](Contracts%20and%20formats.md) · [The chain](../03%20%E2%80%94%20THE%20SYSTEM/The%20chain.md)

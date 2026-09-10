@@ -86,4 +86,4 @@ right test. Plausible and wrong is the expensive combination.
 
 ## 🔗 Related
 
-[Decision records](Decision%20records.md) · [Principles](../01%20%E2%80%94%20THE%20IDEA/Principles.md) · [The v2 backtest engine](../04%20%E2%80%94%20THE%20ENGINEERING/The%20v2%20backtest%20engine.md) · [Working with an AI agent](Working%20with%20an%20AI%20agent.md)
+[Decision records](Decision%20records.md) · [Principles](../01%20%E2%80%94%20THE%20IDEA/Principles.md) · [The v2 validation engine](../04%20%E2%80%94%20THE%20ENGINEERING/The%20v2%20validation%20engine.md) · [Working with an AI agent](Working%20with%20an%20AI%20agent.md)

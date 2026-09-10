@@ -12,24 +12,24 @@
 
 ## Not an automatic money machine
 
-**No real trade happens without the operator.** Not one. The path is deliberately
-staged:
+**Nothing in this system acts on its own.** Not one step of it runs without the
+operator. The path is deliberately staged:
 
 ```
-paper trading  →  statistically defensible results  →  and only then, real money
+simulation  →  statistically defensible results  →  and only then, real money
 ```
 
-The bot can be technically capable of trading live long before it is allowed to.
-The gap between those two moments is a decision, not a missing feature.
+A component can be technically capable of doing something long before it is
+allowed to. The gap between those two moments is a decision, not a missing feature.
 
 ---
 
-## Not a signal service, and not copy-trading
+## Not a signal service, and not copy-market
 
 Nothing here is sold, subscribed to, or mirrored. No one else's money is managed,
 and that is not a "not yet" — the project's own architecture notes rule out the
 whole family of features that would lead there (automatic capital allocation,
-strategy selection without a human, autonomous trading). They were considered and
+strategy selection without a human, autonomous market). They were considered and
 deliberately set aside, because they contradict the principle that **the operator
 always decides**.
 
@@ -44,7 +44,7 @@ future time.
 It has already happened more than once. A pattern that looked "validated" was
 re-run through the corrected engine and turned out to have zero edge — the edge had
 been an artifact of a broken measuring instrument. That story is kept in the vault
-on purpose. See [The v2 backtest engine](../04%20%E2%80%94%20THE%20ENGINEERING/The%20v2%20backtest%20engine.md).
+on purpose. See [The v2 validation engine](../04%20%E2%80%94%20THE%20ENGINEERING/The%20v2%20validation%20engine.md).
 
 ---
 
@@ -67,10 +67,10 @@ This is the public subset. Infrastructure, network layout, hostnames, credential
 calibrated thresholds, scoring weights and the pattern code stay private —
 partly for security, partly because they are the actual work product.
 
-**What is shown is how the project thinks. What is withheld is what it trades on.**
+**What is shown is how the project thinks. What is withheld is what it outcomes on.**
 
 ---
 
 ## 🔗 Related
 
-[Why this exists](Why%20this%20exists.md) · [What ORBITRON is](What%20ORBITRON%20is.md) · [Principles](Principles.md) · [The v2 backtest engine](../04%20%E2%80%94%20THE%20ENGINEERING/The%20v2%20backtest%20engine.md) · [Evidence labels](../05%20%E2%80%94%20HOW%20WE%20WORK/Evidence%20labels.md)
+[Why this exists](Why%20this%20exists.md) · [What ORBITRON is](What%20ORBITRON%20is.md) · [Principles](Principles.md) · [The v2 validation engine](../04%20%E2%80%94%20THE%20ENGINEERING/The%20v2%20validation%20engine.md) · [Evidence labels](../05%20%E2%80%94%20HOW%20WE%20WORK/Evidence%20labels.md)

@@ -112,4 +112,4 @@ An example from the project, kept because it is a small decision with a big shap
 
 ## 🔗 Related
 
-[The tomato press](../03%20%E2%80%94%20THE%20SYSTEM/The%20tomato%20press.md) · [STRATEGY ENGINE](STRATEGY%20ENGINE.md) · [The detachable tool](The%20detachable%20tool.md) · [The golden archive](../02%20%E2%80%94%20THE%20RESEARCH/The%20golden%20archive.md)
+[The tomato press](../03%20%E2%80%94%20THE%20SYSTEM/The%20tomato%20press.md) · [The golden archive](../02%20%E2%80%94%20THE%20RESEARCH/The%20golden%20archive.md)

@@ -10,16 +10,18 @@ quarter. The first market studied is bitcoin.
 
 ## The sentence that explains the rest
 
-> **Trading is the test, not the goal.**
+> **We are looking for answers — and we write them down.**
 
-A pattern that makes money is *evidence that some mechanism was understood
-correctly*. That is why a live chain with real risk management is being built at
-all. But the understanding stays the point: a system that wins without knowing why
-is luck with good marketing.
+The question is never *"what will the price do"*. It is **why did the trend move
+in this direction, in this regime — and what was happening behind the scenes?**
 
-This single sentence explains most of the decisions in this vault — why negative
+And an answer that is not written down is a story. So every day is recorded as it
+happened, permanently, building a history that did not exist before — the only thing
+future answers can honestly be tested against.
+
+This explains most of the decisions in this vault — why negative
 results are recorded and kept, why a format is frozen before the logic that fills
-it, why a backtest engine is built to be able to say *no*.
+it, why a validation engine is built to be able to say *no*.
 
 ---
 
@@ -27,7 +29,7 @@ it, why a backtest engine is built to be able to say *no*.
 
 ```
 watch the market  →  notice something  →  ask what kind of day it is
-      →  decide: trade or not  →  hand it to a bot  →  write the day down forever
+      →  write the day down, permanently  →  test the answer against the record
 ```
 
 Six steps, each with a name and a boundary. [The chain](../03%20%E2%80%94%20THE%20SYSTEM/The%20chain.md) walks through them.
@@ -71,4 +73,4 @@ contradicts itself.
 
 ## 🔗 Related
 
-[Why this exists](Why%20this%20exists.md) · [What ORBITRON is not](What%20ORBITRON%20is%20not.md) · [The SCALP philosophy](The%20SCALP%20philosophy.md) · [Principles](Principles.md) · [The chain](../03%20%E2%80%94%20THE%20SYSTEM/The%20chain.md)
+[Why this exists](Why%20this%20exists.md) · [What ORBITRON is not](What%20ORBITRON%20is%20not.md) · [Principles](Principles.md) · [The chain](../03%20%E2%80%94%20THE%20SYSTEM/The%20chain.md)
