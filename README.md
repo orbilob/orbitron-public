@@ -21,8 +21,9 @@
 [![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white)](https://streamlit.io)
 [![freqtrade](https://img.shields.io/badge/freqtrade-detachable-64748b?style=flat-square)](04%20%E2%80%94%20THE%20ENGINEERING/The%20detachable%20tool.md)
 
-**Written with**
+**Made by**
 
+[![Author](https://img.shields.io/badge/idea%2C%20direction%20%26%20supervision-orbilob-f39c12?style=flat-square)](https://github.com/orbilob)
 [![Claude Code](https://img.shields.io/badge/built%20with-Claude%20Code-D97757?style=flat-square)](https://claude.com/claude-code)
 [![Under written rules](https://img.shields.io/badge/under-written%20rules-2ecc71?style=flat-square)](05%20%E2%80%94%20HOW%20WE%20WORK/Working%20with%20an%20AI%20agent.md)
 
@@ -129,7 +130,11 @@ thresholds, scoring weights, and the pattern code itself.
 
 ## 📄 License & authorship
 
-Documentation by **Joro the Best**, written together with an AI agent working under
+**Built with Claude Code, under the idea, direction and supervision of the author —
+[orbilob](https://github.com/orbilob).**
+
+The project is his: the questions it asks, the decisions it records, and the
+judgement behind every one of them. The agent reads, drafts and implements under
 the project's own written rules — see
 [Working with an AI agent](05%20%E2%80%94%20HOW%20WE%20WORK/Working%20with%20an%20AI%20agent.md).
 
