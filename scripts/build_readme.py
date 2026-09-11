@@ -42,7 +42,7 @@ ASSETS = ROOT / "assets"
 
 # Every image this script owns. Named once, so adding a third cannot be
 # half-done: it is written, checked for staleness and listed from here.
-DRAWINGS = ("board", "chain", "patterns", "tagline")
+DRAWINGS = ("board", "chain", "engine", "patterns", "tagline")
 
 # What the line under the title says. It is drawn rather than written because
 # GitHub strips inline colour from markdown: an image is the only way to say
@@ -76,6 +76,13 @@ PATTERN_INK = "#f0b429"
 # What each part of the chain does, in as few words as will fit under a card.
 # The names come from the vault; these three lines are presentation and live
 # here, where the drawing that uses them lives.
+# The engine is the critical part of the project, so its four stages get four
+# colours of their own rather than one accent repeated. They are chosen for
+# meaning as much as for separation: cold blue for a signal adrift, green for
+# arrival, the project's amber for judgement, violet for the test. All four
+# clear 4.5:1 against the dark panel they sit on.
+STAGE_INK = ("#60a5fa", "#2ecc71", "#f0b429", "#a78bfa")
+
 PILLAR_LINE = {
     "ORPROBE": "brings the material",
     "ORLAB": "says whether there is anything in it",
@@ -210,18 +217,18 @@ def chain_svg(data: dict, theme: str) -> str:
     """The three parts of the chain, side by side, with what each one holds.
 
     Three cards and two arrows: a reader who sees only this picture should be
-    able to say what the project does and in which direction it flows. Under
-    them, the four stages that stand between a bare signal and anything worth
-    acting on.
+    able to say what the project does and in which direction it flows.
+
+    Drawn on the dark palette in both themes, by the operator's choice on
+    2026-09-11 — it reads as a panel rather than as page furniture.
 
     Every name here is exported from the vault, never typed: the drawing is a
     view of chain.json and nothing else.
     """
-    t = THEMES[theme]
+    t = THEMES["dark"]
     card_w, gap = 276, 26
     width = card_w * 3 + gap * 2
-    card_h, stages_h = 196, 58
-    height = card_h + stages_h
+    height = 196
 
     cards = []
     for index, pillar in enumerate(data["pillars"]):
@@ -238,7 +245,7 @@ def chain_svg(data: dict, theme: str) -> str:
             )
         cards.append(
             f'<g transform="translate({x},0)">'
-            f'<rect width="{card_w}" height="{card_h}" rx="10" '
+            f'<rect width="{card_w}" height="{height}" rx="10" '
             f'fill="{t["rail"]}" stroke="{t["edge"]}"/>'
             f'<text x="16" y="34" font-size="14" font-weight="700" '
             f'letter-spacing="0.06em" fill="{t["ink"]}">{pillar["name"]}</text>'
@@ -247,38 +254,75 @@ def chain_svg(data: dict, theme: str) -> str:
             f'<line x1="16" y1="66" x2="{card_w - 16}" y2="66" '
             f'stroke="{t["edge"]}"/>'
             f'{"".join(rows)}'
-            f'<text x="16" y="{card_h - 16}" font-size="11.5" '
+            f'<text x="16" y="{height - 16}" font-size="11.5" '
             f'fill="{t["dim"]}">{PILLAR_LINE.get(pillar["name"], "")}</text>'
             f"</g>"
         )
         if index < 2:
             cards.append(
-                f'<text x="{x + card_w + gap / 2:.0f}" y="{card_h / 2 + 6:.0f}" '
+                f'<text x="{x + card_w + gap / 2:.0f}" y="{height / 2 + 6:.0f}" '
                 f'text-anchor="middle" font-size="17" '
                 f'fill="{t["dim"]}">&#9656;</text>'
             )
 
-    step = width / len(data["stages"])
-    stages = []
-    for index, stage in enumerate(data["stages"]):
-        cx = step * index + step / 2
-        stages.append(
-            f'<text x="{cx:.0f}" y="{card_h + 40}" text-anchor="middle" '
-            f'font-size="11.5" fill="{t["dim"]}">'
-            f'<tspan fill="{PATTERN_INK}">{index + 1}</tspan>  {stage}</text>'
-        )
-
-    spoken = " then ".join(p["name"] for p in data["pillars"])
+    spoken = ". ".join(
+        ", then ".join(x["name"] for x in p["processes"]) for p in data["pillars"]
+    )
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" \
 height="{height}" viewBox="0 0 {width} {height}" role="img" \
-aria-label="The chain: {spoken}. Then four stages: \
-{", ".join(data["stages"])}.">
+aria-label="The chain: {spoken}.">
 <style>text{{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,\
 Helvetica,Arial,sans-serif}}</style>
 {"".join(cards)}
-<text x="0" y="{card_h + 22}" font-size="10.5" letter-spacing="0.14em" \
-fill="{t["dim"]}">AND THEN FOUR STAGES</text>
-{"".join(stages)}
+</svg>
+"""
+
+
+def engine_svg(data: dict, theme: str) -> str:
+    """The strategy engine, on a panel of its own.
+
+    It gets one because it is the critical part of the project: everything
+    before it produces a bare signal, and everything anyone would act on comes
+    out of it. A row of grey words under another drawing said the opposite.
+
+    So: the name large enough to be read first, and the four stages in four
+    colours rather than one accent repeated — a reader should be able to count
+    them at a glance and see that they are four different things.
+    """
+    t = THEMES["dark"]
+    width, height, pad = 880, 158, 28
+    gap = 14
+    span = width - pad * 2
+    pill_w = (span - gap * 3) / 4
+
+    pills = []
+    for index, stage in enumerate(data["stages"]):
+        x = pad + index * (pill_w + gap)
+        ink = STAGE_INK[index % len(STAGE_INK)]
+        pills.append(
+            f'<g transform="translate({x:.1f},96)">'
+            f'<rect width="{pill_w:.1f}" height="42" rx="9" fill="{ink}1f" '
+            f'stroke="{ink}66"/>'
+            f'<text x="15" y="27" font-size="15" font-weight="700" '
+            f'fill="{ink}">{index + 1}</text>'
+            f'<text x="34" y="26" font-size="13" font-weight="500" '
+            f'fill="{t["ink"]}">{stage}</text>'
+            f"</g>"
+        )
+
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" \
+height="{height}" viewBox="0 0 {width} {height}" role="img" \
+aria-label="The strategy engine — four stages: \
+{", ".join(f"{i + 1} {s}" for i, s in enumerate(data["stages"]))}.">
+<style>text{{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,\
+Helvetica,Arial,sans-serif}}</style>
+<rect width="{width}" height="{height}" rx="12" fill="{t['bg']}" \
+stroke="{PATTERN_INK}44"/>
+<text x="{pad}" y="52" font-size="27" font-weight="700" \
+letter-spacing="0.11em" fill="{t['ink']}">THE STRATEGY ENGINE</text>
+<text x="{pad}" y="76" font-size="12.5" fill="{t['dim']}">the four stages \
+between a bare signal and anything worth acting on</text>
+{"".join(pills)}
 </svg>
 """
 
@@ -309,6 +353,8 @@ def drawing(name: str, data: dict, patterns: dict, chain: dict,
         return svg(data, theme)
     if name == "chain":
         return chain_svg(chain, theme)
+    if name == "engine":
+        return engine_svg(chain, theme)
     if name == "patterns":
         return patterns_svg(patterns, theme)
     return tagline_svg(theme)
@@ -388,7 +434,15 @@ Then four stages: {', '.join(chain['stages'])}." width="880">
 
 <sub>{walk}</sub>
 
-<sub>And then four stages: {stages}</sub>
+&nbsp;
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/engine-dark.svg">
+  <img src="assets/engine-light.svg" alt="The strategy engine — four stages: \
+{', '.join(f'{i + 1} {x}' for i, x in enumerate(chain['stages']))}." width="880">
+</picture>
+
+<sub>{stages}</sub>
 
 **→ [How the chain works](04%20%E2%80%94%20THE%20ENGINEERING/The%20chain%20of%20three.md)**
 
