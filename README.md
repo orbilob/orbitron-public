@@ -48,6 +48,23 @@
 
 &nbsp;
 
+**The chain**
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/chain-dark.svg">
+  <img src="assets/chain-light.svg" alt="The chain: The Sampler ▸ The Sweep ▸ The Store &nbsp;·&nbsp; The Inspection ▸ The Cut ▸ The Verdict &nbsp;·&nbsp; The Passport Desk ▸ The Press ▸ The Harvest. Then four stages: lost in space, found home, back to school, the proving ground." width="880">
+</picture>
+
+**ORPROBE** *the sonde* &nbsp;▸&nbsp; **ORLAB** *the assay* &nbsp;▸&nbsp; **ORCORE** *mission control*
+
+<sub>The Sampler ▸ The Sweep ▸ The Store &nbsp;·&nbsp; The Inspection ▸ The Cut ▸ The Verdict &nbsp;·&nbsp; The Passport Desk ▸ The Press ▸ The Harvest</sub>
+
+<sub>And then four stages: **1** lost in space &nbsp;·&nbsp; **2** found home &nbsp;·&nbsp; **3** back to school &nbsp;·&nbsp; **4** the proving ground</sub>
+
+**→ [How the chain works](04%20%E2%80%94%20THE%20ENGINEERING/The%20chain%20of%20three.md)**
+
+&nbsp;
+
 **The named pattern classes**
 
 <picture>

@@ -1,0 +1,65 @@
+{
+  "pillars": [
+    {
+      "name": "ORPROBE",
+      "epithet": "the sonde",
+      "processes": [
+        {
+          "name": "The Sampler",
+          "designation": "Proxima Centauri b"
+        },
+        {
+          "name": "The Sweep",
+          "designation": "TOI-700 d"
+        },
+        {
+          "name": "The Store",
+          "designation": "Ross 128 b"
+        }
+      ]
+    },
+    {
+      "name": "ORLAB",
+      "epithet": "the assay",
+      "processes": [
+        {
+          "name": "The Inspection",
+          "designation": "Teegarden's Star b"
+        },
+        {
+          "name": "The Cut",
+          "designation": "TRAPPIST-1e"
+        },
+        {
+          "name": "The Verdict",
+          "designation": "K2-18b"
+        }
+      ]
+    },
+    {
+      "name": "ORCORE",
+      "epithet": "mission control",
+      "processes": [
+        {
+          "name": "The Passport Desk",
+          "designation": "Kepler-22b"
+        },
+        {
+          "name": "The Press",
+          "designation": "LHS 1140 b"
+        },
+        {
+          "name": "The Harvest",
+          "designation": "Kepler-452b"
+        }
+      ]
+    }
+  ],
+  "stages": [
+    "lost in space",
+    "found home",
+    "back to school",
+    "the proving ground"
+  ],
+  "generated": "2026-09-11"
+}
