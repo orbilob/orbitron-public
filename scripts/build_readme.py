@@ -195,6 +195,15 @@ def drawing(name: str, data: dict, patterns: dict, theme: str) -> str:
     return svg(data, theme) if name == "board" else patterns_svg(patterns, theme)
 
 
+WORDS = ("no", "One", "Two", "Three", "Four", "Five", "Six",
+         "Seven", "Eight", "Nine", "Ten")
+
+
+def spelled(n: int) -> str:
+    """Small numbers read as words in a sentence, as digits in a table."""
+    return WORDS[n] if n < len(WORDS) else str(n)
+
+
 def block(data: dict, patterns: dict) -> str:
     """The README section between the markers.
 
@@ -240,9 +249,8 @@ tail is work that is deferred, archived or deliberately closed.</sub>
 {names}
 
 <sub>Named after real exoplanets — one planet, one class. \
-{count} classes are **designed**; none has been measured yet, and what each \
-one looks for is not published. The names exist so the work has something \
-to be called.</sub>
+{spelled(count)} classes are designed; none measured yet, and what each one \
+looks for is not published. **The project is in active development.**</sub>
 
 </div>
 {END}"""
