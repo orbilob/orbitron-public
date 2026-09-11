@@ -1,6 +1,21 @@
+<!-- board:start -->
 <div align="center">
 
-<img src="assets/logo.png" alt="ORBITRON" width="380">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/board-dark.svg">
+  <img src="assets/board-light.svg" alt="ORBITRON — state of the build: 35 working or proven, 15 partial, 5 not built, 7 decisions taken, 0 validated patterns" width="880">
+</picture>
+
+**35** working or proven &nbsp;·&nbsp; **15** partial &nbsp;·&nbsp; **5** not built &nbsp;·&nbsp; **7** decisions taken &nbsp;·&nbsp; **0** validated patterns
+
+<sub>Generated from the project's live board on 2026-09-11 — not written by hand. The bar spans all 71 tracked rows; its unfilled tail is work that is deferred, archived or deliberately closed.</sub>
+
+</div>
+<!-- board:end -->
+
+<div align="center">
+
+<img src="assets/logo.png" alt="" width="52" align="top">
 
 # ORBITRON — public vault
 
@@ -125,7 +140,7 @@ still — welcome.
 Infrastructure details, network layout, hostnames, credentials, calibrated
 thresholds, scoring weights, and the pattern code itself.
 
-**What is shown is how the project thinks. What is withheld is what it outcomes on.**
+**What is shown is how the project thinks. What is withheld is what it acts on.**
 
 ---
 
