@@ -18,9 +18,10 @@ Three checks, all of which have already caught real defects here:
      not use: anything naming where operational credentials live, and the
      execution vocabulary. Both were removed once by hand; a guard is what
      stops them coming back one careless paragraph at a time.
-  5. A stale board — the state shown at the top of README.md is generated from
-     board.json. A header claiming a state the project left behind is worse
-     than no header, and nothing but a guard notices that it has gone old.
+  5. A stale block — the state and the pattern names shown in README.md are
+     generated from board.json and patterns.json, as are the four drawings.
+     A page claiming a state the project left behind is worse than no page,
+     and nothing but a guard notices that it has gone old.
 
 Exit 0 = clean. Exit 1 = something to fix, and every line says where.
 
@@ -109,11 +110,12 @@ for path in markdown_files():
                 "GitHub needs the type alone on its line"
             )
 
-# 5 — the generated board block is not older than the numbers behind it
+# 5 — the generated block and every drawing are not older than their data
 sys.path.insert(0, str(ROOT / "scripts"))
 import build_readme  # noqa: E402  — imported after ROOT is known
 
-_data = json.loads((ROOT / "board.json").read_text(encoding="utf-8"))
+_board = json.loads((ROOT / "board.json").read_text(encoding="utf-8"))
+_patterns = json.loads((ROOT / "patterns.json").read_text(encoding="utf-8"))
 _readme = (ROOT / "README.md").read_text(encoding="utf-8")
 _marked = re.search(
     re.escape(build_readme.START) + r".*?" + re.escape(build_readme.END),
@@ -121,21 +123,22 @@ _marked = re.search(
 )
 if not _marked:
     findings.append("README.md: the board markers are gone — nothing to keep fresh")
-elif _marked.group(0) != build_readme.block(_data):
-    findings.append(
-        "README.md: the board is older than board.json — "
-        "run python3 scripts/build_readme.py"
-    )
 else:
-    for _theme in ("light", "dark"):
-        _file = ROOT / "assets" / f"board-{_theme}.svg"
-        if not _file.exists() or _file.read_text(encoding="utf-8") != build_readme.svg(
-            _data, _theme
-        ):
-            findings.append(
-                f"assets/board-{_theme}.svg: older than board.json — "
-                "run python3 scripts/build_readme.py"
-            )
+    if _marked.group(0) != build_readme.block(_board, _patterns):
+        findings.append(
+            "README.md: the generated block is older than the data behind it — "
+            "run python3 scripts/build_readme.py"
+        )
+    for _name in build_readme.DRAWINGS:
+        for _theme in build_readme.THEMES:
+            _file = ROOT / "assets" / f"{_name}-{_theme}.svg"
+            if not _file.exists() or _file.read_text(
+                encoding="utf-8"
+            ) != build_readme.drawing(_name, _board, _patterns, _theme):
+                findings.append(
+                    f"assets/{_name}-{_theme}.svg: older than the data behind it — "
+                    "run python3 scripts/build_readme.py"
+                )
 
 count = len(markdown_files())
 
@@ -146,4 +149,4 @@ if findings:
     sys.exit(1)
 
 print(f"✅ Clean — {count} documents, no broken links, "
-      f"GitHub-safe, nothing withheld leaked, board fresh.")
+      f"GitHub-safe, nothing withheld leaked, every drawing fresh.")
