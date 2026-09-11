@@ -4,6 +4,11 @@
 
 # ORBITRON — public vault
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/tagline-dark.svg">
+  <img src="assets/tagline-light.svg" alt="A personal, hobby project" width="560">
+</picture>
+
 **We look for answers. We ask why. We write the day down — permanently.**
 
 [![Vault guard](https://github.com/orbilob/orbitron-public/actions/workflows/vault.yml/badge.svg)](https://github.com/orbilob/orbitron-public/actions/workflows/vault.yml)
@@ -124,7 +129,7 @@ and every link works in both.
 |---|---|---|
 | 🧑 Curious, non-technical | [Why this exists](01%20%E2%80%94%20THE%20IDEA/Why%20this%20exists.md) | 5 min |
 | 🔬 Interested in method | **02 — THE RESEARCH** and [The v2 validation engine](04%20%E2%80%94%20THE%20ENGINEERING/The%20v2%20validation%20engine.md) | 15 min |
-| 🧑‍💻 A developer | **04 — THE ENGINEERING** and **05 — HOW WE WORK** | 20 min |
+| 🧑‍💻 A developer | [The chain of three](04%20%E2%80%94%20THE%20ENGINEERING/The%20chain%20of%20three.md), then **05 — HOW WE WORK** | 20 min |
 
 Full map: **[START HERE](START%20HERE.md)**
 
@@ -132,7 +137,7 @@ Full map: **[START HERE](START%20HERE.md)**
 01 — THE IDEA          why this exists · what it is and is not · principles
 02 — THE RESEARCH      the permanent archive · regimes · smart money · the daily file
 03 — THE SYSTEM        how observation becomes a testable claim
-04 — THE ENGINEERING   contracts, statistics, and the boundaries that keep it honest
+04 — THE ENGINEERING   the chain of three, contracts, statistics, honest boundaries
 05 — HOW WE WORK       ⭐ the discipline: decisions, evidence labels, guards
 ```
 
