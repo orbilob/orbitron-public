@@ -339,8 +339,16 @@ def block(data: dict, patterns: dict, chain: dict) -> str:
     parts = " &nbsp;▸&nbsp; ".join(
         f'**{p["name"]}** *{p["epithet"]}*' for p in chain["pillars"]
     )
+    # Two spellings on purpose: the visible line wants the wide spacing of
+    # &nbsp;, and alt text wants none of it — an entity in an attribute is
+    # read out by a screen reader as the character it stands for, and a row
+    # of stray non-breaking spaces is noise to someone who cannot see the
+    # picture it describes.
     walk = " &nbsp;·&nbsp; ".join(
         " ▸ ".join(x["name"] for x in p["processes"]) for p in chain["pillars"]
+    )
+    spoken_walk = ". ".join(
+        ", then ".join(x["name"] for x in p["processes"]) for p in chain["pillars"]
     )
     stages = " &nbsp;·&nbsp; ".join(
         f'**{i + 1}** {s}' for i, s in enumerate(chain["stages"])
@@ -372,7 +380,7 @@ tail is work that is deferred, archived or deliberately closed.</sub>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/chain-dark.svg">
-  <img src="assets/chain-light.svg" alt="The chain: {walk}. \
+  <img src="assets/chain-light.svg" alt="The chain: {spoken_walk}. \
 Then four stages: {', '.join(chain['stages'])}." width="880">
 </picture>
 

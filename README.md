@@ -52,7 +52,7 @@
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/chain-dark.svg">
-  <img src="assets/chain-light.svg" alt="The chain: The Sampler ▸ The Sweep ▸ The Store &nbsp;·&nbsp; The Inspection ▸ The Cut ▸ The Verdict &nbsp;·&nbsp; The Passport Desk ▸ The Press ▸ The Harvest. Then four stages: lost in space, found home, back to school, the proving ground." width="880">
+  <img src="assets/chain-light.svg" alt="The chain: The Sampler, then The Sweep, then The Store. The Inspection, then The Cut, then The Verdict. The Passport Desk, then The Press, then The Harvest. Then four stages: lost in space, found home, back to school, the proving ground." width="880">
 </picture>
 
 **ORPROBE** *the sonde* &nbsp;▸&nbsp; **ORLAB** *the assay* &nbsp;▸&nbsp; **ORCORE** *mission control*
