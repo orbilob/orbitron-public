@@ -19,7 +19,8 @@ Three checks, all of which have already caught real defects here:
      execution vocabulary. Both were removed once by hand; a guard is what
      stops them coming back one careless paragraph at a time.
   5. A stale block — the state and the pattern names shown in README.md are
-     generated from board.json and patterns.json, as are the four drawings.
+     generated from board.json, chain.json and patterns.json, as are the
+     drawings.
      A page claiming a state the project left behind is worse than no page,
      and nothing but a guard notices that it has gone old.
 
@@ -116,6 +117,7 @@ import build_readme  # noqa: E402  — imported after ROOT is known
 
 _board = json.loads((ROOT / "board.json").read_text(encoding="utf-8"))
 _patterns = json.loads((ROOT / "patterns.json").read_text(encoding="utf-8"))
+_chain = json.loads((ROOT / "chain.json").read_text(encoding="utf-8"))
 _readme = (ROOT / "README.md").read_text(encoding="utf-8")
 _marked = re.search(
     re.escape(build_readme.START) + r".*?" + re.escape(build_readme.END),
@@ -124,7 +126,7 @@ _marked = re.search(
 if not _marked:
     findings.append("README.md: the board markers are gone — nothing to keep fresh")
 else:
-    if _marked.group(0) != build_readme.block(_board, _patterns):
+    if _marked.group(0) != build_readme.block(_board, _patterns, _chain):
         findings.append(
             "README.md: the generated block is older than the data behind it — "
             "run python3 scripts/build_readme.py"
@@ -134,7 +136,7 @@ else:
             _file = ROOT / "assets" / f"{_name}-{_theme}.svg"
             if not _file.exists() or _file.read_text(
                 encoding="utf-8"
-            ) != build_readme.drawing(_name, _board, _patterns, _theme):
+            ) != build_readme.drawing(_name, _board, _patterns, _chain, _theme):
                 findings.append(
                     f"assets/{_name}-{_theme}.svg: older than the data behind it — "
                     "run python3 scripts/build_readme.py"
