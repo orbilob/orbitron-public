@@ -36,12 +36,13 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 BOARD = ROOT / "board.json"
 PATTERNS = ROOT / "patterns.json"
+CHAIN = ROOT / "chain.json"
 README = ROOT / "README.md"
 ASSETS = ROOT / "assets"
 
 # Every image this script owns. Named once, so adding a third cannot be
 # half-done: it is written, checked for staleness and listed from here.
-DRAWINGS = ("board", "patterns", "tagline")
+DRAWINGS = ("board", "chain", "patterns", "tagline")
 
 # What the line under the title says. It is drawn rather than written because
 # GitHub strips inline colour from markdown: an image is the only way to say
@@ -71,6 +72,15 @@ WORKING, PARTIAL, NOT_BUILT, DECIDED = "#2ecc71", "#f39c12", "#64748b", "#22a06b
 # accent rather than a status colour: a green badge would read as "working"
 # and that is precisely what they are not.
 PATTERN_INK = "#f0b429"
+
+# What each part of the chain does, in as few words as will fit under a card.
+# The names come from the vault; these three lines are presentation and live
+# here, where the drawing that uses them lives.
+PILLAR_LINE = {
+    "ORPROBE": "brings the material",
+    "ORLAB": "says whether there is anything in it",
+    "ORCORE": "gives the finding an identity",
+}
 
 W, H = 880, 172
 PAD = 28
@@ -196,6 +206,83 @@ def patterns_svg(data: dict, theme: str) -> str:
 """
 
 
+def chain_svg(data: dict, theme: str) -> str:
+    """The three parts of the chain, side by side, with what each one holds.
+
+    Three cards and two arrows: a reader who sees only this picture should be
+    able to say what the project does and in which direction it flows. Under
+    them, the four stages that stand between a bare signal and anything worth
+    acting on.
+
+    Every name here is exported from the vault, never typed: the drawing is a
+    view of chain.json and nothing else.
+    """
+    t = THEMES[theme]
+    card_w, gap = 276, 26
+    width = card_w * 3 + gap * 2
+    card_h, stages_h = 196, 58
+    height = card_h + stages_h
+
+    cards = []
+    for index, pillar in enumerate(data["pillars"]):
+        x = index * (card_w + gap)
+        rows = []
+        for row, process in enumerate(pillar["processes"]):
+            y = 86 + row * 34
+            rows.append(
+                f'<text x="16" y="{y}" font-size="13.5" font-weight="600" '
+                f'fill="{t["ink"]}">{process["name"]}</text>'
+                f'<text x="{card_w - 16}" y="{y}" text-anchor="end" '
+                f'font-size="11" fill="{PATTERN_INK}">'
+                f'{process["designation"]}</text>'
+            )
+        cards.append(
+            f'<g transform="translate({x},0)">'
+            f'<rect width="{card_w}" height="{card_h}" rx="10" '
+            f'fill="{t["rail"]}" stroke="{t["edge"]}"/>'
+            f'<text x="16" y="34" font-size="14" font-weight="700" '
+            f'letter-spacing="0.06em" fill="{t["ink"]}">{pillar["name"]}</text>'
+            f'<text x="16" y="53" font-size="12" font-style="italic" '
+            f'fill="{PATTERN_INK}">{pillar["epithet"]}</text>'
+            f'<line x1="16" y1="66" x2="{card_w - 16}" y2="66" '
+            f'stroke="{t["edge"]}"/>'
+            f'{"".join(rows)}'
+            f'<text x="16" y="{card_h - 16}" font-size="11.5" '
+            f'fill="{t["dim"]}">{PILLAR_LINE.get(pillar["name"], "")}</text>'
+            f"</g>"
+        )
+        if index < 2:
+            cards.append(
+                f'<text x="{x + card_w + gap / 2:.0f}" y="{card_h / 2 + 6:.0f}" '
+                f'text-anchor="middle" font-size="17" '
+                f'fill="{t["dim"]}">&#9656;</text>'
+            )
+
+    step = width / len(data["stages"])
+    stages = []
+    for index, stage in enumerate(data["stages"]):
+        cx = step * index + step / 2
+        stages.append(
+            f'<text x="{cx:.0f}" y="{card_h + 40}" text-anchor="middle" '
+            f'font-size="11.5" fill="{t["dim"]}">'
+            f'<tspan fill="{PATTERN_INK}">{index + 1}</tspan>  {stage}</text>'
+        )
+
+    spoken = " then ".join(p["name"] for p in data["pillars"])
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" \
+height="{height}" viewBox="0 0 {width} {height}" role="img" \
+aria-label="The chain: {spoken}. Then four stages: \
+{", ".join(data["stages"])}.">
+<style>text{{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,\
+Helvetica,Arial,sans-serif}}</style>
+{"".join(cards)}
+<text x="0" y="{card_h + 22}" font-size="10.5" letter-spacing="0.14em" \
+fill="{t["dim"]}">AND THEN FOUR STAGES</text>
+{"".join(stages)}
+</svg>
+"""
+
+
 def tagline_svg(theme: str) -> str:
     """The line under the title, in the project's amber.
 
@@ -216,9 +303,12 @@ font-weight="700" fill="{PATTERN_INK}">{TAGLINE}</text>
 """
 
 
-def drawing(name: str, data: dict, patterns: dict, theme: str) -> str:
+def drawing(name: str, data: dict, patterns: dict, chain: dict,
+            theme: str) -> str:
     if name == "board":
         return svg(data, theme)
+    if name == "chain":
+        return chain_svg(chain, theme)
     if name == "patterns":
         return patterns_svg(patterns, theme)
     return tagline_svg(theme)
@@ -233,17 +323,36 @@ def spelled(n: int) -> str:
     return WORDS[n] if n < len(WORDS) else str(n)
 
 
-def block(data: dict, patterns: dict) -> str:
+def block(data: dict, patterns: dict, chain: dict) -> str:
     """The README section between the markers.
 
-    Every image is followed by the same information as text, because a
-    picture is not readable by everyone and GitHub does not always load one.
+    The order is the argument: first what is built, then the machine that was
+    built, then what is being run through it. Every image is followed by the
+    same information as text, because a picture is not readable by everyone
+    and GitHub does not always load one.
     """
     total = data["total_rows"]
     names = " &nbsp;·&nbsp; ".join(
         f'**{p["name"]}** {p["version"]}' for p in patterns["patterns"]
     )
     count = len(patterns["patterns"])
+    parts = " &nbsp;▸&nbsp; ".join(
+        f'**{p["name"]}** *{p["epithet"]}*' for p in chain["pillars"]
+    )
+    # Two spellings on purpose: the visible line wants the wide spacing of
+    # &nbsp;, and alt text wants none of it — an entity in an attribute is
+    # read out by a screen reader as the character it stands for, and a row
+    # of stray non-breaking spaces is noise to someone who cannot see the
+    # picture it describes.
+    walk = " &nbsp;·&nbsp; ".join(
+        " ▸ ".join(x["name"] for x in p["processes"]) for p in chain["pillars"]
+    )
+    spoken_walk = ". ".join(
+        ", then ".join(x["name"] for x in p["processes"]) for p in chain["pillars"]
+    )
+    stages = " &nbsp;·&nbsp; ".join(
+        f'**{i + 1}** {s}' for i, s in enumerate(chain["stages"])
+    )
     return f"""{START}
 <div align="center">
 
@@ -264,6 +373,24 @@ def block(data: dict, patterns: dict) -> str:
 <sub>Generated from the project's live board on {data['generated']} \
 — not written by hand. The bar spans all {total} tracked rows; its unfilled \
 tail is work that is deferred, archived or deliberately closed.</sub>
+
+&nbsp;
+
+**The chain**
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/chain-dark.svg">
+  <img src="assets/chain-light.svg" alt="The chain: {spoken_walk}. \
+Then four stages: {', '.join(chain['stages'])}." width="880">
+</picture>
+
+{parts}
+
+<sub>{walk}</sub>
+
+<sub>And then four stages: {stages}</sub>
+
+**→ [How the chain works](04%20%E2%80%94%20THE%20ENGINEERING/The%20chain%20of%20three.md)**
 
 &nbsp;
 
@@ -288,8 +415,9 @@ looks for is not published. **The project is in active development.**</sub>
 def main() -> None:
     data = json.loads(BOARD.read_text(encoding="utf-8"))
     patterns = json.loads(PATTERNS.read_text(encoding="utf-8"))
+    chain = json.loads(CHAIN.read_text(encoding="utf-8"))
     readme = README.read_text(encoding="utf-8")
-    fresh = block(data, patterns)
+    fresh = block(data, patterns, chain)
 
     pattern = re.compile(re.escape(START) + r".*?" + re.escape(END), re.DOTALL)
     found = pattern.search(readme)
@@ -303,7 +431,7 @@ def main() -> None:
                 file = ASSETS / f"{name}-{theme}.svg"
                 if not file.exists() or file.read_text(
                     encoding="utf-8"
-                ) != drawing(name, data, patterns, theme):
+                ) != drawing(name, data, patterns, chain, theme):
                     out.append(f"assets/{name}-{theme}.svg")
         return out
 
@@ -314,20 +442,21 @@ def main() -> None:
                 "❌ Older than the data behind them: " + ", ".join(problems) + "\n"
                 "   Run: python3 scripts/build_readme.py"
             )
-        print("✅ README.md and every drawing match board.json and patterns.json.")
+        print("✅ README.md and every drawing match the data behind them.")
         return
 
     for name in DRAWINGS:
         for theme in THEMES:
             (ASSETS / f"{name}-{theme}.svg").write_text(
-                drawing(name, data, patterns, theme), encoding="utf-8"
+                drawing(name, data, patterns, chain, theme), encoding="utf-8"
             )
     README.write_text(pattern.sub(lambda _: fresh, readme), encoding="utf-8")
     print(
-        f"✅ Board written — {data['working']} working · {data['partial']} partial · "
+        f"✅ Written — {data['working']} working · {data['partial']} partial · "
         f"{data['not_built']} not built · {data['decisions']} decisions · "
         f"{data['validated_patterns']} validated · "
-        f"{len(patterns['patterns'])} named classes"
+        f"{len(patterns['patterns'])} named classes · "
+        f"{len(chain['pillars'])} parts of the chain"
     )
 
 
