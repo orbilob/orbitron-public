@@ -7,3 +7,7 @@
 # OS noise
 .DS_Store
 Thumbs.db
+
+# Python bytecode from the guard importing the generator
+__pycache__/
+*.pyc

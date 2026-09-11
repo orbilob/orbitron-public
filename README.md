@@ -52,14 +52,14 @@
 
 **Madriu** v0.1 &nbsp;·&nbsp; **Xolotl** v0.1 &nbsp;·&nbsp; **Hypatia** v0.1 &nbsp;·&nbsp; **Awohali** v0.1 &nbsp;·&nbsp; **Draugr** v0.1
 
-<sub>Named after real exoplanets — one planet, one class. 5 classes are **designed**; none has been measured yet, and what each one looks for is not published. The names exist so the work has something to be called.</sub>
+<sub>Named after real exoplanets — one planet, one class. Five classes are designed; none measured yet, and what each one looks for is not published. **The project is in active development.**</sub>
 
 </div>
 <!-- board:end -->
 
 <div align="center">
 
-<img src="assets/logo.png" alt="" width="52">
+<img src="assets/signature.png" alt="" width="150">
 
 </div>
 
@@ -177,3 +177,9 @@ the project's own written rules — see
 
 Licensed under [CC BY-NC 4.0](LICENSE) — read it, share it, quote it with credit;
 don't sell it.
+
+<div align="center">
+
+<img src="assets/signature-full.png" alt="ORBITRON project" width="130">
+
+</div>
