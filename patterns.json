@@ -1,0 +1,25 @@
+{
+  "patterns": [
+    {
+      "name": "Madriu",
+      "version": "v0.1"
+    },
+    {
+      "name": "Xolotl",
+      "version": "v0.1"
+    },
+    {
+      "name": "Hypatia",
+      "version": "v0.1"
+    },
+    {
+      "name": "Awohali",
+      "version": "v0.1"
+    },
+    {
+      "name": "Draugr",
+      "version": "v0.1"
+    }
+  ],
+  "generated": "2026-09-11"
+}

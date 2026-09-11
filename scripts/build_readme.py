@@ -35,8 +35,13 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 BOARD = ROOT / "board.json"
+PATTERNS = ROOT / "patterns.json"
 README = ROOT / "README.md"
 ASSETS = ROOT / "assets"
+
+# Every image this script owns. Named once, so adding a third cannot be
+# half-done: it is written, checked for staleness and listed from here.
+DRAWINGS = ("board", "patterns")
 
 START = "<!-- board:start -->"
 END = "<!-- board:end -->"
@@ -56,6 +61,11 @@ THEMES = {
 
 # The same colours the vault's own board uses, so the two read as one system.
 WORKING, PARTIAL, NOT_BUILT, DECIDED = "#2ecc71", "#f39c12", "#64748b", "#22a06b"
+
+# The pattern classes are named, not proven. They get the project's own
+# accent rather than a status colour: a green badge would read as "working"
+# and that is precisely what they are not.
+PATTERN_INK = "#f0b429"
 
 W, H = 880, 172
 PAD = 28
@@ -138,10 +148,64 @@ fill="{t['dim']}">{verdict}</text>
 """
 
 
-def block(data: dict) -> str:
-    """The README section between the markers — picture, then the same
-    numbers as text, because an image is not readable by everyone."""
+def patterns_svg(data: dict, theme: str) -> str:
+    """One strip of name badges, drawn rather than fetched.
+
+    Each badge carries a name and a version and nothing else. The class code
+    and what the class looks for stay in the private vault: those say what the
+    system reacts to, and that is the part this vault withholds.
+
+    Widths are computed from the text, not guessed, so a longer name added
+    later does not overflow its pill.
+    """
+    t = THEMES[theme]
+    gap, pad, height = 10, 15, 30
+    # An average glyph advance for the sizes used below. Measured off the
+    # rendered strip rather than taken from the font metrics — close enough
+    # that the padding stays visually even across all five names.
+    widths = [
+        int(len(p["name"]) * 7.4 + len(p["version"]) * 6.1 + pad * 2 + 16)
+        for p in data["patterns"]
+    ]
+    width = sum(widths) + gap * (len(widths) - 1)
+
+    badges, x = [], 0
+    for pattern, w in zip(data["patterns"], widths):
+        badges.append(
+            f'<g transform="translate({x},0)">'
+            f'<rect width="{w}" height="{height}" rx="15" fill="{PATTERN_INK}14" '
+            f'stroke="{PATTERN_INK}55"/>'
+            f'<text x="{pad}" y="20" font-size="13" font-weight="600" '
+            f'fill="{PATTERN_INK}">{pattern["name"]}</text>'
+            f'<text x="{w - pad}" y="20" text-anchor="end" font-size="11.5" '
+            f'fill="{t["dim"]}">{pattern["version"]}</text>'
+            f"</g>"
+        )
+        x += w + gap
+
+    names = ", ".join(f'{p["name"]} {p["version"]}' for p in data["patterns"])
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-label="Named pattern classes: {names}">
+<style>text{{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}}</style>
+{''.join(badges)}
+</svg>
+"""
+
+
+def drawing(name: str, data: dict, patterns: dict, theme: str) -> str:
+    return svg(data, theme) if name == "board" else patterns_svg(patterns, theme)
+
+
+def block(data: dict, patterns: dict) -> str:
+    """The README section between the markers.
+
+    Every image is followed by the same information as text, because a
+    picture is not readable by everyone and GitHub does not always load one.
+    """
     total = data["total_rows"]
+    names = " &nbsp;·&nbsp; ".join(
+        f'**{p["name"]}** {p["version"]}' for p in patterns["patterns"]
+    )
+    count = len(patterns["patterns"])
     return f"""{START}
 <div align="center">
 
@@ -163,45 +227,70 @@ def block(data: dict) -> str:
 — not written by hand. The bar spans all {total} tracked rows; its unfilled \
 tail is work that is deferred, archived or deliberately closed.</sub>
 
+&nbsp;
+
+**The named pattern classes**
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/patterns-dark.svg">
+  <img src="assets/patterns-light.svg" alt="Named pattern classes: \
+{', '.join(p['name'] + ' ' + p['version'] for p in patterns['patterns'])}">
+</picture>
+
+{names}
+
+<sub>Named after real exoplanets — one planet, one class. \
+{count} classes are **designed**; none has been measured yet, and what each \
+one looks for is not published. The names exist so the work has something \
+to be called.</sub>
+
 </div>
 {END}"""
 
 
 def main() -> None:
     data = json.loads(BOARD.read_text(encoding="utf-8"))
+    patterns = json.loads(PATTERNS.read_text(encoding="utf-8"))
     readme = README.read_text(encoding="utf-8")
-    fresh = block(data)
+    fresh = block(data, patterns)
 
-    pattern = re.compile(
-        re.escape(START) + r".*?" + re.escape(END), re.DOTALL
-    )
-    if not pattern.search(readme):
+    pattern = re.compile(re.escape(START) + r".*?" + re.escape(END), re.DOTALL)
+    found = pattern.search(readme)
+    if not found:
         sys.exit(f"❌ README.md has no {START} … {END} block to fill.")
 
-    stale = [
-        name for name, theme in (("light", "light"), ("dark", "dark"))
-        if (ASSETS / f"board-{name}.svg").read_text(encoding="utf-8")
-        != svg(data, theme)
-    ] if all((ASSETS / f"board-{n}.svg").exists() for n in ("light", "dark")) else [
-        "light", "dark"
-    ]
+    def stale() -> list[str]:
+        out = []
+        for name in DRAWINGS:
+            for theme in THEMES:
+                file = ASSETS / f"{name}-{theme}.svg"
+                if not file.exists() or file.read_text(
+                    encoding="utf-8"
+                ) != drawing(name, data, patterns, theme):
+                    out.append(f"assets/{name}-{theme}.svg")
+        return out
 
     if "--check" in sys.argv:
-        if pattern.search(readme).group(0) != fresh or stale:
+        problems = ([] if found.group(0) == fresh else ["README.md"]) + stale()
+        if problems:
             sys.exit(
-                "❌ The board in README.md is older than board.json.\n"
+                "❌ Older than the data behind them: " + ", ".join(problems) + "\n"
                 "   Run: python3 scripts/build_readme.py"
             )
-        print("✅ The board in README.md matches board.json.")
+        print("✅ README.md and every drawing match board.json and patterns.json.")
         return
 
-    for name in ("light", "dark"):
-        (ASSETS / f"board-{name}.svg").write_text(svg(data, name), encoding="utf-8")
+    for name in DRAWINGS:
+        for theme in THEMES:
+            (ASSETS / f"{name}-{theme}.svg").write_text(
+                drawing(name, data, patterns, theme), encoding="utf-8"
+            )
     README.write_text(pattern.sub(lambda _: fresh, readme), encoding="utf-8")
     print(
         f"✅ Board written — {data['working']} working · {data['partial']} partial · "
         f"{data['not_built']} not built · {data['decisions']} decisions · "
-        f"{data['validated_patterns']} validated"
+        f"{data['validated_patterns']} validated · "
+        f"{len(patterns['patterns'])} named classes"
     )
 
 
