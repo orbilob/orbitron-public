@@ -41,7 +41,12 @@ ASSETS = ROOT / "assets"
 
 # Every image this script owns. Named once, so adding a third cannot be
 # half-done: it is written, checked for staleness and listed from here.
-DRAWINGS = ("board", "patterns")
+DRAWINGS = ("board", "patterns", "tagline")
+
+# What the line under the title says. It is drawn rather than written because
+# GitHub strips inline colour from markdown: an image is the only way to say
+# something in the project's own amber.
+TAGLINE = "A personal, hobby project"
 
 START = "<!-- board:start -->"
 END = "<!-- board:end -->"
@@ -191,8 +196,32 @@ def patterns_svg(data: dict, theme: str) -> str:
 """
 
 
+def tagline_svg(theme: str) -> str:
+    """The line under the title, in the project's amber.
+
+    The same colour in both themes, by the operator's choice on 2026-09-11.
+    Worth knowing: this amber carries a contrast ratio under 2:1 on white, so
+    on a light background it reads as a soft accent rather than as body text —
+    which is what it is meant to be.
+    """
+    width, height = 560, 48
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" \
+height="{height}" viewBox="0 0 {width} {height}" role="img" \
+aria-label="{TAGLINE}">
+<style>text{{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,\
+Helvetica,Arial,sans-serif}}</style>
+<text x="{width // 2}" y="32" text-anchor="middle" font-size="23" \
+font-weight="700" fill="{PATTERN_INK}">{TAGLINE}</text>
+</svg>
+"""
+
+
 def drawing(name: str, data: dict, patterns: dict, theme: str) -> str:
-    return svg(data, theme) if name == "board" else patterns_svg(patterns, theme)
+    if name == "board":
+        return svg(data, theme)
+    if name == "patterns":
+        return patterns_svg(patterns, theme)
+    return tagline_svg(theme)
 
 
 WORDS = ("no", "One", "Two", "Three", "Four", "Five", "Six",

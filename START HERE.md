@@ -77,9 +77,8 @@ For people who build things. Contracts, statistics, and the boundaries that keep
 project honest.
 
 - [The v2 validation engine](04%20%E2%80%94%20THE%20ENGINEERING/The%20v2%20validation%20engine.md) ⭐ how a claim is allowed to fail
-- — four named stages from signal to outcome
+- [The chain of three](04%20%E2%80%94%20THE%20ENGINEERING/The%20chain%20of%20three.md) ⭐ the sonde, the assay, mission control — and the four named stages
 - [Contracts and formats](04%20%E2%80%94%20THE%20ENGINEERING/Contracts%20and%20formats.md) — why formats are frozen before logic
-- — no third-party software is load-bearing
 - [Shared code, one number](04%20%E2%80%94%20THE%20ENGINEERING/Shared%20code%2C%20one%20number.md) — one input, one number, from anywhere
 - [Repositories](04%20%E2%80%94%20THE%20ENGINEERING/Repositories.md) — three repos, and why exactly three
 
