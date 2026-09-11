@@ -67,7 +67,7 @@ This is the public subset. Infrastructure, network layout, hostnames, credential
 calibrated thresholds, scoring weights and the pattern code stay private —
 partly for security, partly because they are the actual work product.
 
-**What is shown is how the project thinks. What is withheld is what it outcomes on.**
+**What is shown is how the project thinks. What is withheld is what it acts on.**
 
 ---
 
