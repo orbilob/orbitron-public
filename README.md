@@ -1,21 +1,6 @@
-<!-- board:start -->
 <div align="center">
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/board-dark.svg">
-  <img src="assets/board-light.svg" alt="ORBITRON — state of the build: 35 working or proven, 15 partial, 5 not built, 7 decisions taken, 0 validated patterns" width="880">
-</picture>
-
-**35** working or proven &nbsp;·&nbsp; **15** partial &nbsp;·&nbsp; **5** not built &nbsp;·&nbsp; **7** decisions taken &nbsp;·&nbsp; **0** validated patterns
-
-<sub>Generated from the project's live board on 2026-09-11 — not written by hand. The bar spans all 71 tracked rows; its unfilled tail is work that is deferred, archived or deliberately closed.</sub>
-
-</div>
-<!-- board:end -->
-
-<div align="center">
-
-<img src="assets/logo.png" alt="" width="52" align="top">
+<img src="assets/logo.png" alt="ORBITRON" width="380">
 
 # ORBITRON — public vault
 
@@ -39,6 +24,42 @@
 [![Author](https://img.shields.io/badge/idea%2C%20direction%20%26%20supervision-orbilob-f39c12?style=flat-square)](https://github.com/orbilob)
 [![Claude Code](https://img.shields.io/badge/built%20with-Claude%20Code-D97757?style=flat-square)](https://claude.com/claude-code)
 [![Under written rules](https://img.shields.io/badge/under-written%20rules-2ecc71?style=flat-square)](05%20%E2%80%94%20HOW%20WE%20WORK/Working%20with%20an%20AI%20agent.md)
+
+</div>
+
+---
+
+<!-- board:start -->
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/board-dark.svg">
+  <img src="assets/board-light.svg" alt="ORBITRON — state of the build: 35 working or proven, 15 partial, 5 not built, 7 decisions taken, 0 validated patterns" width="880">
+</picture>
+
+**35** working or proven &nbsp;·&nbsp; **15** partial &nbsp;·&nbsp; **5** not built &nbsp;·&nbsp; **7** decisions taken &nbsp;·&nbsp; **0** validated patterns
+
+<sub>Generated from the project's live board on 2026-09-11 — not written by hand. The bar spans all 71 tracked rows; its unfilled tail is work that is deferred, archived or deliberately closed.</sub>
+
+&nbsp;
+
+**The named pattern classes**
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/patterns-dark.svg">
+  <img src="assets/patterns-light.svg" alt="Named pattern classes: Madriu v0.1, Xolotl v0.1, Hypatia v0.1, Awohali v0.1, Draugr v0.1">
+</picture>
+
+**Madriu** v0.1 &nbsp;·&nbsp; **Xolotl** v0.1 &nbsp;·&nbsp; **Hypatia** v0.1 &nbsp;·&nbsp; **Awohali** v0.1 &nbsp;·&nbsp; **Draugr** v0.1
+
+<sub>Named after real exoplanets — one planet, one class. 5 classes are **designed**; none has been measured yet, and what each one looks for is not published. The names exist so the work has something to be called.</sub>
+
+</div>
+<!-- board:end -->
+
+<div align="center">
+
+<img src="assets/logo.png" alt="" width="52">
 
 </div>
 
