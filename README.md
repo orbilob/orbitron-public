@@ -59,7 +59,14 @@
 
 <sub>The Sampler ▸ The Sweep ▸ The Store &nbsp;·&nbsp; The Inspection ▸ The Cut ▸ The Verdict &nbsp;·&nbsp; The Passport Desk ▸ The Press ▸ The Harvest</sub>
 
-<sub>And then four stages: **1** lost in space &nbsp;·&nbsp; **2** found home &nbsp;·&nbsp; **3** back to school &nbsp;·&nbsp; **4** the proving ground</sub>
+&nbsp;
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/engine-dark.svg">
+  <img src="assets/engine-light.svg" alt="The strategy engine — four stages: 1 lost in space, 2 found home, 3 back to school, 4 the proving ground." width="880">
+</picture>
+
+<sub>**1** lost in space &nbsp;·&nbsp; **2** found home &nbsp;·&nbsp; **3** back to school &nbsp;·&nbsp; **4** the proving ground</sub>
 
 **→ [How the chain works](04%20%E2%80%94%20THE%20ENGINEERING/The%20chain%20of%20three.md)**
 
