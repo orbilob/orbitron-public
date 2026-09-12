@@ -70,8 +70,8 @@ freshness load-bearing rather than cosmetic.
 
 A decision worth including because the answer went against the fashionable choice:
 
-> **235 files with descriptive names and a generated index are not a semantic search
-> problem.**
+> **A few hundred files with descriptive names and a generated index are not a
+> semantic search problem.**
 
 Vector search returns "the closest thing by meaning". This project needs
 **exhaustiveness** — the rule "one statement, one place" requires finding *every*

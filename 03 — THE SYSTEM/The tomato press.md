@@ -41,7 +41,7 @@ how many patterns to watch simultaneously. A fourth row in the pattern registry
 works without touching the machine.
 
 ```
-        [ COLLECTOR ]
+         [ ORPROBE ]
               │
     ┌─────────┴──────────┐
     │  THE PRESS (slot)  │  ← one machine
