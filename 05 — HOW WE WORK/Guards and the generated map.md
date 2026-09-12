@@ -7,6 +7,11 @@ Documentation rots. This is the mechanical part of not letting it.
 Two scripts run **before every commit**. One checks the vault for self-contradiction;
 the other regenerates the index so that it cannot go stale.
 
+Since 2026-09-12 that sentence is not a description of discipline. A hook refuses the
+commit outright while the checker is red, which is the same argument this page makes
+about documentation applied to the habit of checking it: *a rule that depends on
+remembering is weaker than a script.*
+
 ---
 
 ## Why a guard was needed at all
