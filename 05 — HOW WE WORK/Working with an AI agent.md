@@ -87,19 +87,19 @@ pleasant — it is **delivered solved**. *"I don't know how"* is a valid outcome
 
 ### `R-MAP` — cartography before work
 
-Before the first line of code or text on any non-trivial task, the agent posts a
-short map in the chat and waits:
+Before the first line of code or text on any non-trivial task, the agent says in the
+chat what it has read, what `R-DECIDED` turned up and when, which places the change
+touches, where this truth lives in two or more documents — and **what it is
+deliberately skipping, and why**. Then it waits.
 
-```
-TOPIC:              the task in one word
-DECISIONS FOUND:    what R-DECIDED turned up, with dates — or "none found"
-READ:               the exact list of files
-PLACES AFFECTED:    grep results across all repositories
-DRIFT RISK:         where this truth lives in 2+ places
-NOT READ:           what I am deliberately skipping, and why
-```
+The form is free; the last question is not optional.
 
-> **The last line is the most important one.** It turns "I read everything" from a
+*Changed on 2026-09-12, because: the rule used to prescribe a fixed six-line
+template. A fixed format propagates into the rest of the answer — the model matches
+its structure well beyond the map itself. The value is in the six questions, not in
+the frame around them.*
+
+> **The last question is the most important one.** It turns "I read everything" from a
 > promise into a **checkable claim**, and it lets the operator see the holes before
 > anything is built on top of them.
 
