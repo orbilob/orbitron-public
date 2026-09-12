@@ -12,7 +12,7 @@ plain language.
 ```mermaid
 flowchart TD
     SRC["🌍 Market data, news feeds,<br/>macro and on-chain sources"]
-    COL["📡 COLLECTOR<br/><i>fetches, computes nothing</i>"]
+    COL["📡 ORPROBE<br/><i>fetches, computes nothing</i>"]
     DB[("🗄️ Raw candles<br/>+ headlines + daily values")]
     PRESS["🔧 The press<br/><i>patterns in, one record out</i>"]
     CTX["🏠 Context<br/><i>in what kind of world</i>"]

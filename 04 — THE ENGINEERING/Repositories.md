@@ -4,9 +4,9 @@
 
 | Repository | Contains | Runs on | Why separate |
 |---|---|---|---|
-| 📡 **COLLECTOR** | everything that fetches from outside and computes nothing | ☁️ the cloud machine | **Security**: that machine physically cannot see the analysis code, even by mistake |
-| ⚙️ **CORE** | technical and fundamental analysis, the context layer, the written day, the dashboard | 🏠 the home server | They evolve together, with frequent cross-cutting changes |
-| 🧪 **LAB** | research, historical validation, history | 💻 the command centre | A completely different lifecycle |
+| 📡 **ORPROBE** *the sonde* | everything that fetches from outside and computes nothing | ☁️ the cloud machine | **Security**: that machine physically cannot see the analysis code, even by mistake |
+| ⚙️ **ORCORE** *mission control* | technical and fundamental analysis, the context layer, the written day, the dashboard | 🏠 the home server | They evolve together, with frequent cross-cutting changes |
+| 🧪 **ORLAB** *the assay* | research, historical validation, history | 💻 the command centre | A completely different lifecycle |
 
 Plus this vault and the private working vault, which carry no code and do not count.
 
@@ -14,14 +14,14 @@ Plus this vault and the private working vault, which carry no code and do not co
 
 ## The reasoning behind each split
 
-### Why the collector is alone
+### Why the sonde is alone
 
 Not modularity — **blast radius**. The collector is the only component with an
 inbound relationship to the open internet, and it runs on the machine designated as
 *acceptable to lose*. Keeping the analytical code out of that repository means a full
 compromise of that machine leaks nothing worth having.
 
-### Why the core is one repository and not four
+### Why mission control is one repository and not four
 
 The four logical areas inside it (technical analysis, fundamentals, the outcome
 calculation, the dashboard) change together constantly. Splitting them would buy
@@ -33,7 +33,7 @@ imaginary independence and pay for it in cross-repository version dances.
 
 That is the actual separation of concerns; the folder layout is not.
 
-### Why the lab is alone
+### Why the assay is alone
 
 A different lifecycle entirely. Research code is allowed to be exploratory, messy
 and thrown away. Production code is not. Mixing the two means one of those standards
