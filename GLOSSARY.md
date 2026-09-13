@@ -23,7 +23,7 @@ out to be hard to measure or easy to confuse.
 | Term | Meaning |
 |---|---|
 | **the written day** | one Markdown file per day, recording what the market did and what the world looked like while it did it |
-| **the golden archive** | those files, kept permanently → [The golden archive](02%20%E2%80%94%20THE%20RESEARCH/The%20golden%20archive.md) |
+| **the eternal archive** | those files, kept permanently → [The eternal archive](02%20%E2%80%94%20THE%20RESEARCH/The%20eternal%20archive.md) |
 | `daily info & smart money track` | the one section of the written day that code does not write |
 | **market backdrop** | what a random moment on the same day returned. Always printed next to any pattern's number |
 | **muted** | an observation suppressed by cooldown. Kept in the database forever, collapsed to one line in the journal |
