@@ -76,7 +76,7 @@ Those files are never rotated and never deleted.
 > Price data can be re-downloaded at any time.
 > **The explanation of a day cannot.**
 
-That is [The golden archive](../02%20%E2%80%94%20THE%20RESEARCH/The%20golden%20archive.md),
+That is [The eternal archive](../02%20%E2%80%94%20THE%20RESEARCH/The%20eternal%20archive.md),
 and it is the part of this project most likely to matter in five years.
 
 ### 5 · 🧪 The test — and the loop closes
@@ -108,4 +108,4 @@ The last row does not move. **No part of this system acts on its own.**
 
 ## 🔗 Related
 
-[The tomato press](The%20tomato%20press.md) · [The golden archive](../02%20%E2%80%94%20THE%20RESEARCH/The%20golden%20archive.md) · [The daily file](../02%20%E2%80%94%20THE%20RESEARCH/The%20daily%20file.md) · [Repositories](../04%20%E2%80%94%20THE%20ENGINEERING/Repositories.md)
+[The tomato press](The%20tomato%20press.md) · [The eternal archive](../02%20%E2%80%94%20THE%20RESEARCH/The%20eternal%20archive.md) · [The daily file](../02%20%E2%80%94%20THE%20RESEARCH/The%20daily%20file.md) · [Repositories](../04%20%E2%80%94%20THE%20ENGINEERING/Repositories.md)

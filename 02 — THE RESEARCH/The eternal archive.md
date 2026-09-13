@@ -1,6 +1,6 @@
 ← [START HERE](../START%20HERE.md)
 
-# 🏆 The golden archive
+# 🏆 The eternal archive
 
 > [!TIP]
 > **The rule**
