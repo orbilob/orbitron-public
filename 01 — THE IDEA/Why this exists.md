@@ -109,7 +109,7 @@ What it eventually makes possible:
 That question cannot be asked today. It can only be asked by someone who started
 writing years earlier, honestly, before knowing which parts would matter.
 
-Full detail: [The golden archive](../02%20%E2%80%94%20THE%20RESEARCH/The%20golden%20archive.md).
+Full detail: [The eternal archive](../02%20%E2%80%94%20THE%20RESEARCH/The%20eternal%20archive.md).
 
 ---
 
@@ -151,7 +151,7 @@ the rest of this is.
 
 | If you want | Go to |
 |---|---|
-| the record that all of this serves | [The golden archive](../02%20%E2%80%94%20THE%20RESEARCH/The%20golden%20archive.md) · [The daily file](../02%20%E2%80%94%20THE%20RESEARCH/The%20daily%20file.md) |
+| the record that all of this serves | [The eternal archive](../02%20%E2%80%94%20THE%20RESEARCH/The%20eternal%20archive.md) · [The daily file](../02%20%E2%80%94%20THE%20RESEARCH/The%20daily%20file.md) |
 | what is being studied right now | [Market regimes](../02%20%E2%80%94%20THE%20RESEARCH/Market%20regimes.md) · [Smart money track](../02%20%E2%80%94%20THE%20RESEARCH/Smart%20money%20track.md) |
 | how an answer is tested honestly | [The v2 validation engine](../04%20%E2%80%94%20THE%20ENGINEERING/The%20v2%20validation%20engine.md) |
 | what the project explicitly is *not* | [What ORBITRON is not](What%20ORBITRON%20is%20not.md) |

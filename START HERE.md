@@ -26,7 +26,7 @@
 > many things at once. A pattern that survives is evidence that some mechanism was
 > understood correctly. A pattern that doesn't is a saved year.
 
-If that interests you, [The golden archive](02%20%E2%80%94%20THE%20RESEARCH/The%20golden%20archive.md)
+If that interests you, [The eternal archive](02%20%E2%80%94%20THE%20RESEARCH/The%20eternal%20archive.md)
 is the next page.
 
 > [!WARNING]
@@ -57,7 +57,7 @@ No technical background needed. What this project is chasing, and why.
 
 The actual subject matter, and the record it accumulates into.
 
-- [The golden archive](02%20%E2%80%94%20THE%20RESEARCH/The%20golden%20archive.md) ⭐ the permanent record — **the product**
+- [The eternal archive](02%20%E2%80%94%20THE%20RESEARCH/The%20eternal%20archive.md) ⭐ the permanent record — **the product**
 - [The daily file](02%20%E2%80%94%20THE%20RESEARCH/The%20daily%20file.md) — what one day looks like
 - [Market regimes](02%20%E2%80%94%20THE%20RESEARCH/Market%20regimes.md) — the same state means different things in different worlds
 - [Smart money track](02%20%E2%80%94%20THE%20RESEARCH/Smart%20money%20track.md) — where money goes when it leaves somewhere else
@@ -97,6 +97,6 @@ AI agent working on this project must follow.
 ## 🔤 A note on names
 
 Some words here are the project's own vocabulary — *the press*, *the written day*,
-*the golden archive*. They are not jargon for its own sake; each exists because a
+*the eternal archive*. They are not jargon for its own sake; each exists because a
 nameless thing turned out to be unmeasurable.
 [GLOSSARY](GLOSSARY.md) collects them.

@@ -139,7 +139,7 @@ It makes a question possible that cannot be asked today:
 > behave then?"*
 
 Only someone who started keeping the record years earlier can ask it.
-→ [The golden archive](02%20%E2%80%94%20THE%20RESEARCH/The%20golden%20archive.md)
+→ [The eternal archive](02%20%E2%80%94%20THE%20RESEARCH/The%20eternal%20archive.md)
 
 ---
 
