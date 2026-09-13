@@ -115,4 +115,4 @@ actually known, rather than defaulting to "uninterrupted".
 
 ## 🔗 Related
 
-[Why this exists](../01%20%E2%80%94%20THE%20IDEA/Why%20this%20exists.md) · [The golden archive](The%20golden%20archive.md) · [Smart money track](Smart%20money%20track.md) · [Market regimes](Market%20regimes.md) · [The chain](../03%20%E2%80%94%20THE%20SYSTEM/The%20chain.md)
+[Why this exists](../01%20%E2%80%94%20THE%20IDEA/Why%20this%20exists.md) · [The eternal archive](The%20eternal%20archive.md) · [Smart money track](Smart%20money%20track.md) · [Market regimes](Market%20regimes.md) · [The chain](../03%20%E2%80%94%20THE%20SYSTEM/The%20chain.md)
