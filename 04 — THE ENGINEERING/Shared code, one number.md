@@ -24,7 +24,7 @@ reimplement it from the description, you understood it.
 
 But the cost turned out to be larger than the benefit:
 
-> **You prove one number and you outcome a different one, and the difference is
+> **You prove one number and you act on a different one, and the difference is
 > invisible until it costs money.**
 
 The replacement rule is testable. "We rewrote it carefully" is not.
@@ -76,6 +76,39 @@ must return the same number.
 
 If they don't, one of them is wrong and you find out in CI rather than in a
 post-mortem.
+
+---
+
+## One engine for the data
+
+The rule above has a precondition that is easy to miss: **both callers must compute
+on the same engine.** For a while the lab ran on polars and everything else on
+pandas, and both sides claimed to do the same arithmetic. That claim could not be
+tested — a comparison across two libraries checks two implementations, not one
+piece of logic in one place. Decided on 15.09.2026: **pandas everywhere.**
+
+Speed was the argument for polars, so it was measured rather than assumed. One
+year of one-minute candles, 525,600 rows: the ATR takes 92 ms in pandas and 17 ms
+in polars. Five times faster, and 75 ms that nobody waits for.
+
+Two differences had to be settled by hand, and they will come back with any
+similar switch:
+
+| Difference | What happens if it is missed |
+|---|---|
+| **Ties** | polars `sort_by(...).last()` keeps the *last* of equal values, pandas `idxmax` the *first*. A drop and a rebound of equal size flip an event from bearish to bullish |
+| **A column that can be empty** | pandas `int64` cannot hold a missing value; it either raises or silently becomes a float. The nullable `Int64` is required |
+
+The port was checked by differential probes: the old version, taken from history,
+against the new one on the same input. All 24 columns of the first pattern agree,
+the largest gap being `2.5e-14` — floating-point noise. And the suite passes with
+polars **deliberately blocked** from import.
+
+> [!NOTE]
+> Two of the probes could not fail at first. A threshold broken on purpose passed
+> because no row sat exactly on it; a broken `idxmax` passed because the cluster
+> had a single maximum. *A test that cannot fail is worth nothing* holds for probes
+> too.
 
 ---
 
