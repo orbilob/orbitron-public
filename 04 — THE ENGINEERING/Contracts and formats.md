@@ -97,6 +97,31 @@ that created it, and a name is a contract with the future reader.
 
 ---
 
+## 🪣 Data moves as rows, not as files
+
+When one repository reads what another one writes, it pulls **the new rows through a
+query**, not a copy of the database file. Decided on 21.09.2026, on three
+measurements against one year of minute data:
+
+| | Result |
+|---|---|
+| **volume** | copying the whole file moves 42 MB; one day of new rows moves 0.1 MB |
+| **silent loss** | a live SQLite file copied without its write-ahead log lost **12%** of its rows — and `integrity_check` still said `ok` |
+| **repeat** | pulling the same range twice added zero duplicates, because every table's primary key carries the time |
+
+The second row is the decisive one. A copy that is broken can be noticed; a copy
+that is merely *incomplete* looks exactly like a healthy database with less data in
+it. The fill of that bench was synthetic volume, used to measure storage behaviour
+and nothing else — no number from it enters an analysis.
+
+Three rules follow: the source is opened **read-only**, so a wrong path fails
+instead of creating an empty database; the cursor is **when a row was taken**, not
+when the event happened, because a late-dated row would otherwise be skipped
+forever; and columns are **named**, never `SELECT *`, so a column the other side
+grows is a loud error rather than a quiet one.
+
+---
+
 ## What a good format decision looks like
 
 An example from the project, kept because it is a small decision with a big shape:
