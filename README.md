@@ -39,12 +39,12 @@
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/board-dark.svg">
-  <img src="assets/board-light.svg" alt="ORBITRON — state of the build: 38 working or proven, 15 partial, 3 not built, 9 decisions taken, 0 validated patterns" width="880">
+  <img src="assets/board-light.svg" alt="ORBITRON — state of the build: 37 working or proven, 17 partial, 3 not built, 9 decisions taken, 0 validated patterns" width="880">
 </picture>
 
-**38** working or proven &nbsp;·&nbsp; **15** partial &nbsp;·&nbsp; **3** not built &nbsp;·&nbsp; **9** decisions taken &nbsp;·&nbsp; **0** validated patterns
+**37** working or proven &nbsp;·&nbsp; **17** partial &nbsp;·&nbsp; **3** not built &nbsp;·&nbsp; **9** decisions taken &nbsp;·&nbsp; **0** validated patterns
 
-<sub>Generated from the project's live board on 2026-09-22 — not written by hand. The bar spans all 74 tracked rows; its unfilled tail is work that is deferred, archived or deliberately closed.</sub>
+<sub>Generated from the project's live board on 2026-09-22 — not written by hand. The bar spans all 75 tracked rows; its unfilled tail is work that is deferred, archived or deliberately closed.</sub>
 
 &nbsp;
 
