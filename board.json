@@ -1,9 +1,9 @@
 {
-  "working": 35,
+  "working": 38,
   "validated_patterns": 0,
   "partial": 15,
-  "not_built": 5,
-  "decisions": 7,
-  "total_rows": 71,
-  "generated": "2026-09-11"
+  "not_built": 3,
+  "decisions": 9,
+  "total_rows": 74,
+  "generated": "2026-09-22"
 }
