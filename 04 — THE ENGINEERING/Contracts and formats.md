@@ -17,8 +17,8 @@ are the flowing sands.
 
 Patterns will be born, mutate and die. That is their normal behaviour.
 
-But if every pattern writes its own record format, then six months later A001 cannot
-be compared to A007. The data is incomparable and the accumulated history is
+But if every pattern writes its own record format, then six months later Madriu cannot
+be compared to Draugr. The data is incomparable and the accumulated history is
 worthless.
 
 > The frame is frozen while it is cheap. The patterns line up inside it afterwards.
@@ -34,8 +34,15 @@ And there is a second reason, specific to the head/hand boundary:
 ## 📋 The passport convention
 
 Every module declares its inputs, outputs, version and compatibility. For a pattern
-that means: the hypothesis, the direction, the family, the lookback, and — mandatory —
-the **status**.
+that means: the hypothesis, the direction, its **class** — one of the five — the lookback,
+its **methods with the points each can give**, the **threshold** a signal needs, and —
+mandatory — the **status**. The scale is the sum of the methods' points, and a passport
+that promises more than its methods can give does not load.
+
+Since 29 September 2026 every pattern also reports its **pulse**: the points of every
+method, every minute, whether or not anything fired. A signal keeps only the minutes
+that crossed the threshold; *how close it came* is kept too, because it is exactly the
+raw material the research needs.
 
 | Status | Meaning |
 |---|---|

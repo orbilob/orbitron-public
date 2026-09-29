@@ -62,7 +62,7 @@ ORBITRON is a research project. Patterns will be born, mutate and die — that i
 their normal behaviour, not a problem.
 
 But if every pattern has its own record format, then six months later you cannot
-compare pattern A001 with pattern A007. The data is incomparable and the entire
+compare pattern Madriu with pattern Draugr. The data is incomparable and the entire
 accumulated history is worthless.
 
 > **So: the frame is frozen now, while it is cheap. The patterns line up inside it
