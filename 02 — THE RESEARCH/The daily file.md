@@ -22,12 +22,12 @@ Open · Close · High · Low · Range · Direction · Volume vs. the 30-day aver
 | Hour | Direction | Move | Volume |
 
 ## 🎯 Signals
-### 16:43 · A001 · LONG · SIGNAL
+### 16:43 · Madriu · LONG · SIGNAL
 Conditions met: …
 Follow-up: +0.6% at 60 min ✅ · +0.4% at 4h · −0.1% at 8h
 Context: —
 
-_47 suppressed by cooldown · A001 · 16:44–17:31_
+_47 suppressed by cooldown · Madriu · 16:44–17:31_
 
 ## 📈 Per-pattern summary
 | Pattern | Signals | Hit rate 60m | Mean result | Market backdrop |
@@ -51,7 +51,7 @@ metric without a baseline is advertising.
 
 ### 2 · No verdicts in the daily file
 
-Not *"A001 is working well"*. One day is noise — the verdict comes from accumulation,
+Not *"Madriu is working well"*. One day is noise — the verdict comes from accumulation,
 not from the evening.
 
 ### 3 · The file gets appended to, not rewritten
