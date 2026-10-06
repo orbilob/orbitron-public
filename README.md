@@ -39,12 +39,12 @@
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/board-dark.svg">
-  <img src="assets/board-light.svg" alt="ORBITRON — state of the build: 42 working or proven, 12 partial, 3 not built, 9 decisions taken, 0 validated patterns" width="880">
+  <img src="assets/board-light.svg" alt="ORBITRON — state of the build: 40 working or proven, 14 partial, 3 not built, 11 decisions taken, 0 validated patterns" width="880">
 </picture>
 
-**42** working or proven &nbsp;·&nbsp; **12** partial &nbsp;·&nbsp; **3** not built &nbsp;·&nbsp; **9** decisions taken &nbsp;·&nbsp; **0** validated patterns
+**40** working or proven &nbsp;·&nbsp; **14** partial &nbsp;·&nbsp; **3** not built &nbsp;·&nbsp; **11** decisions taken &nbsp;·&nbsp; **0** validated patterns
 
-<sub>Generated from the project's live board on 2026-09-29 — not written by hand. The bar spans all 71 tracked rows; its unfilled tail is work that is deferred, archived or deliberately closed.</sub>
+<sub>Generated from the project's live board on 2026-10-06 — not written by hand. The bar spans all 73 tracked rows; its unfilled tail is work that is deferred, archived or deliberately closed.</sub>
 
 &nbsp;
 
@@ -81,7 +81,7 @@
 
 **Madriu** v0.1 &nbsp;·&nbsp; **Xolotl** v0.1 &nbsp;·&nbsp; **Hypatia** v0.1 &nbsp;·&nbsp; **Awohali** v0.1 &nbsp;·&nbsp; **Draugr** v0.1
 
-<sub>Named after real exoplanets — one planet, one class. Five classes are designed; none measured yet, and what each one looks for is not published. **The project is in active development.**</sub>
+<sub>Named after real exoplanets — one planet, one class. Five classes are designed; the first is measured and runs live as an observation, none is validated yet, and what each one looks for is not published. **The project is in active development.**</sub>
 
 </div>
 <!-- board:end -->
