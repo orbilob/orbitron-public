@@ -459,8 +459,9 @@ Then four stages: {', '.join(chain['stages'])}." width="880">
 {names}
 
 <sub>Named after real exoplanets — one planet, one class. \
-{spelled(count)} classes are designed; none measured yet, and what each one \
-looks for is not published. **The project is in active development.**</sub>
+{spelled(count)} classes are designed; the first is measured and runs live as \
+an observation, none is validated yet, and what each one looks for is not \
+published. **The project is in active development.**</sub>
 
 </div>
 {END}"""
