@@ -39,12 +39,12 @@
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/board-dark.svg">
-  <img src="assets/board-light.svg" alt="ORBITRON — state of the build: 41 working or proven, 17 partial, 2 not built, 11 decisions taken, 0 validated patterns" width="880">
+  <img src="assets/board-light.svg" alt="ORBITRON — state of the build: 41 working or proven, 18 partial, 2 not built, 11 decisions taken, 0 validated patterns" width="880">
 </picture>
 
-**41** working or proven &nbsp;·&nbsp; **17** partial &nbsp;·&nbsp; **2** not built &nbsp;·&nbsp; **11** decisions taken &nbsp;·&nbsp; **0** validated patterns
+**41** working or proven &nbsp;·&nbsp; **18** partial &nbsp;·&nbsp; **2** not built &nbsp;·&nbsp; **11** decisions taken &nbsp;·&nbsp; **0** validated patterns
 
-<sub>Generated from the project's live board on 2026-10-18 — not written by hand. The bar spans all 76 tracked rows; its unfilled tail is work that is deferred, archived or deliberately closed.</sub>
+<sub>Generated from the project's live board on 2026-10-21 — not written by hand. The bar spans all 77 tracked rows; its unfilled tail is work that is deferred, archived or deliberately closed.</sub>
 
 &nbsp;
 
@@ -76,10 +76,10 @@
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/patterns-dark.svg">
-  <img src="assets/patterns-light.svg" alt="Named pattern classes: Madriu v0.1, Xolotl v0.1, Hypatia v0.1, Awohali v0.1, Draugr v0.1">
+  <img src="assets/patterns-light.svg" alt="Named pattern classes: Madriu —, Xolotl —, Hypatia —, Awohali —, Draugr 0.5">
 </picture>
 
-**Madriu** v0.1 &nbsp;·&nbsp; **Xolotl** v0.1 &nbsp;·&nbsp; **Hypatia** v0.1 &nbsp;·&nbsp; **Awohali** v0.1 &nbsp;·&nbsp; **Draugr** v0.1
+**Madriu** — &nbsp;·&nbsp; **Xolotl** — &nbsp;·&nbsp; **Hypatia** — &nbsp;·&nbsp; **Awohali** — &nbsp;·&nbsp; **Draugr** 0.5
 
 <sub>Named after real exoplanets — one planet, one class. Five classes are designed; the first is measured and runs live as an observation, none is validated yet, and what each one looks for is not published. **The project is in active development.**</sub>
 
