@@ -52,6 +52,20 @@ They are kept as **separate fields**, never fused.
 
 ---
 
+## 🧩 One system, two outputs — decided 2026-11-09
+
+The two dimensions are not built as two layers bolted onto the record. They come
+out of **one system**: the havens read at several horizons *as of the moment*,
+bitcoin's trend laid over them, and every larger move given its explanation of
+*why*. Risk-on / risk-off and the four regimes are its **outputs** — still two
+separate fields, never one score, for the reason above.
+
+A first, simple count of the risk axis ran beside the money-flow record from
+October to November 2026. It was taken out of the daily flow on 2026-11-11, so
+that the axis comes from the system rather than from a count standing next to it.
+
+---
+
 ## Where the values come from — and where they do not
 
 | What | Source |
