@@ -1,9 +1,10 @@
 /* ORBITRON — the public page, its one script.
  *
- * Three jobs and nothing else:
+ * Four jobs and nothing else:
  *   1. the language switch — English is the page's own text, Bulgarian comes from i18n/bg.json;
  *   2. the numbers — drawn from data/*.json, which the build copies from the repository root;
- *   3. the sky — a field of stars, drawn once.
+ *   3. the panels — a tile opens its panel full-screen at its own address (#report, #chain …);
+ *   4. the sky — a field of stars, drawn once.
  *
  * No framework, no third-party request, no cookie. A choice of language is remembered in
  * the reader's own browser when the browser allows it, and forgotten when it does not.
@@ -116,18 +117,19 @@
       var value = board[node.dataset.board];
       node.textContent = value === undefined ? "—" : String(value);
     });
-    var rail = document.getElementById("rail");
-    rail.textContent = "";
-    [["working", "var(--green)"], ["decisions", "var(--decided)"], ["partial", "var(--partial)"], ["not_built", "var(--notbuilt)"]]
-      .forEach(function (pair) {
-        var share = (board[pair[0]] || 0) / board.total_rows * 100;
-        if (share > 0) {
-          var bit = el("span");
-          bit.style.width = share.toFixed(2) + "%";
-          bit.style.background = pair[1];
-          rail.appendChild(bit);
-        }
-      });
+    document.querySelectorAll(".rail").forEach(function (rail) {
+      rail.textContent = "";
+      [["working", "var(--green)"], ["decisions", "var(--decided)"], ["partial", "var(--partial)"], ["not_built", "var(--notbuilt)"]]
+        .forEach(function (pair) {
+          var share = (board[pair[0]] || 0) / board.total_rows * 100;
+          if (share > 0) {
+            var bit = el("span");
+            bit.style.width = share.toFixed(2) + "%";
+            bit.style.background = pair[1];
+            rail.appendChild(bit);
+          }
+        });
+    });
     vars["build.note"] = { date: board.generated, total: board.total_rows };
     vars["build.rail"] = { working: board.working, partial: board.partial, not_built: board.not_built, total: board.total_rows };
   }
@@ -163,6 +165,30 @@
     });
   }
 
+  function renderMini(chain, patterns) {
+    var names = document.getElementById("mini-chain");
+    names.textContent = "";
+    chain.pillars.forEach(function (pillar, i) {
+      if (i) { names.appendChild(el("span", "arrow", "▸")); }
+      names.appendChild(el("span", "", pillar.name));
+    });
+    var stages = document.getElementById("mini-stages");
+    stages.textContent = "";
+    chain.stages.forEach(function (name, i) {
+      var chip = el("span", "", (i + 1) + " · " + name);
+      chip.style.setProperty("--c", "var(--stage-" + (i + 1) + ")");
+      stages.appendChild(chip);
+    });
+    var orbs = document.getElementById("mini-planets");
+    orbs.textContent = "";
+    patterns.patterns.forEach(function (p) {
+      var built = p.version && p.version !== "—";
+      var orb = el("span", "orb" + (built ? " live" : ""));
+      orb.title = p.name + (built ? " " + p.version : "");
+      orbs.appendChild(orb);
+    });
+  }
+
   function renderPatterns(patterns) {
     var box = document.getElementById("planets");
     box.textContent = "";
@@ -177,15 +203,26 @@
   }
 
   function renderFollow(links) {
-    var box = document.getElementById("follow");
-    box.querySelectorAll("a").forEach(function (a) { a.remove(); });
-    (links || []).forEach(function (link) {
-      var a = el("a", "", link.name);
+    links = links || [];
+    document.querySelectorAll(".follow").forEach(function (box) {
+      box.querySelectorAll("a").forEach(function (a) { a.remove(); });
+      links.forEach(function (link) {
+        var a = el("a", "", link.name);
+        a.href = link.url;
+        a.rel = "me noopener";
+        box.appendChild(a);
+      });
+      box.hidden = !links.length;
+    });
+    var bar = document.getElementById("follow-bar");
+    bar.textContent = "";
+    links.forEach(function (link) {
+      var a = el("a");
       a.href = link.url;
       a.rel = "me noopener";
-      box.appendChild(a);
+      a.appendChild(el("span", "", link.name));
+      bar.appendChild(a);
     });
-    box.hidden = !(links && links.length);
   }
 
   function render() {
@@ -193,13 +230,15 @@
     renderBoard(data.board);
     renderChain(data.chain, data.site.pillar_lines);
     renderPatterns(data.patterns);
+    renderMini(data.chain, data.patterns);
     renderFollow(data.site.follow);
     // The two elements whose text carries numbers are filled once the numbers are known.
     ["build.note"].forEach(function (key) {
       document.querySelectorAll('[data-i18n="' + key + '"]').forEach(function (n) { n.textContent = t(key, vars[key]); });
     });
-    var rail = document.getElementById("rail");
-    rail.setAttribute("aria-label", t("build.rail", vars["build.rail"]));
+    document.querySelectorAll(".rail").forEach(function (rail) {
+      rail.setAttribute("aria-label", t("build.rail", vars["build.rail"]));
+    });
   }
 
   function loadData() {
@@ -212,6 +251,71 @@
     })).then(function (all) {
       data = { board: all[0], chain: all[1], patterns: all[2], site: all[3] };
     });
+  }
+
+  // ---------------------------------------------------------------- panels
+
+  var PANELS = ["report", "idea", "archive", "build", "chain", "method", "disclaimer"];
+  var opener = null;        // the tile that opened the panel, to give focus back to
+  var fromHere = false;     // the panel was opened on this page, so "back" closes it
+
+  function setInert(on) {
+    ["bar", "main", "foot"].forEach(function (id) {
+      var node = document.getElementById(id);
+      if (node) { node.inert = on; }
+    });
+  }
+
+  function route() {
+    var id = location.hash.slice(1);
+    var panel = PANELS.indexOf(id) >= 0 ? document.getElementById(id) : null;
+    document.querySelectorAll(".panel.open").forEach(function (p) { if (p !== panel) { p.classList.remove("open"); } });
+    if (panel) {
+      panel.classList.add("open");
+      panel.scrollTop = 0;
+      document.documentElement.classList.add("locked");
+      setInert(true);
+      var close = panel.querySelector(".close");
+      if (close) { close.focus({ preventScroll: true }); }
+    } else {
+      document.documentElement.classList.remove("locked");
+      setInert(false);
+      fromHere = false;
+      if (opener) { opener.focus({ preventScroll: true }); opener = null; }
+    }
+  }
+
+  function openPanel(id, tile) {
+    opener = tile || null;
+    fromHere = true;
+    history.pushState(null, "", "#" + id);
+    route();
+  }
+
+  function closePanel() {
+    if (fromHere) { history.back(); return; }        // popstate routes it
+    history.replaceState(null, "", location.pathname + location.search);
+    route();
+  }
+
+  function wirePanels() {
+    document.querySelectorAll('a.tile, a.strip').forEach(function (a) {
+      a.addEventListener("click", function (e) {
+        var id = a.getAttribute("href").slice(1);
+        if (PANELS.indexOf(id) < 0 || e.metaKey || e.ctrlKey || e.shiftKey) { return; }
+        e.preventDefault();
+        openPanel(id, a);
+      });
+    });
+    document.querySelectorAll(".panel .close").forEach(function (a) {
+      a.addEventListener("click", function (e) { e.preventDefault(); closePanel(); });
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && document.querySelector(".panel.open")) { closePanel(); }
+    });
+    window.addEventListener("popstate", route);
+    window.addEventListener("hashchange", route);
+    route();
   }
 
   // ---------------------------------------------------------------- sky
@@ -238,6 +342,7 @@
     document.querySelectorAll(".lang button").forEach(function (b) {
       b.addEventListener("click", function () { setLang(b.dataset.lang, true); });
     });
+    wirePanels();
     loadData().catch(function () { data = null; }).then(function () { return setLang(chosenLang(), false); });
   });
 }());
