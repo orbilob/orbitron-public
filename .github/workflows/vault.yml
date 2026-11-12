@@ -23,3 +23,6 @@ jobs:
 
       - name: Links, wiki links, callouts, withheld words, board freshness
         run: python3 scripts/check_vault.py
+
+      - name: The page assembles
+        run: python3 scripts/build_site.py

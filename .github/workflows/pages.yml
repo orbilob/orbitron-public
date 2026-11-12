@@ -1,0 +1,60 @@
+name: pages
+
+# The public page. It is assembled from site/ and the root's data files on every
+# change to main, and published only when the vault guard is green — the same
+# guard that holds the page to the withheld vocabulary in both of its languages.
+#
+# One switch lives outside this file and outside the agent's reach:
+# Settings → Pages → Source: "GitHub Actions". Until it is on, the deploy step
+# fails with "Get Pages site failed" and nothing is published.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: assemble the page
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: The vault guard — nothing is published past a red one
+        run: python3 scripts/check_vault.py
+
+      - name: Web-sized images
+        run: pip install pillow==12.0.0
+
+      - name: Assemble _site/
+        run: python3 scripts/build_site.py
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    name: publish
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

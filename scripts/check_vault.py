@@ -5,7 +5,7 @@ This vault claims, in "05 — HOW WE WORK", that documentation rot is fought
 mechanically rather than by good intentions. A vault making that claim with no
 guard of its own would be advertising, not practice.
 
-Three checks, all of which have already caught real defects here:
+Six checks; the older ones have already caught real defects here:
 
   1. Broken internal links — a link pointing into nothing sends the reader to
      the wrong place with confidence.
@@ -23,6 +23,10 @@ Three checks, all of which have already caught real defects here:
      drawings.
      A page claiming a state the project left behind is worse than no page,
      and nothing but a guard notices that it has gone old.
+  6. The public page — site/ is held to the same withheld vocabulary in
+     English AND in Bulgarian, and every English text must have its
+     Bulgarian line (scripts/build_site.py). A page in two languages
+     guarded in one is a way around the guard.
 
 Exit 0 = clean. Exit 1 = something to fix, and every line says where.
 
@@ -142,6 +146,11 @@ else:
                     "run python3 scripts/build_readme.py"
                 )
 
+# 6 — the public page, in both of its languages
+import build_site  # noqa: E402  — same folder, already on the path
+
+findings.extend(build_site.check(WITHHELD))
+
 count = len(markdown_files())
 
 if findings:
@@ -151,4 +160,5 @@ if findings:
     sys.exit(1)
 
 print(f"✅ Clean — {count} documents, no broken links, "
-      f"GitHub-safe, nothing withheld leaked, every drawing fresh.")
+      f"GitHub-safe, nothing withheld leaked, every drawing fresh, "
+      f"the page whole in both languages.")
