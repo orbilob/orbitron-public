@@ -33,7 +33,19 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/icon.png">
 <link rel="stylesheet" href="style.css">
-<script>document.documentElement.classList.add("js");</script>
+<script>
+  /* Before the first paint: mark the page as scripted, and choose the theme —
+     the reader's own choice if the browser kept one, else the system's. */
+  (function (root) {
+    root.classList.add("js");
+    var theme = null;
+    try { theme = localStorage.getItem("orbitron.theme"); } catch (e) {}
+    if (theme !== "light" && theme !== "dark") {
+      theme = window.matchMedia && matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+    }
+    root.setAttribute("data-theme", theme);
+  }(document.documentElement));
+</script>
 <script src="app.js" defer></script>
 </head>
 <body>
@@ -89,9 +101,12 @@
         <img src="assets/icon.png" alt="" width="30" height="30">
         <span>ORBITRON</span>
       </a>
-      <div class="lang" role="group" aria-label="Language" data-i18n-aria="lang.label">
-        <button type="button" data-lang="en" aria-pressed="true">EN</button>
-        <button type="button" data-lang="bg" aria-pressed="false">БГ</button>
+      <div class="side-tools">
+        <button type="button" class="theme" aria-label="Switch the theme" data-i18n-aria="theme.switch"><span class="moon" aria-hidden="true">☾</span><span class="sun" aria-hidden="true">☀</span></button>
+        <div class="lang" role="group" aria-label="Language" data-i18n-aria="lang.label">
+          <button type="button" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-lang="bg" aria-pressed="false">БГ</button>
+        </div>
       </div>
     </div>
 

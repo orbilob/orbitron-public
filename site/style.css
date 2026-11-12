@@ -1,4 +1,7 @@
 /* ORBITRON — the public page.
+   Two themes. Dark is the default and what a reader without JavaScript gets;
+   light is :root[data-theme="light"], set before the first paint by a line in
+   <head> — from the reader's own choice, or else from the system's.
    Colours come from the mark: deep space, the green orbit and the amber one.
    Amber (#f0b429) is the project's own accent, the same as in the README drawings.
    No web fonts: the page makes no third-party request, so it uses the reader's own. */
@@ -31,8 +34,7 @@
   color-scheme: dark;
 }
 
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme="dark"]) {
+:root[data-theme="light"] {
     --bg: #f4f6f9;
     --bg-2: #eaeef3;
     --panel: #ffffff;
@@ -54,7 +56,6 @@
     --star: rgba(26, 31, 39, 0.0);
     --shadow: 0 8px 28px rgba(20, 30, 45, 0.10);
     color-scheme: light;
-  }
 }
 
 * { box-sizing: border-box; }
@@ -96,10 +97,8 @@ p { margin: 0; }
 :root {
   --side: #0b1822; --side-2: #10222f; --side-edge: #1c3546; --side-ink: #d5e6ee; --side-dim: #86a3b3; --side-accent: #5ec8d8;
 }
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme="dark"]) {
+:root[data-theme="light"] {
     --side: #e6eff4; --side-2: #dbe8ef; --side-edge: #c3d6e0; --side-ink: #14303d; --side-dim: #4c6a79; --side-accent: #0f6f80;
-  }
 }
 
 .eyebrow { font-family: var(--f-mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber); }
@@ -416,3 +415,18 @@ html.locked { overflow: hidden; }
 
 @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 .orb.live { background: radial-gradient(circle at 35% 35%, #ffe08a, #b7790a); box-shadow: 0 0 14px rgba(240, 180, 41, 0.35); }
+
+/* The theme switch, beside the language */
+.side-tools { display: inline-flex; align-items: center; gap: 8px; }
+.theme {
+  display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; cursor: pointer;
+  border: 1px solid var(--side-edge); background: transparent; color: var(--side-ink); font-size: 16px; line-height: 1;
+}
+.theme:hover { border-color: var(--side-accent); color: var(--side-accent); }
+.theme .sun { display: none; }
+:root[data-theme="light"] .theme .sun { display: inline; }
+:root[data-theme="light"] .theme .moon { display: none; }
+:root[data-theme="light"] .sky { display: none; }
+@media (min-width: 900px) and (min-height: 560px) {
+  .theme { width: max(30px, calc(var(--u) * 1.9)); height: max(30px, calc(var(--u) * 1.9)); font-size: max(14px, calc(var(--u) * 0.95)); }
+}
