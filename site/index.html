@@ -2,11 +2,15 @@
 <!--
   The public page of ORBITRON.
 
+  One screen, six tiles: the whole project at a glance. Every tile is a link to
+  its own address (#report, #chain …); the script opens that panel full-screen,
+  so the back button and a shared link both work. Without JavaScript the panels
+  simply stand below the tiles, and nothing is lost.
+
   English lives here, once, as the page's own text: it is what a reader without
   JavaScript and every search engine sees. Bulgarian lives in i18n/bg.json and
-  replaces it on request. Every element that carries words has a data-i18n key;
-  scripts/build_site.py refuses a key without a Bulgarian line, and a Bulgarian
-  line without a key.
+  replaces it on request. A key used twice carries the same English twice —
+  scripts/build_site.py checks that, and that every key has its Bulgarian line.
 
   Numbers are never written here. They come from board.json, chain.json and
   patterns.json — the same files the README is drawn from.
@@ -28,24 +32,26 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/icon.png">
 <link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add("js");</script>
 <script src="app.js" defer></script>
 </head>
 <body>
 
 <div class="sky" aria-hidden="true"></div>
 
-<header class="bar">
+<header class="bar" id="bar">
   <div class="wrap bar-in">
-    <a class="brand" href="#top" aria-label="ORBITRON">
+    <a class="brand" href="#" aria-label="ORBITRON">
       <img src="assets/icon.png" alt="" width="34" height="34">
       <span>ORBITRON</span>
     </a>
-    <nav class="nav" aria-label="Sections" data-i18n-aria="nav.label">
-      <a href="#idea" data-i18n="nav.idea">The idea</a>
-      <a href="#archive" data-i18n="nav.archive">The archive</a>
-      <a href="#build" data-i18n="nav.build">The build</a>
-      <a href="#chain" data-i18n="nav.chain">The chain</a>
-      <a href="#method" data-i18n="nav.method">How we work</a>
+    <nav class="links" aria-label="Links" data-i18n-aria="bar.label">
+      <a class="link-why" href="https://github.com/orbilob/orbitron-public/blob/main/01%20%E2%80%94%20THE%20IDEA/Why%20this%20exists.md" data-i18n="bar.why">Why this exists</a>
+      <a class="link-gh" href="https://github.com/orbilob/orbitron-public">
+        <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.05-.49.05-.49.8.06 1.23.83 1.23.83.72 1.22 1.87.87 2.33.66.07-.52.28-.87.5-1.07-1.78-.2-3.65-.89-3.65-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.22 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.19c0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        <span data-i18n="bar.github">The vault on GitHub</span>
+      </a>
+      <span class="follow-bar" id="follow-bar"></span>
     </nav>
     <div class="lang" role="group" aria-label="Language" data-i18n-aria="lang.label">
       <button type="button" data-lang="en" aria-pressed="true">EN</button>
@@ -54,36 +60,133 @@
   </div>
 </header>
 
-<main id="top">
+<main id="main">
 
-  <!-- 1 · HERO -->
-  <section class="hero">
-    <div class="wrap hero-in">
-      <div class="hero-text">
-        <p class="eyebrow" data-i18n="hero.eyebrow">A personal research project · bitcoin first</p>
-        <h1>
-          <span data-i18n="hero.title">We look for answers.</span>
-          <span class="h1-sub" data-i18n="hero.title2">We ask why. We write the day down — permanently.</span>
-        </h1>
-        <p class="lede" data-i18n="hero.lede">Not predictions, and not a system that acts on anyone's behalf. One question, asked again every single day:</p>
-        <blockquote class="question" data-i18n="hero.question">Why did the trend move in this direction, in this market regime — and what was happening behind the scenes?</blockquote>
-        <div class="cta">
-          <a class="btn primary" href="https://github.com/orbilob/orbitron-public/blob/main/01%20%E2%80%94%20THE%20IDEA/Why%20this%20exists.md" data-i18n="hero.cta.why">Why this exists</a>
-          <a class="btn" href="#chain" data-i18n="hero.cta.chain">How it works</a>
-          <a class="btn ghost" href="https://github.com/orbilob/orbitron-public" data-i18n="hero.cta.vault">Read the vault on GitHub</a>
-        </div>
-      </div>
-      <figure class="hero-art">
-        <img src="assets/logo.png" alt="The ORBITRON mark: the Earth with two orbits, one green and one amber" data-i18n-alt="hero.logo.alt" width="640" height="675">
-      </figure>
+  <section class="intro">
+    <div class="wrap">
+      <h1>
+        <span data-i18n="hero.title">We look for answers.</span>
+        <span class="h1-sub" data-i18n="hero.question">Why did the trend move in this direction, in this market regime — and what was happening behind the scenes?</span>
+      </h1>
     </div>
   </section>
 
-  <!-- 2 · THE IDEA -->
-  <section id="idea" class="block">
-    <div class="wrap">
-      <p class="eyebrow" data-i18n="idea.eyebrow">The idea</p>
-      <h2 data-i18n="idea.title">Three habits, kept every day</h2>
+  <!-- THE SIX TILES — the whole project on one screen -->
+  <section class="wrap bento" aria-label="The project at a glance" data-i18n-aria="bento.label">
+
+    <a class="tile tile-report" href="#report">
+      <div class="report-head">
+        <span class="masthead">ORBITRON <b data-i18n="report.name">Daily Report</b></span>
+        <span class="edition" data-i18n="report.edition">No. — · first edition soon</span>
+      </div>
+      <p class="report-lede" data-i18n="report.lede">One day, one image: the market, the macro backdrop, where money moved — and a note written by hand.</p>
+      <dl class="mini-fields">
+        <div><dt data-i18n="day.f.market">The market today</dt><dd>—</dd></div>
+        <div><dt data-i18n="day.f.macro">Macro backdrop</dt><dd>—</dd></div>
+        <div><dt data-i18n="day.f.money">Smart money track</dt><dd>—</dd></div>
+        <div><dt data-i18n="day.f.hours">The strongest hours</dt><dd>—</dd></div>
+        <div class="wide"><dt data-i18n="day.f.words">The day, in words</dt><dd>—</dd></div>
+      </dl>
+      <span class="tile-foot">
+        <span class="tag" data-i18n="report.tag">Every day · free · no advice</span>
+        <span class="open" data-i18n="report.open">Open the report →</span>
+      </span>
+    </a>
+
+    <a class="tile tile-idea" href="#idea">
+      <span class="tile-n">2</span>
+      <span class="eyebrow" data-i18n="idea.eyebrow">The idea</span>
+      <span class="tile-title" data-i18n="tile.idea.t">We ask why — and write it down</span>
+      <span class="tile-text" data-i18n="tile.idea.d">Three habits, kept every day: ask why, write the day down, test the answer so it can say no.</span>
+      <span class="open" data-i18n="tile.open">Open →</span>
+    </a>
+
+    <a class="tile tile-archive" href="#archive">
+      <span class="tile-n">3</span>
+      <span class="eyebrow" data-i18n="archive.eyebrow">The part that matters most</span>
+      <span class="tile-title" data-i18n="tile.archive.t">The eternal archive</span>
+      <span class="tile-text" data-i18n="tile.archive.d">Raw candles can be re-downloaded. The explanation of a day cannot.</span>
+      <span class="open" data-i18n="tile.open">Open →</span>
+    </a>
+
+    <a class="tile tile-build" href="#build">
+      <span class="tile-n">4</span>
+      <span class="eyebrow" data-i18n="build.eyebrow">State of the build</span>
+      <span class="mini-stats">
+        <span class="ms working"><b data-board="working">·</b><i data-i18n="build.working">working or proven</i></span>
+        <span class="ms partial"><b data-board="partial">·</b><i data-i18n="build.partial">partial</i></span>
+        <span class="ms validated"><b data-board="validated_patterns">·</b><i data-i18n="build.validated">validated patterns</i></span>
+      </span>
+      <span class="rail" role="img" aria-label="{working} working or proven, {partial} partial, {not_built} not built — of {total} tracked rows" data-i18n-aria="build.rail"></span>
+      <span class="open" data-i18n="tile.open">Open →</span>
+    </a>
+
+    <a class="tile tile-chain" href="#chain">
+      <span class="tile-n">5</span>
+      <span class="eyebrow" data-i18n="chain.eyebrow">The chain</span>
+      <span class="mini-chain" id="mini-chain"></span>
+      <span class="mini-stages" id="mini-stages"></span>
+      <span class="mini-planets" id="mini-planets"></span>
+      <span class="open" data-i18n="tile.open">Open →</span>
+    </a>
+
+    <a class="tile tile-method" href="#method">
+      <span class="tile-n">6</span>
+      <span class="eyebrow" data-i18n="method.eyebrow">How we work</span>
+      <span class="method-row">
+        <span data-i18n="tile.method.1">Every decision has a date and a reason</span>
+        <span data-i18n="tile.method.2">Every claim carries a label</span>
+        <span data-i18n="tile.method.3">One statement, one place</span>
+        <span data-i18n="tile.method.4">Guards, not good intentions</span>
+      </span>
+      <span class="open" data-i18n="tile.open">Open →</span>
+    </a>
+  </section>
+
+  <div class="wrap">
+    <a class="strip" href="#disclaimer">
+      <span aria-hidden="true">⚠️</span>
+      <span data-i18n="strip.text">Personal research · not financial advice · no signals sold, no money managed.</span>
+      <span class="open" data-i18n="strip.more">The full disclaimer →</span>
+    </a>
+  </div>
+
+</main>
+
+<!-- THE PANELS — each opens full-screen from its tile -->
+<div class="panels" id="panels">
+
+  <section class="panel" id="report" aria-labelledby="report-title">
+    <div class="wrap panel-in">
+      <a class="close" href="#" aria-label="Close" data-i18n-aria="ui.close">✕</a>
+      <div class="report-head big">
+        <span class="masthead">ORBITRON <b data-i18n="report.name">Daily Report</b></span>
+        <span class="edition" data-i18n="report.edition">No. — · first edition soon</span>
+      </div>
+      <h2 id="report-title" data-i18n="day.title">One card per day, on this page</h2>
+      <p class="sub" data-i18n="day.body">The next stage publishes a short public card for every day: the market, the macro backdrop, where money moved over the week and the month, the strongest hours — and a note written by hand. It is generated from the same numbers as the private record, through a list of what may leave the house.</p>
+      <dl class="dayfields">
+        <div><dt data-i18n="day.f.market">The market today</dt><dd>—</dd></div>
+        <div><dt data-i18n="day.f.macro">Macro backdrop</dt><dd>—</dd></div>
+        <div><dt data-i18n="day.f.money">Smart money track</dt><dd>—</dd></div>
+        <div><dt data-i18n="day.f.hours">The strongest hours</dt><dd>—</dd></div>
+        <div><dt data-i18n="day.f.words">The day, in words</dt><dd>—</dd></div>
+        <div><dt data-i18n="day.f.coverage">Coverage of the record</dt><dd>—</dd></div>
+      </dl>
+      <p class="note" data-i18n="day.honest">Until the first card is out, these fields stay empty on purpose — the page shows nothing it does not have.</p>
+      <p class="report-rule" data-i18n="report.rule">The report describes a day. It never says what to buy or sell, and it makes no forecast.</p>
+      <p class="follow" hidden><span data-i18n="foot.follow">Follow the project:</span> </p>
+    </div>
+  </section>
+
+  <section class="panel" id="idea" aria-labelledby="idea-title">
+    <div class="wrap panel-in">
+      <a class="close" href="#" aria-label="Close" data-i18n-aria="ui.close">✕</a>
+      <p class="eyebrow" data-i18n="hero.eyebrow">A personal research project · bitcoin first</p>
+      <h2 id="idea-title" data-i18n="hero.title2">We ask why. We write the day down — permanently.</h2>
+      <p class="sub" data-i18n="hero.lede">Not predictions, and not a system that acts on anyone's behalf. One question, asked again every single day:</p>
+      <blockquote class="question" data-i18n="hero.question">Why did the trend move in this direction, in this market regime — and what was happening behind the scenes?</blockquote>
+      <h3 class="h3-gap" data-i18n="idea.title">Three habits, kept every day</h3>
       <div class="cards three">
         <article class="card">
           <span class="glyph" aria-hidden="true">?</span>
@@ -101,14 +204,15 @@
           <p data-i18n="idea.test.d">An answer becomes a claim that can come back negative: measured against chance, after costs, over the whole record. “No edge” counts as a result.</p>
         </article>
       </div>
+      <a class="more" href="https://github.com/orbilob/orbitron-public/blob/main/01%20%E2%80%94%20THE%20IDEA/Why%20this%20exists.md" data-i18n="hero.cta.why">Why this exists</a>
     </div>
   </section>
 
-  <!-- 3 · THE ARCHIVE -->
-  <section id="archive" class="block">
-    <div class="wrap">
+  <section class="panel" id="archive" aria-labelledby="archive-title">
+    <div class="wrap panel-in">
+      <a class="close" href="#" aria-label="Close" data-i18n-aria="ui.close">✕</a>
       <p class="eyebrow" data-i18n="archive.eyebrow">The part that matters most</p>
-      <div class="big-quote">
+      <div class="big-quote" id="archive-title">
         <p data-i18n="archive.q1">Raw candles can be re-downloaded at any time.</p>
         <p class="accent" data-i18n="archive.q2">The explanation of a day cannot.</p>
       </div>
@@ -120,83 +224,62 @@
           <a class="more" href="https://github.com/orbilob/orbitron-public/blob/main/02%20%E2%80%94%20THE%20RESEARCH/The%20eternal%20archive.md" data-i18n="archive.link">The eternal archive →</a>
         </div>
       </div>
-
-      <!-- The day card. Empty on purpose until the first public day exists:
-           the page shows nothing it does not have. -->
-      <article class="daycard" aria-labelledby="daycard-title">
-        <header>
-          <p class="eyebrow" data-i18n="day.eyebrow">Coming next</p>
-          <h3 id="daycard-title" data-i18n="day.title">One card per day, on this page</h3>
-          <p data-i18n="day.body">The next stage publishes a short public card for every day: the market, the macro backdrop, where money moved over the week and the month, the strongest hours — and a note written by hand. It is generated from the same numbers as the private record, through a list of what may leave the house.</p>
-        </header>
-        <dl class="dayfields">
-          <div><dt data-i18n="day.f.market">The market today</dt><dd>—</dd></div>
-          <div><dt data-i18n="day.f.macro">Macro backdrop</dt><dd>—</dd></div>
-          <div><dt data-i18n="day.f.money">Smart money track</dt><dd>—</dd></div>
-          <div><dt data-i18n="day.f.hours">The strongest hours</dt><dd>—</dd></div>
-          <div><dt data-i18n="day.f.words">The day, in words</dt><dd>—</dd></div>
-          <div><dt data-i18n="day.f.coverage">Coverage of the record</dt><dd>—</dd></div>
-        </dl>
-        <p class="note" data-i18n="day.honest">Until the first card is out, these fields stay empty on purpose — the page shows nothing it does not have.</p>
-      </article>
     </div>
   </section>
 
-  <!-- 4 · THE BUILD -->
-  <section id="build" class="block">
-    <div class="wrap">
+  <section class="panel" id="build" aria-labelledby="build-title">
+    <div class="wrap panel-in">
+      <a class="close" href="#" aria-label="Close" data-i18n-aria="ui.close">✕</a>
       <p class="eyebrow" data-i18n="build.eyebrow">State of the build</p>
-      <h2 data-i18n="build.title">Counted, not claimed</h2>
-      <div class="stats" id="stats" aria-live="polite">
+      <h2 id="build-title" data-i18n="build.title">Counted, not claimed</h2>
+      <div class="stats">
         <div class="stat working"><span class="n" data-board="working">·</span><span class="l" data-i18n="build.working">working or proven</span></div>
         <div class="stat partial"><span class="n" data-board="partial">·</span><span class="l" data-i18n="build.partial">partial</span></div>
         <div class="stat notbuilt"><span class="n" data-board="not_built">·</span><span class="l" data-i18n="build.notbuilt">not built</span></div>
         <div class="stat decided"><span class="n" data-board="decisions">·</span><span class="l" data-i18n="build.decisions">decisions taken</span></div>
         <div class="stat validated"><span class="n" data-board="validated_patterns">·</span><span class="l" data-i18n="build.validated">validated patterns</span></div>
       </div>
-      <div class="rail" id="rail" role="img" aria-label="{working} working or proven, {partial} partial, {not_built} not built — of {total} tracked rows" data-i18n-aria="build.rail"></div>
-      <p class="note" data-i18n="build.note" data-vars>Generated from the project's live board on {date} — not written by hand. The bar spans all {total} tracked rows; its unfilled tail is work that is deferred, archived or deliberately closed.</p>
+      <div class="rail big" role="img" aria-label="{working} working or proven, {partial} partial, {not_built} not built — of {total} tracked rows" data-i18n-aria="build.rail"></div>
+      <p class="note" data-i18n="build.note">Generated from the project's live board on {date} — not written by hand. The bar spans all {total} tracked rows; its unfilled tail is work that is deferred, archived or deliberately closed.</p>
     </div>
   </section>
 
-  <!-- 5 · THE CHAIN -->
-  <section id="chain" class="block">
-    <div class="wrap">
+  <section class="panel" id="chain" aria-labelledby="chain-title">
+    <div class="wrap panel-in">
+      <a class="close" href="#" aria-label="Close" data-i18n-aria="ui.close">✕</a>
       <p class="eyebrow" data-i18n="chain.eyebrow">The chain</p>
-      <h2 data-i18n="chain.title">From a sample to a recorded outcome</h2>
+      <h2 id="chain-title" data-i18n="chain.title">From a sample to a recorded outcome</h2>
       <p class="sub" data-i18n="chain.body">Three pillars, three processes each — every process named after a real exoplanet. The material flows one way: nothing goes back to the source.</p>
       <div class="pillars" id="pillars"></div>
-
       <h3 class="h3-gap" data-i18n="chain.engine">The strategy engine — four stages</h3>
       <ol class="stages" id="stages"></ol>
-      <a class="more" href="https://github.com/orbilob/orbitron-public/blob/main/04%20%E2%80%94%20THE%20ENGINEERING/The%20chain%20of%20three.md" data-i18n="chain.link">How the chain works →</a>
-
       <h3 class="h3-gap" data-i18n="patterns.title">The named pattern classes</h3>
       <ul class="planets" id="planets"></ul>
       <p class="note" data-i18n="patterns.note">Named after real exoplanets — one planet, one class. Five classes are designed; the first is measured and runs live as an observation, none is validated yet, and what each one looks for is not published.</p>
+      <a class="more" href="https://github.com/orbilob/orbitron-public/blob/main/04%20%E2%80%94%20THE%20ENGINEERING/The%20chain%20of%20three.md" data-i18n="chain.link">How the chain works →</a>
     </div>
   </section>
 
-  <!-- 6 · HOW WE WORK -->
-  <section id="method" class="block">
-    <div class="wrap">
+  <section class="panel" id="method" aria-labelledby="method-title">
+    <div class="wrap panel-in">
+      <a class="close" href="#" aria-label="Close" data-i18n-aria="ui.close">✕</a>
       <p class="eyebrow" data-i18n="method.eyebrow">How we work</p>
-      <h2 data-i18n="method.title">The part most projects skip</h2>
+      <h2 id="method-title" data-i18n="method.title">The part most projects skip</h2>
       <div class="cards four">
         <article class="card">
-          <h3 data-i18n="method.decisions.t">Every decision has a date and a reason</h3>
+          <h3 data-i18n="tile.method.1">Every decision has a date and a reason</h3>
           <p data-i18n="method.decisions.d">Recorded so it can be reopened on its merits — never defended out of habit.</p>
         </article>
         <article class="card">
-          <h3 data-i18n="method.labels.t">Every claim carries a label</h3>
+          <h3 data-i18n="tile.method.2">Every claim carries a label</h3>
           <p data-i18n="method.labels.d">✅ verified · 🟡 claimed · ⚫ unknown — and every document ends with what it does not claim.</p>
         </article>
         <article class="card">
-          <h3 data-i18n="method.one.t">One statement, one place</h3>
+          <h3 data-i18n="tile.method.3">One statement, one place</h3>
           <p data-i18n="method.one.d">When a fact changes, it is rewritten where it lives, and everything else points to it.</p>
         </article>
         <article class="card">
-          <h3 data-i18n="method.guards.t">Guards, not good intentions</h3>
+          <h3 data-i18n="tile.method.4">Guards, not good intentions</h3>
           <p data-i18n="method.guards.d">Scripts refuse a change when the record contradicts itself. This page is checked by one too.</p>
         </article>
       </div>
@@ -205,11 +288,11 @@
     </div>
   </section>
 
-  <!-- 7 · DISCLAIMER -->
-  <section id="disclaimer" class="block">
-    <div class="wrap">
+  <section class="panel" id="disclaimer" aria-labelledby="disc-title">
+    <div class="wrap panel-in">
+      <a class="close" href="#" aria-label="Close" data-i18n-aria="ui.close">✕</a>
       <div class="disclaimer">
-        <h2 data-i18n="disc.title">Disclaimer</h2>
+        <h2 id="disc-title" data-i18n="disc.title">Disclaimer</h2>
         <p class="lead" data-i18n="disc.lead">ORBITRON is personal research. Nothing here is financial advice.</p>
         <ul>
           <li data-i18n="disc.1">It does not sell signals, subscriptions or a course.</li>
@@ -222,17 +305,15 @@
     </div>
   </section>
 
-</main>
+</div>
 
-<footer class="foot">
+<footer class="foot" id="foot">
   <div class="wrap foot-in">
-    <img src="assets/signature-full.png" alt="" width="110" height="100" class="sig">
+    <img src="assets/signature-full.png" alt="" width="90" height="82" class="sig">
     <div>
       <p data-i18n="foot.license">Licensed under CC BY-NC 4.0 — read it, share it, quote it with credit; don't sell it.</p>
       <p data-i18n="foot.made">Idea, direction and supervision: orbilob · built with Claude Code.</p>
       <p data-i18n="foot.privacy">No cookies, no trackers, no third-party requests.</p>
-      <p class="follow" id="follow" hidden><span data-i18n="foot.follow">Follow the project:</span> </p>
-      <p><a href="https://github.com/orbilob/orbitron-public" data-i18n="foot.source">The vault and the source of this page</a></p>
     </div>
   </div>
 </footer>
