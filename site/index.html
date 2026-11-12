@@ -2,10 +2,11 @@
 <!--
   The public page of ORBITRON.
 
-  One screen, six tiles: the whole project at a glance. Every tile is a link to
-  its own address (#report, #chain …); the script opens that panel full-screen,
-  so the back button and a shared link both work. Without JavaScript the panels
-  simply stand below the tiles, and nothing is lost.
+  One screen, fitted to the window: on the stage the mark, the Daily Report and
+  the disclaimer; on the side, in a tone of its own, the rest of the project and
+  the links. Every entry is a link to its own address (#report, #chain …); the
+  script opens that panel full-screen, so the back button and a shared link
+  both work. Without JavaScript the panels stand below, and nothing is lost.
 
   English lives here, once, as the page's own text: it is what a reader without
   JavaScript and every search engine sees. Bulgarian lives in i18n/bg.json and
@@ -39,119 +40,109 @@
 
 <div class="sky" aria-hidden="true"></div>
 
-<header class="bar" id="bar">
-  <div class="wrap bar-in">
-    <a class="brand" href="#" aria-label="ORBITRON">
-      <img src="assets/icon.png" alt="" width="34" height="34">
-      <span>ORBITRON</span>
-    </a>
-    <nav class="links" aria-label="Links" data-i18n-aria="bar.label">
-      <a class="link-why" href="https://github.com/orbilob/orbitron-public/blob/main/01%20%E2%80%94%20THE%20IDEA/Why%20this%20exists.md" data-i18n="bar.why">Why this exists</a>
-      <a class="link-gh" href="https://github.com/orbilob/orbitron-public">
-        <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.05-.49.05-.49.8.06 1.23.83 1.23.83.72 1.22 1.87.87 2.33.66.07-.52.28-.87.5-1.07-1.78-.2-3.65-.89-3.65-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.22 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.19c0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
-        <span data-i18n="bar.github">The vault on GitHub</span>
-      </a>
-      <span class="follow-bar" id="follow-bar"></span>
-    </nav>
-    <div class="lang" role="group" aria-label="Language" data-i18n-aria="lang.label">
-      <button type="button" data-lang="en" aria-pressed="true">EN</button>
-      <button type="button" data-lang="bg" aria-pressed="false">БГ</button>
-    </div>
-  </div>
-</header>
+<div class="app" id="app">
 
-<main id="main">
+  <!-- THE STAGE — the three things a visitor must see: the mark, the report, the disclaimer -->
+  <main class="stage" id="main">
 
-  <section class="intro">
-    <div class="wrap">
+    <header class="hero">
+      <img class="mark" src="assets/logo.png" alt="The ORBITRON mark: the Earth with two orbits, one green and one amber" data-i18n-alt="hero.logo.alt" width="640" height="675">
       <h1>
         <span data-i18n="hero.title">We look for answers.</span>
         <span class="h1-sub" data-i18n="hero.question">Why did the trend move in this direction, in this market regime — and what was happening behind the scenes?</span>
       </h1>
-    </div>
-  </section>
+    </header>
 
-  <!-- THE SIX TILES — the whole project on one screen -->
-  <section class="wrap bento" aria-label="The project at a glance" data-i18n-aria="bento.label">
-
-    <a class="tile tile-report" href="#report">
-      <div class="report-head">
+    <a class="report" href="#report">
+      <span class="report-head">
         <span class="masthead">ORBITRON <b data-i18n="report.name">Daily Report</b></span>
         <span class="edition" data-i18n="report.edition">No. — · first edition soon</span>
-      </div>
-      <p class="report-lede" data-i18n="report.lede">One day, one image: the market, the macro backdrop, where money moved — and a note written by hand.</p>
-      <dl class="mini-fields">
-        <div><dt data-i18n="day.f.market">The market today</dt><dd>—</dd></div>
-        <div><dt data-i18n="day.f.macro">Macro backdrop</dt><dd>—</dd></div>
-        <div><dt data-i18n="day.f.money">Smart money track</dt><dd>—</dd></div>
-        <div><dt data-i18n="day.f.hours">The strongest hours</dt><dd>—</dd></div>
-        <div class="wide"><dt data-i18n="day.f.words">The day, in words</dt><dd>—</dd></div>
-      </dl>
-      <span class="tile-foot">
+      </span>
+      <span class="report-lede" data-i18n="report.lede">One day, one image: the market, the macro backdrop, where money moved — and a note written by hand.</span>
+      <span class="fields">
+        <span class="field"><span class="ft" data-i18n="day.f.market">The market today</span><span class="fv">—</span></span>
+        <span class="field"><span class="ft" data-i18n="day.f.macro">Macro backdrop</span><span class="fv">—</span></span>
+        <span class="field"><span class="ft" data-i18n="day.f.money">Smart money track</span><span class="fv">—</span></span>
+        <span class="field"><span class="ft" data-i18n="day.f.hours">The strongest hours</span><span class="fv">—</span></span>
+        <span class="field wide"><span class="ft" data-i18n="day.f.words">The day, in words</span><span class="fv">—</span></span>
+      </span>
+      <span class="report-foot">
         <span class="tag" data-i18n="report.tag">Every day · free · no advice</span>
         <span class="open" data-i18n="report.open">Open the report →</span>
       </span>
     </a>
 
-    <a class="tile tile-idea" href="#idea">
-      <span class="tile-n">2</span>
-      <span class="eyebrow" data-i18n="idea.eyebrow">The idea</span>
-      <span class="tile-title" data-i18n="tile.idea.t">We ask why — and write it down</span>
-      <span class="tile-text" data-i18n="tile.idea.d">Three habits, kept every day: ask why, write the day down, test the answer so it can say no.</span>
-      <span class="open" data-i18n="tile.open">Open →</span>
-    </a>
-
-    <a class="tile tile-archive" href="#archive">
-      <span class="tile-n">3</span>
-      <span class="eyebrow" data-i18n="archive.eyebrow">The part that matters most</span>
-      <span class="tile-title" data-i18n="tile.archive.t">The eternal archive</span>
-      <span class="tile-text" data-i18n="tile.archive.d">Raw candles can be re-downloaded. The explanation of a day cannot.</span>
-      <span class="open" data-i18n="tile.open">Open →</span>
-    </a>
-
-    <a class="tile tile-build" href="#build">
-      <span class="tile-n">4</span>
-      <span class="eyebrow" data-i18n="build.eyebrow">State of the build</span>
-      <span class="mini-stats">
-        <span class="ms working"><b data-board="working">·</b><i data-i18n="build.working">working or proven</i></span>
-        <span class="ms partial"><b data-board="partial">·</b><i data-i18n="build.partial">partial</i></span>
-        <span class="ms validated"><b data-board="validated_patterns">·</b><i data-i18n="build.validated">validated patterns</i></span>
+    <a class="warn" href="#disclaimer">
+      <span class="warn-icon" aria-hidden="true">⚠️</span>
+      <span class="warn-text">
+        <b data-i18n="disc.lead">ORBITRON is personal research. Nothing here is financial advice.</b>
+        <span data-i18n="warn.sub">No signals sold, no money managed for anyone, no profitability claimed anywhere.</span>
       </span>
-      <span class="rail" role="img" aria-label="{working} working or proven, {partial} partial, {not_built} not built — of {total} tracked rows" data-i18n-aria="build.rail"></span>
-      <span class="open" data-i18n="tile.open">Open →</span>
-    </a>
-
-    <a class="tile tile-chain" href="#chain">
-      <span class="tile-n">5</span>
-      <span class="eyebrow" data-i18n="chain.eyebrow">The chain</span>
-      <span class="mini-chain" id="mini-chain"></span>
-      <span class="mini-stages" id="mini-stages"></span>
-      <span class="mini-planets" id="mini-planets"></span>
-      <span class="open" data-i18n="tile.open">Open →</span>
-    </a>
-
-    <a class="tile tile-method" href="#method">
-      <span class="tile-n">6</span>
-      <span class="eyebrow" data-i18n="method.eyebrow">How we work</span>
-      <span class="method-row">
-        <span data-i18n="tile.method.1">Every decision has a date and a reason</span>
-        <span data-i18n="tile.method.2">Every claim carries a label</span>
-        <span data-i18n="tile.method.3">One statement, one place</span>
-        <span data-i18n="tile.method.4">Guards, not good intentions</span>
-      </span>
-      <span class="open" data-i18n="tile.open">Open →</span>
-    </a>
-  </section>
-
-  <div class="wrap">
-    <a class="strip" href="#disclaimer">
-      <span aria-hidden="true">⚠️</span>
-      <span data-i18n="strip.text">Personal research · not financial advice · no signals sold, no money managed.</span>
       <span class="open" data-i18n="strip.more">The full disclaimer →</span>
     </a>
-  </div>
+  </main>
 
-</main>
+  <!-- THE SIDE — the rest of the project and the links, in a tone of their own -->
+  <aside class="side" aria-label="The project at a glance" data-i18n-aria="bento.label">
+    <div class="side-top">
+      <a class="brand" href="#" aria-label="ORBITRON">
+        <img src="assets/icon.png" alt="" width="30" height="30">
+        <span>ORBITRON</span>
+      </a>
+      <div class="lang" role="group" aria-label="Language" data-i18n-aria="lang.label">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="bg" aria-pressed="false">БГ</button>
+      </div>
+    </div>
+
+    <nav class="items">
+      <a class="item" href="#idea">
+        <span class="item-n">2</span>
+        <span class="item-body"><span class="eyebrow" data-i18n="idea.eyebrow">The idea</span><span class="item-t" data-i18n="tile.idea.t">We ask why — and write it down</span></span>
+        <span class="go" aria-hidden="true">→</span>
+      </a>
+      <a class="item" href="#archive">
+        <span class="item-n">3</span>
+        <span class="item-body"><span class="eyebrow" data-i18n="archive.eyebrow">The part that matters most</span><span class="item-t" data-i18n="tile.archive.t">The eternal archive</span></span>
+        <span class="go" aria-hidden="true">→</span>
+      </a>
+      <a class="item" href="#build">
+        <span class="item-n">4</span>
+        <span class="item-body">
+          <span class="eyebrow" data-i18n="build.eyebrow">State of the build</span>
+          <span class="mini-stats">
+            <span class="ms working"><b data-board="working">·</b><i data-i18n="build.working">working or proven</i></span>
+            <span class="ms partial"><b data-board="partial">·</b><i data-i18n="build.partial">partial</i></span>
+            <span class="ms validated"><b data-board="validated_patterns">·</b><i data-i18n="build.validated">validated patterns</i></span>
+          </span>
+        </span>
+        <span class="go" aria-hidden="true">→</span>
+      </a>
+      <a class="item" href="#chain">
+        <span class="item-n">5</span>
+        <span class="item-body"><span class="eyebrow" data-i18n="chain.eyebrow">The chain</span><span class="mini-chain" id="mini-chain"></span><span class="mini-planets" id="mini-planets"></span></span>
+        <span class="go" aria-hidden="true">→</span>
+      </a>
+      <a class="item" href="#method">
+        <span class="item-n">6</span>
+        <span class="item-body"><span class="eyebrow" data-i18n="method.eyebrow">How we work</span><span class="item-t" data-i18n="method.title">The part most projects skip</span></span>
+        <span class="go" aria-hidden="true">→</span>
+      </a>
+    </nav>
+
+    <div class="links">
+      <a href="https://github.com/orbilob/orbitron-public/blob/main/01%20%E2%80%94%20THE%20IDEA/Why%20this%20exists.md" data-i18n="bar.why">Why this exists</a>
+      <a href="https://github.com/orbilob/orbitron-public">
+        <svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.05-.49.05-.49.8.06 1.23.83 1.23.83.72 1.22 1.87.87 2.33.66.07-.52.28-.87.5-1.07-1.78-.2-3.65-.89-3.65-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.22 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.19c0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        <span data-i18n="bar.github">The vault on GitHub</span>
+      </a>
+      <span class="follow-bar" id="follow-bar"></span>
+    </div>
+
+    <p class="side-foot"><span data-i18n="foot.made">Idea, direction and supervision: orbilob · built with Claude Code.</span> <span data-i18n="foot.license">Licensed under CC BY-NC 4.0 — read it, share it, quote it with credit; don't sell it.</span> <span data-i18n="foot.privacy">No cookies, no trackers, no third-party requests.</span></p>
+  </aside>
+
+</div>
 
 <!-- THE PANELS — each opens full-screen from its tile -->
 <div class="panels" id="panels">
@@ -307,16 +298,6 @@
 
 </div>
 
-<footer class="foot" id="foot">
-  <div class="wrap foot-in">
-    <img src="assets/signature-full.png" alt="" width="90" height="82" class="sig">
-    <div>
-      <p data-i18n="foot.license">Licensed under CC BY-NC 4.0 — read it, share it, quote it with credit; don't sell it.</p>
-      <p data-i18n="foot.made">Idea, direction and supervision: orbilob · built with Claude Code.</p>
-      <p data-i18n="foot.privacy">No cookies, no trackers, no third-party requests.</p>
-    </div>
-  </div>
-</footer>
 
 <!-- Words the script places into drawn parts of the page. Hidden: they are read, not shown. -->
 <div hidden>
