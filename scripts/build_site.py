@@ -66,37 +66,49 @@ KEY_ATTRS = ("data-i18n", "data-i18n-content", "data-i18n-alt", "data-i18n-aria"
 
 
 class _Keys(html.parser.HTMLParser):
-    """Every translation key on the page, with the English text it stands for."""
+    """Every translation key on the page, with the English text it stands for.
+
+    A key may appear more than once — a tile and its panel share a label — but
+    then it must say the same thing every time, or one key would stand for two
+    texts and the Bulgarian could match only one of them.
+    """
 
     def __init__(self) -> None:
         super().__init__(convert_charrefs=True)
         self.english: dict[str, str] = {}
-        self._open: list[tuple[str, str]] = []   # (tag, key) awaiting their text
+        self.twice: list[str] = []                    # keys with two different English texts
+        self._open: list[tuple[str, str, list[str]]] = []   # (tag, key, text so far)
+
+    def _record(self, key: str, text: str) -> None:
+        text = " ".join(text.split())
+        if key in self.english and self.english[key] != text:
+            self.twice.append(key)
+        self.english.setdefault(key, text)
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         found = dict(attrs)
         for attr, source in (("data-i18n-content", "content"), ("data-i18n-alt", "alt"),
                              ("data-i18n-aria", "aria-label")):
             if found.get(attr):
-                self.english.setdefault(found[attr], found.get(source) or "")
+                self._record(found[attr], found.get(source) or "")
         if found.get("data-i18n"):
-            self._open.append((tag, found["data-i18n"]))
-            self.english.setdefault(found["data-i18n"], "")
+            self._open.append((tag, found["data-i18n"], []))
 
     def handle_data(self, data: str) -> None:
         if self._open:
-            key = self._open[-1][1]
-            self.english[key] = self.english.get(key, "") + data
+            self._open[-1][2].append(data)
 
     def handle_endtag(self, tag: str) -> None:
         if self._open and self._open[-1][0] == tag:
-            self._open.pop()
+            _, key, parts = self._open.pop()
+            self._record(key, "".join(parts))
 
 
-def english_keys() -> dict[str, str]:
+def english_keys() -> tuple[dict[str, str], list[str]]:
+    """The page's English by key, and the keys that say two different things."""
     parser = _Keys()
     parser.feed(PAGE.read_text(encoding="utf-8"))
-    return {k: v.strip() for k, v in parser.english.items()}
+    return parser.english, sorted(set(parser.twice))
 
 
 def pillar_lines() -> dict[str, str]:
@@ -112,7 +124,9 @@ def check(withheld_en: dict[str, str]) -> list[str]:
     if not PAGE.is_file():
         return [f"{PAGE.relative_to(ROOT)}: the page is missing"]
 
-    english = english_keys()
+    english, twice = english_keys()
+    for key in twice:
+        findings.append(f"site/index.html: \"{key}\" stands for two different English texts")
     try:
         bulgarian = json.loads(BULGARIAN.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as e:
