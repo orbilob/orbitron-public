@@ -172,13 +172,6 @@
       if (i) { names.appendChild(el("span", "arrow", "▸")); }
       names.appendChild(el("span", "", pillar.name));
     });
-    var stages = document.getElementById("mini-stages");
-    stages.textContent = "";
-    chain.stages.forEach(function (name, i) {
-      var chip = el("span", "", (i + 1) + " · " + name);
-      chip.style.setProperty("--c", "var(--stage-" + (i + 1) + ")");
-      stages.appendChild(chip);
-    });
     var orbs = document.getElementById("mini-planets");
     orbs.textContent = "";
     patterns.patterns.forEach(function (p) {
@@ -260,7 +253,7 @@
   var fromHere = false;     // the panel was opened on this page, so "back" closes it
 
   function setInert(on) {
-    ["bar", "main", "foot"].forEach(function (id) {
+    ["app"].forEach(function (id) {
       var node = document.getElementById(id);
       if (node) { node.inert = on; }
     });
@@ -299,7 +292,7 @@
   }
 
   function wirePanels() {
-    document.querySelectorAll('a.tile, a.strip').forEach(function (a) {
+    document.querySelectorAll("a.report, a.warn, a.item").forEach(function (a) {
       a.addEventListener("click", function (e) {
         var id = a.getAttribute("href").slice(1);
         if (PANELS.indexOf(id) < 0 || e.metaKey || e.ctrlKey || e.shiftKey) { return; }
