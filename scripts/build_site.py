@@ -169,7 +169,20 @@ def check(withheld_en: dict[str, str]) -> list[str]:
                     f"{path.relative_to(ROOT)}:{line}: withheld word \"{match.group(0)}\" — {why}"
                 )
 
-    # 4 — the links the page offers to follow the project
+    # 4 — a stylesheet whose comments do not pair up. A stray "*/" leaves the
+    #     text after it outside any comment, the browser reads it as a selector
+    #     and drops the rule that follows — on 12.11.2026 that rule was the
+    #     whole dark theme, and no other check noticed.
+    for path in sorted(SITE.rglob("*.css")):
+        text = path.read_text(encoding="utf-8")
+        opened, closed = text.count("/*"), text.count("*/")
+        if opened != closed:
+            findings.append(
+                f"{path.relative_to(ROOT)}: {opened} comment(s) opened, {closed} closed — "
+                "the text between them is read as CSS"
+            )
+
+    # 5 — the links the page offers to follow the project
     try:
         links = json.loads(LINKS.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as e:

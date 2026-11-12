@@ -311,6 +311,23 @@
     route();
   }
 
+  // ---------------------------------------------------------------- theme
+
+  function wireTheme() {
+    var root = document.documentElement;
+    var meta = document.querySelector('meta[name="theme-color"]');
+    function paint() { if (meta) { meta.setAttribute("content", root.getAttribute("data-theme") === "light" ? "#f4f6f9" : "#070b12"); } }
+    paint();
+    document.querySelectorAll(".theme").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var next = root.getAttribute("data-theme") === "light" ? "dark" : "light";
+        root.setAttribute("data-theme", next);
+        try { localStorage.setItem("orbitron.theme", next); } catch (e) { /* forget it */ }
+        paint();
+      });
+    });
+  }
+
   // ---------------------------------------------------------------- sky
 
   function drawSky() {
@@ -331,7 +348,8 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     collectEnglish();
-    if (!window.matchMedia || !window.matchMedia("(prefers-color-scheme: light)").matches) { drawSky(); }
+    drawSky();                                   // hidden by CSS in the light theme
+    wireTheme();
     document.querySelectorAll(".lang button").forEach(function (b) {
       b.addEventListener("click", function () { setLang(b.dataset.lang, true); });
     });
