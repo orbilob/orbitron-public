@@ -11,3 +11,6 @@ Thumbs.db
 # Python bytecode from the guard importing the generator
 __pycache__/
 *.pyc
+
+# The assembled public page — built by scripts/build_site.py on every deploy
+_site/
