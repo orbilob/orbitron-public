@@ -68,15 +68,12 @@
     <a class="report" href="#report">
       <span class="report-head">
         <span class="masthead">ORBITRON <b data-i18n="report.name">Daily Report</b></span>
-        <span class="edition" data-i18n="report.edition">No. — · first edition soon</span>
+        <span class="edition" data-day-edition data-i18n="report.edition">No. — · first edition soon</span>
       </span>
-      <span class="report-lede" data-i18n="report.lede">One day, one image: the market, the macro backdrop, where money moved — and a note written by hand.</span>
-      <span class="fields">
-        <span class="field"><span class="ft" data-i18n="day.f.market">The market today</span><span class="fv">—</span></span>
-        <span class="field"><span class="ft" data-i18n="day.f.macro">Macro backdrop</span><span class="fv">—</span></span>
-        <span class="field"><span class="ft" data-i18n="day.f.money">Smart money track</span><span class="fv">—</span></span>
-        <span class="field"><span class="ft" data-i18n="day.f.hours">The strongest hours</span><span class="fv">—</span></span>
-        <span class="field wide"><span class="ft" data-i18n="day.f.words">The day, in words</span><span class="fv">—</span></span>
+      <span class="report-lede" data-i18n="report.lede">One day, in words: what happened, what was known, and the scheduled events that framed it. No prices, no forecasts.</span>
+      <span class="report-body">
+        <span class="words" data-day-words><span data-i18n="report.soon">The first edition is being written — it appears here on the day it is approved.</span></span>
+        <span class="events" data-day-events></span>
       </span>
       <span class="report-foot">
         <span class="tag" data-i18n="report.tag">Every day · free · no advice</span>
@@ -167,19 +164,17 @@
       <a class="close" href="#" aria-label="Close" data-i18n-aria="ui.close">✕</a>
       <div class="report-head big">
         <span class="masthead">ORBITRON <b data-i18n="report.name">Daily Report</b></span>
-        <span class="edition" data-i18n="report.edition">No. — · first edition soon</span>
+        <span class="edition" data-day-edition data-i18n="report.edition">No. — · first edition soon</span>
       </div>
-      <h2 id="report-title" data-i18n="day.title">One card per day, on this page</h2>
-      <p class="sub" data-i18n="day.body">The next stage publishes a short public card for every day: the market, the macro backdrop, where money moved over the week and the month, the strongest hours — and a note written by hand. It is generated from the same numbers as the private record, through a list of what may leave the house.</p>
-      <dl class="dayfields">
-        <div><dt data-i18n="day.f.market">The market today</dt><dd>—</dd></div>
-        <div><dt data-i18n="day.f.macro">Macro backdrop</dt><dd>—</dd></div>
-        <div><dt data-i18n="day.f.money">Smart money track</dt><dd>—</dd></div>
-        <div><dt data-i18n="day.f.hours">The strongest hours</dt><dd>—</dd></div>
-        <div><dt data-i18n="day.f.words">The day, in words</dt><dd>—</dd></div>
-        <div><dt data-i18n="day.f.coverage">Coverage of the record</dt><dd>—</dd></div>
-      </dl>
-      <p class="note" data-i18n="day.honest">Until the first card is out, these fields stay empty on purpose — the page shows nothing it does not have.</p>
+      <h2 id="report-title" data-i18n="day.f.words">The day, in words</h2>
+      <div class="words big" data-day-words><p data-i18n="report.soon">The first edition is being written — it appears here on the day it is approved.</p></div>
+      <h3 class="h3-gap" data-i18n="report.events">Scheduled events · UTC</h3>
+      <ul class="events big" data-day-events></ul>
+      <nav class="editions" aria-label="Editions" data-i18n-aria="report.editions">
+        <button type="button" class="ed-prev" data-i18n="report.prev">← Earlier</button>
+        <button type="button" class="ed-next" data-i18n="report.next">Later →</button>
+      </nav>
+      <p class="note" data-i18n="day.body">Written by hand, approved by the author, published once and kept. The card carries no prices and no numbers from any data vendor — only what the project itself observed and wrote.</p>
       <p class="report-rule" data-i18n="report.rule">The report describes a day. It never says what to buy or sell, and it makes no forecast.</p>
       <p class="follow" hidden><span data-i18n="foot.follow">Follow the project:</span> </p>
     </div>
@@ -317,6 +312,8 @@
 <!-- Words the script places into drawn parts of the page. Hidden: they are read, not shown. -->
 <div hidden>
   <span data-i18n="patterns.none">not built yet</span>
+  <span data-i18n="report.edition.n">No. {n} · {date}</span>
+  <span data-i18n="report.noevents">No three-star event on the calendar.</span>
 </div>
 
 <noscript><p class="noscript">The numbers on this page are drawn by a small script. Without it, the text still reads — and the same numbers are in the repository's README.</p></noscript>
