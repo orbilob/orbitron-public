@@ -218,6 +218,56 @@
     });
   }
 
+  // ---------------------------------------------------------------- the daily report
+
+  var shown = 0;            // which edition the report shows: 0 is the newest
+
+  function dateText(day) {
+    // ISO in English, the Bulgarian way in Bulgarian — the same day either way.
+    if (current !== "bg") { return day; }
+    var p = day.split("-");
+    return p[2] + "." + p[1] + "." + p[0];
+  }
+
+  function renderReport(days) {
+    document.documentElement.classList.toggle("has-days", days.length > 0);
+    if (!days.length) { return; }                 // the empty state is the page's own text
+    if (shown >= days.length) { shown = 0; }
+    var d = days[shown];
+    var words = (d.words[current] || d.words.en || "").trim();
+
+    document.querySelectorAll("[data-day-edition]").forEach(function (node) {
+      node.textContent = t("report.edition.n", { n: d.edition, date: dateText(d.day) });
+    });
+    document.querySelectorAll("[data-day-words]").forEach(function (box) {
+      box.textContent = "";
+      words.split(/\n\s*\n/).forEach(function (para) {
+        if (para.trim()) { box.appendChild(el(box.tagName === "DIV" ? "p" : "span", "", para.trim())); }
+      });
+    });
+    document.querySelectorAll("[data-day-events]").forEach(function (box) {
+      box.textContent = "";
+      var item = box.tagName === "UL" ? "li" : "span";
+      if (!d.events.length) { box.appendChild(el(item, "none", t("report.noevents"))); return; }
+      d.events.forEach(function (e) {
+        var row = el(item, "event");
+        row.appendChild(el("b", "", e.time));
+        row.appendChild(el("i", "", e.country));
+        row.appendChild(el("span", "", e.name));
+        box.appendChild(row);
+      });
+    });
+    var prev = document.querySelector(".ed-prev"), next = document.querySelector(".ed-next");
+    if (prev) { prev.disabled = shown >= days.length - 1; }
+    if (next) { next.disabled = shown === 0; }
+  }
+
+  function wireEditions() {
+    var prev = document.querySelector(".ed-prev"), next = document.querySelector(".ed-next");
+    if (prev) { prev.addEventListener("click", function () { shown += 1; render(); }); }
+    if (next) { next.addEventListener("click", function () { shown = Math.max(0, shown - 1); render(); }); }
+  }
+
   function render() {
     if (!data) { return; }
     renderBoard(data.board);
@@ -225,6 +275,7 @@
     renderPatterns(data.patterns);
     renderMini(data.chain, data.patterns);
     renderFollow(data.site.follow);
+    renderReport(data.days);
     // The two elements whose text carries numbers are filled once the numbers are known.
     ["build.note"].forEach(function (key) {
       document.querySelectorAll('[data-i18n="' + key + '"]').forEach(function (n) { n.textContent = t(key, vars[key]); });
@@ -235,14 +286,14 @@
   }
 
   function loadData() {
-    var names = ["board", "chain", "patterns", "site"];
+    var names = ["board", "chain", "patterns", "site", "days"];
     return Promise.all(names.map(function (n) {
       return fetch("data/" + n + ".json").then(function (r) {
         if (!r.ok) { throw new Error(n + ".json " + r.status); }
         return r.json();
       });
     })).then(function (all) {
-      data = { board: all[0], chain: all[1], patterns: all[2], site: all[3] };
+      data = { board: all[0], chain: all[1], patterns: all[2], site: all[3], days: all[4].days || [] };
     });
   }
 
@@ -262,9 +313,9 @@
   function route() {
     var id = location.hash.slice(1);
     var panel = PANELS.indexOf(id) >= 0 ? document.getElementById(id) : null;
-    document.querySelectorAll(".panel.open").forEach(function (p) { if (p !== panel) { p.classList.remove("open"); } });
+    document.querySelectorAll(".panel.is-open").forEach(function (p) { if (p !== panel) { p.classList.remove("is-open"); } });
     if (panel) {
-      panel.classList.add("open");
+      panel.classList.add("is-open");
       panel.scrollTop = 0;
       document.documentElement.classList.add("locked");
       setInert(true);
@@ -304,7 +355,7 @@
       a.addEventListener("click", function (e) { e.preventDefault(); closePanel(); });
     });
     document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && document.querySelector(".panel.open")) { closePanel(); }
+      if (e.key === "Escape" && document.querySelector(".panel.is-open")) { closePanel(); }
     });
     window.addEventListener("popstate", route);
     window.addEventListener("hashchange", route);
@@ -354,6 +405,7 @@
       b.addEventListener("click", function () { setLang(b.dataset.lang, true); });
     });
     wirePanels();
+    wireEditions();
     loadData().catch(function () { data = null; }).then(function () { return setLang(chosenLang(), false); });
   });
 }());
