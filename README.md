@@ -13,6 +13,9 @@
 
 🌐 **[orbilob.github.io/orbitron-public](https://orbilob.github.io/orbitron-public/)** — the project's page, in English and Bulgarian
 
+<sub>📱 On your phone — point the camera at the code</sub><br>
+<img src="assets/qr.svg" alt="A QR code with the address of the project's page" width="148">
+
 [![Vault guard](https://github.com/orbilob/orbitron-public/actions/workflows/vault.yml/badge.svg)](https://github.com/orbilob/orbitron-public/actions/workflows/vault.yml)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-2ecc71?style=flat-square)](LICENSE)
 [![We ask why](https://img.shields.io/badge/we%20ask-why-f39c12?style=flat-square)](01%20%E2%80%94%20THE%20IDEA/Why%20this%20exists.md)

@@ -33,6 +33,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: The QR code's library, pinned
+        run: pip install segno==1.6.6
+
       - name: The vault guard — nothing is published past a red one
         run: python3 scripts/check_vault.py
 
