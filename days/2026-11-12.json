@@ -1,0 +1,16 @@
+{
+  "format": "public_day",
+  "version": "1.0",
+  "day": "2026-11-12",
+  "events": [
+    {
+      "time": "13:30",
+      "country": "US",
+      "name": "Initial Jobless Claims"
+    }
+  ],
+  "words": {
+    "en": "A red Thursday for bitcoin. It slipped through the Asian night and fell harder from late European morning into the opening of the American session; the three strongest hours of the day all pointed down. Around it the safe havens split: the dollar and bond yields rose, gold fell sharply, and oil climbed as tension around Iran returned to the headlines. In the afternoon and evening, Federal Reserve speakers talked of further rate hikes, and the fear gauges for stocks and for bonds both moved higher. The one scheduled release was the weekly US jobless claims at 13:30 UTC. Next on the calendar: US producer prices.",
+    "bg": "Червен четвъртък за биткойна. Поевтиня още през азиатската нощ и падна по-рязко от късната европейска сутрин до отварянето на американската сесия; трите най-силни часа на деня бяха надолу. Около него убежищата се разделиха: доларът и доходността на облигациите се качиха, златото поевтиня рязко, а петролът поскъпна, докато напрежението около Иран се върна в заглавията. Следобед и вечерта говорители на Федералния резерв заговориха за още повишения на лихвите, а индексите на страха за акциите и за облигациите се качиха. Единственото насрочено събитие бяха седмичните молби за помощи при безработица в САЩ в 13:30 UTC. Следва в календара: цените на производител в САЩ."
+  }
+}
