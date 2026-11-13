@@ -378,6 +378,8 @@ def build() -> None:
     _image(ROOT / "assets" / "signature-full.png", assets / "signature-full.png", 220)
     _image(ROOT / "assets" / "signature.png", assets / "icon.png", 96)
     shutil.copyfile(ROOT / "assets" / "social-preview.png", assets / "social-preview.png")
+    for name in ("qr.svg", "qr.png"):          # the page shows the SVG; the PNG is for print
+        shutil.copyfile(ROOT / "assets" / name, assets / name)
     (OUT / ".nojekyll").write_text("", encoding="utf-8")
 
 

@@ -146,6 +146,13 @@ else:
                     "run python3 scripts/build_readme.py"
                 )
 
+# 5b — the QR code carries the page's address (2026-11-13)
+import build_qr  # noqa: E402  — same folder, already on the path
+
+for _name in build_qr.stale():
+    findings.append(f"{_name}: not the QR code of the page's og:url — "
+                    "run python3 scripts/build_qr.py")
+
 # 6 — the public page, in both of its languages
 import build_site  # noqa: E402  — same folder, already on the path
 
@@ -160,5 +167,5 @@ if findings:
     sys.exit(1)
 
 print(f"✅ Clean — {count} documents, no broken links, "
-      f"GitHub-safe, nothing withheld leaked, every drawing fresh, "
+      f"GitHub-safe, nothing withheld leaked, every drawing and the QR code fresh, "
       f"the page whole in both languages.")

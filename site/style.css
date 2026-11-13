@@ -136,6 +136,7 @@ p { margin: 0; }
   box-shadow: var(--shadow), 0 0 60px rgba(46, 204, 113, 0.10), 0 0 90px rgba(240, 180, 41, 0.08); }
 h1 { font-size: 30px; font-weight: 800; }
 .h1-sub { display: block; margin-top: 6px; font-size: 15.5px; font-weight: 500; color: var(--dim); letter-spacing: 0; line-height: 1.4; }
+.h1-beta { display: inline-block; margin-top: 8px; padding: 3px 10px; border: 1px solid var(--partial); border-radius: 999px; font-size: 12.5px; font-weight: 600; color: var(--partial); letter-spacing: 0; line-height: 1.4; }
 
 /* The Daily Report — dressed as an edition */
 .report {
@@ -246,6 +247,7 @@ html.has-days .editions { display: flex; }
   .mark { width: calc(var(--u) * 11); border-radius: calc(var(--u) * 1.6); }
   h1 { font-size: calc(var(--u) * 3.5); }
   .h1-sub { font-size: max(13px, calc(var(--u) * 1.2)); margin-top: calc(var(--u) * 0.6); max-width: 60ch; }
+  .h1-beta { font-size: max(11px, calc(var(--u) * 0.95)); margin-top: calc(var(--u) * 0.7); }
 
   .report { padding: calc(var(--u) * 2) calc(var(--u) * 2.4); gap: calc(var(--u) * 1.1); border-radius: calc(var(--u) * 1.6); }
   .masthead { font-size: max(12px, calc(var(--u) * 0.9)); }
@@ -415,6 +417,11 @@ html.locked { overflow: hidden; }
 .made { margin-top: 26px; color: var(--dim); max-width: 80ch; }
 
 /* Disclaimer */
+/* On your phone — the QR code, dark on white in both themes: a camera reads contrast */
+.phone { max-width: 46ch; margin: 0 auto; text-align: center; }
+.phone .lead { margin-top: 10px; color: var(--dim); }
+.phone .qr { display: block; margin: 22px auto 14px; width: min(296px, 70vw); height: auto; background: #ffffff; padding: 10px; border-radius: 14px; box-shadow: var(--shadow); }
+.phone .addr { font-family: var(--f-mono); font-size: 14px; }
 .disclaimer { border: 1px solid var(--edge); border-left: 4px solid var(--partial); background: var(--panel); border-radius: var(--radius); padding: 26px; }
 .disclaimer h2 { font-size: 24px; }
 .disclaimer .lead { margin-top: 10px; font-weight: 700; font-size: 19px; }
