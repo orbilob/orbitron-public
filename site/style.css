@@ -490,3 +490,63 @@ html.js .sky-slot {
     border-radius: max(8px, calc(var(--u) * 0.9));
   }
 }
+
+/* "Coming soon" in the Daily Report — the market picture around an event, announced
+   in large type with a slow amber glow. The glow breathes only when motion is welcome;
+   otherwise it stands still. An announcement, not content: no numbers, no forecast. */
+.soon {
+  display: grid; gap: 8px; padding: 12px 14px; border-radius: 14px;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--amber) 16%, transparent), color-mix(in srgb, var(--amber) 4%, transparent));
+  border: 1px solid color-mix(in srgb, var(--amber) 70%, var(--edge));
+  box-shadow: 0 0 18px color-mix(in srgb, var(--amber) 28%, transparent);
+}
+.soon-top { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.soon-badge {
+  display: inline-flex; align-items: center; gap: 8px; color: var(--amber);
+  font: 800 13px var(--f-mono); letter-spacing: 0.16em; text-transform: uppercase;
+}
+.soon-badge::before {
+  content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--amber);
+  box-shadow: 0 0 10px var(--amber);
+}
+.soon-lenses { display: inline-flex; gap: 6px; }
+.soon-lenses i {
+  font: 700 12px var(--f-mono); font-style: normal; letter-spacing: 0.06em; color: var(--amber);
+  padding: 2px 9px; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--amber) 55%, transparent);
+}
+.soon-text { font-size: 18px; font-weight: 650; line-height: 1.35; color: var(--ink); }
+@media (prefers-reduced-motion: no-preference) {
+  .soon { animation: soon-glow 3.6s ease-in-out infinite; }
+  .soon-badge::before { animation: soon-dot 1.8s ease-in-out infinite; }
+  @keyframes soon-glow {
+    0%, 100% { box-shadow: 0 0 10px color-mix(in srgb, var(--amber) 18%, transparent); }
+    50% { box-shadow: 0 0 26px color-mix(in srgb, var(--amber) 45%, transparent), 0 0 0 1px color-mix(in srgb, var(--amber) 35%, transparent); }
+  }
+  @keyframes soon-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+}
+@media (min-width: 900px) and (min-height: 560px) {
+  .soon { gap: calc(var(--u) * 0.6); padding: calc(var(--u) * 0.9) calc(var(--u) * 1.3); border-radius: calc(var(--u) * 1); }
+  .soon-badge { font-size: max(11px, calc(var(--u) * 0.85)); }
+  .soon-lenses i { font-size: max(10.5px, calc(var(--u) * 0.78)); }
+  .soon-text { font-size: max(14px, calc(var(--u) * 1.3)); }
+}
+/* A short window: the announcement folds into one flowing block, so the day's
+   words keep their lines — the report comes first, the promise second */
+@media (min-width: 900px) and (min-height: 560px) and (max-height: 720px) {
+  .soon { display: block; padding: calc(var(--u) * 0.45) calc(var(--u) * 1); }
+  .soon-top { display: inline-flex; gap: calc(var(--u) * 0.5); margin-right: calc(var(--u) * 0.6); vertical-align: 0.1em; }
+  .soon-text { display: inline; font-size: max(12.5px, calc(var(--u) * 1)); line-height: 1.3; }
+  .report-body { flex: none; }
+  .report .words { flex: none; -webkit-line-clamp: 2; }
+}
+/* The shortest windows: the day keeps one line and its events, the announcement stays whole */
+@media (min-width: 900px) and (min-height: 560px) and (max-height: 640px) {
+  .report .words { -webkit-line-clamp: 1; }
+  .report { gap: calc(var(--u) * 0.8); }
+}
+@media (min-width: 900px) and (min-height: 560px) and (max-height: 600px) {
+  .masthead b { font-size: calc(var(--u) * 2.1); }
+  .report { padding: calc(var(--u) * 1.3) calc(var(--u) * 2.2); }
+  .report-head { padding-bottom: calc(var(--u) * 0.5); }
+  .report { gap: calc(var(--u) * 0.6); }
+}
