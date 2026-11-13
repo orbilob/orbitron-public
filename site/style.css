@@ -473,3 +473,20 @@ html.locked { overflow: hidden; }
 @media (min-width: 900px) and (min-height: 560px) {
   .theme { width: max(30px, calc(var(--u) * 1.9)); height: max(30px, calc(var(--u) * 1.9)); font-size: max(14px, calc(var(--u) * 0.95)); }
 }
+
+/* The sky slot — a small window into space under the switches, drawn by sky-slot.js.
+   Dark in both themes on purpose. Without the script it is not shown at all, and
+   the side keeps its own rows. */
+.sky-slot { display: none; }
+html.js .sky-slot {
+  display: block; position: relative; overflow: hidden; order: 1;
+  height: 108px; background: #020103; border-top: 1px solid var(--side-edge);
+}
+.sky-slot canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+@media (min-width: 900px) and (min-height: 560px) {
+  html.js .side { grid-template-rows: auto auto minmax(0, 1fr) auto auto; }
+  html.js .sky-slot {
+    height: max(64px, calc(var(--u) * 7.5)); border: 1px solid var(--side-edge);
+    border-radius: max(8px, calc(var(--u) * 0.9));
+  }
+}
