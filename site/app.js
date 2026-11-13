@@ -299,7 +299,7 @@
 
   // ---------------------------------------------------------------- panels
 
-  var PANELS = ["report", "idea", "archive", "build", "chain", "method", "disclaimer"];
+  var PANELS = ["report", "idea", "archive", "build", "chain", "method", "phone", "disclaimer"];
   var opener = null;        // the tile that opened the panel, to give focus back to
   var fromHere = false;     // the panel was opened on this page, so "back" closes it
 
