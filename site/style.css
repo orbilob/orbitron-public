@@ -136,7 +136,20 @@ p { margin: 0; }
   box-shadow: var(--shadow), 0 0 60px rgba(46, 204, 113, 0.10), 0 0 90px rgba(240, 180, 41, 0.08); }
 h1 { font-size: 30px; font-weight: 800; }
 .h1-sub { display: block; margin-top: 6px; font-size: 15.5px; font-weight: 500; color: var(--dim); letter-spacing: 0; line-height: 1.4; }
-.h1-beta { display: inline-block; margin-top: 8px; padding: 3px 10px; border: 1px solid var(--partial); border-radius: 999px; font-size: 12.5px; font-weight: 600; color: var(--partial); letter-spacing: 0; line-height: 1.4; }
+/* The two ways out, beside the title: the vault on GitHub and the page on a phone */
+.hero { flex-wrap: wrap; }
+/* On a phone the code would point at the page already open — only GitHub stays, under the title */
+.hero-links { flex: 1 0 100%; display: flex; gap: 8px; }
+.hero-qr { display: none; }
+.hero-gh { display: inline-flex; align-items: center; gap: 8px; color: var(--ink); text-decoration: none; font-size: 14px; font-weight: 600;
+  padding: 9px 14px; border-radius: 999px; border: 1px solid var(--edge); background: var(--panel); white-space: nowrap; }
+.hero-gh:hover { border-color: var(--amber); color: var(--amber); }
+.hero-links .hero-qr { flex-direction: column; align-items: center; gap: 6px; text-decoration: none; color: var(--ink); font-size: 12.5px; font-weight: 600; white-space: nowrap; }
+/* 37 squares a side (version 3 and its quiet zone): a whole number of pixels per square keeps every edge sharp */
+.hero-qr img { display: block; flex: none; box-sizing: content-box; max-width: none; width: 111px; height: 111px; background: #ffffff; padding: 4px; border-radius: 10px; border: 1px solid var(--edge); }
+.hero-qr:hover img { border-color: var(--amber); }
+.hero-qr:hover span { color: var(--amber); }
+.h1-beta { display: inline-block; margin-top: 8px; padding: 3px 10px; border: 1px solid var(--partial); border-radius: 10px; font-size: 12.5px; font-weight: 600; color: var(--partial); letter-spacing: 0; line-height: 1.4; }
 
 /* The Daily Report — dressed as an edition */
 .report {
@@ -248,6 +261,11 @@ html.has-days .editions { display: flex; }
   h1 { font-size: calc(var(--u) * 3.5); }
   .h1-sub { font-size: max(13px, calc(var(--u) * 1.2)); margin-top: calc(var(--u) * 0.6); max-width: 60ch; }
   .h1-beta { font-size: max(11px, calc(var(--u) * 0.95)); margin-top: calc(var(--u) * 0.7); }
+  .hero { flex-wrap: nowrap; }
+  .hero-links { flex: none; margin-left: auto; flex-direction: column-reverse; align-items: center; gap: calc(var(--u) * 0.6); }
+  .hero-links .hero-qr { display: flex; }
+  .hero-gh { font-size: max(12px, calc(var(--u) * 0.95)); padding: calc(var(--u) * 0.6) calc(var(--u) * 1.1); }
+  .hero-qr { font-size: max(11px, calc(var(--u) * 0.85)); }
 
   .report { padding: calc(var(--u) * 2) calc(var(--u) * 2.4); gap: calc(var(--u) * 1.1); border-radius: calc(var(--u) * 1.6); }
   .masthead { font-size: max(12px, calc(var(--u) * 0.9)); }
@@ -285,6 +303,17 @@ html.has-days .editions { display: flex; }
   .mini-planets .orb { width: max(14px, calc(var(--u) * 1.1)); height: max(14px, calc(var(--u) * 1.1)); }
   .links a, .follow-bar a { font-size: max(12px, calc(var(--u) * 0.8)); padding: calc(var(--u) * 0.45) calc(var(--u) * 0.8); }
   .side-foot { font-size: max(10.5px, calc(var(--u) * 0.66)); }
+}
+
+/* A narrower dashboard: GitHub keeps its mark only, so the column stays as
+   narrow as the code and the title keeps its line. The name stays for screen readers. */
+@media (min-width: 900px) and (min-height: 560px) and (max-width: 1199px) {
+  .hero-gh { padding: calc(var(--u) * 0.55); }
+  .hero-gh span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+}
+
+@media (min-width: 1800px) and (min-height: 900px) {
+  .hero-qr img { width: 148px; height: 148px; }
 }
 
 /* A short window: the side keeps its titles and numbers and drops the small
