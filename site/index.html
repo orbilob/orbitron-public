@@ -47,6 +47,7 @@
   }(document.documentElement));
 </script>
 <script src="app.js" defer></script>
+<script src="sky-slot.js" defer></script>
 </head>
 <body>
 
@@ -117,6 +118,9 @@
         </div>
       </div>
     </div>
+
+    <!-- A small window into the sky, drawn by sky-slot.js; without the script it is not shown -->
+    <div class="sky-slot" aria-hidden="true"></div>
 
     <nav class="items">
       <a class="item" href="#idea">
