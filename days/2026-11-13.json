@@ -1,0 +1,16 @@
+{
+  "format": "public_day",
+  "version": "1.0",
+  "day": "2026-11-13",
+  "events": [
+    {
+      "time": "13:30",
+      "country": "US",
+      "name": "PPI + Core PPI m/m"
+    }
+  ],
+  "words": {
+    "en": "A heavy Friday for bitcoin. It broke lower in the Asian night, as the dollar pushed toward a multi-month high and the yen tested a level Japan has vowed to defend, and by early morning it had slipped below a round mark that had held for days. Most of the day's strong hours pointed down, with two short rebounds in the European morning. Around it the safe havens barely moved: gold and oil eased, while the dollar and bond yields edged higher. The one scheduled release was US producer prices at 13:30 UTC — the core reading came in as expected and the headline a touch softer; bitcoin jumped briefly, then turned lower again. Through the afternoon and evening Federal Reserve speakers kept talking of further rate hikes, while the US Treasury chief urged caution. Next on the calendar: US retail sales.",
+    "bg": "Тежък петък за биткойна. Пробиха надолу още през азиатската нощ — доларът се качи към многомесечен връх, а йената тества ниво, което Япония обеща да защити — и до ранната сутрин цената слезе под кръгла граница, удържала няколко дни. Повечето силни часове на деня бяха надолу, с два кратки отскока през европейската сутрин. Около него убежищата почти не помръднаха: златото и петролът поевтиняха леко, а доларът и доходността на облигациите се качиха малко. Единственото насрочено събитие бяха цените на производител в САЩ в 13:30 UTC — основният показател излезе според очакванията, а общият — малко по-мек; биткойнът подскочи за кратко и после пак тръгна надолу. Следобед и вечерта говорители на Федералния резерв продължиха да говорят за още повишения на лихвите, а финансовият министър на САЩ призова за предпазливост. Следва в календара: продажбите на дребно в САЩ."
+  }
+}
