@@ -1,0 +1,16 @@
+{
+  "format": "public_day",
+  "version": "1.0",
+  "day": "2026-11-16",
+  "events": [
+    {
+      "time": "17:00",
+      "country": "US",
+      "name": "Fed Chairman Warsh Speaks"
+    }
+  ],
+  "words": {
+    "en": "A restless Monday for bitcoin, which ended slightly lower after swings in both directions. In the Asian night the news that Japan's economy had unexpectedly shrunk, and nervousness ahead of a major chipmaker's results, set a cautious tone. The day's largest move was a rise in the early afternoon, after a company that holds bitcoin on its balance sheet announced another purchase, but it faded within the next hour. The Fed chair spoke in the evening about the impact of new technologies; the price barely reacted. Headlines also had gold sliding to a one-year low. Next on the calendar: US retail sales on Tuesday.",
+    "bg": "Неспокоен понеделник за биткойна, който завърши малко по-ниско след колебания в двете посоки. През азиатската нощ новината, че японската икономика неочаквано се е свила, и напрежението преди резултатите на голям производител на чипове зададоха предпазлив тон. Най-голямото движение на деня беше покачване в ранния следобед, след като компания, която държи биткойн в баланса си, обяви нова покупка, но то се стопи още в следващия час. Председателят на Фед говори вечерта за влиянието на новите технологии; цената почти не реагира. Според заглавията златото пък слезе до най-ниското си ниво от година. Следва в календара: продажбите на дребно в САЩ във вторник."
+  }
+}
