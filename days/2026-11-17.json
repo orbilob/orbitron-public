@@ -1,0 +1,16 @@
+{
+  "format": "public_day",
+  "version": "1.0",
+  "day": "2026-11-17",
+  "events": [
+    {
+      "time": "13:30",
+      "country": "US",
+      "name": "Retail Sales + Core Retail Sales m/m"
+    }
+  ],
+  "words": {
+    "en": "A flat Tuesday for bitcoin from start to finish, but not a quiet one. The US retail sales report in the afternoon showed a moderate rise in spending, according to the wire; the hour of the release was choppy, and the sharpest drop of the day came in the hour after it, alongside news of higher import prices and a Federal Reserve official signalling more rate hikes. Earlier the price had risen in the late morning, and late in the evening it recovered, while a major chipmaker reported results above expectations. Headlines put the dollar at its highest level in more than a year and a half. Next on the calendar: the minutes of the last Fed meeting on Wednesday.",
+    "bg": "Равен вторник за биткойна от началото до края, но не и тих. Докладът за продажбите на дребно в САЩ следобед показа умерен ръст на харченето, според агенциите; часът на публикуването беше накъсан, а най-рязкото поевтиняване за деня дойде в следващия час, заедно с новини за по-високи цени на вноса и за говорител на Федералния резерв, който даде знак за още повишения на лихвите. По-рано цената се беше качила в късната сутрин, а късно вечерта се възстанови, докато голям производител на чипове отчете резултати над очакванията. Според заглавията доларът е на най-високото си ниво от повече от година и половина. Следва в календара: протоколът от последното заседание на Фед в сряда."
+  }
+}
