@@ -153,7 +153,7 @@ def svg(data: dict, theme: str) -> str:
 viewBox="0 0 {W} {H}" role="img" aria-label="ORBITRON state: \
 {data['working']} working, {data['partial']} partial, \
 {data['not_built']} not built, {data['decisions']} decisions, \
-{patterns} validated patterns">
+{patterns} validated pattern{'' if patterns == 1 else 's'}">
 <style>text{{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,\
 Helvetica,Arial,sans-serif}}</style>
 <rect width="{W}" height="{H}" rx="10" fill="{t['bg']}" stroke="{t['edge']}"/>
@@ -407,14 +407,16 @@ def block(data: dict, patterns: dict, chain: dict) -> str:
   <img src="assets/board-light.svg" alt="ORBITRON — state of the build: \
 {data['working']} working or proven, {data['partial']} partial, \
 {data['not_built']} not built, {data['decisions']} decisions taken, \
-{data['validated_patterns']} validated patterns" width="880">
+{data['validated_patterns']} validated \
+pattern{'' if data['validated_patterns'] == 1 else 's'}" width="880">
 </picture>
 
 **{data['working']}** working or proven &nbsp;·&nbsp; \
 **{data['partial']}** partial &nbsp;·&nbsp; \
 **{data['not_built']}** not built &nbsp;·&nbsp; \
 **{data['decisions']}** decisions taken &nbsp;·&nbsp; \
-**{data['validated_patterns']}** validated patterns
+**{data['validated_patterns']}** validated \
+pattern{'' if data['validated_patterns'] == 1 else 's'}
 
 <sub>Generated from the project's live board on {data['generated']} \
 — not written by hand. The bar spans all {total} tracked rows; its unfilled \
@@ -459,9 +461,9 @@ Then four stages: {', '.join(chain['stages'])}." width="880">
 {names}
 
 <sub>Named after real exoplanets — one planet, one class. \
-{spelled(count)} classes are designed; the first is measured and runs live as \
-an observation, none is validated yet, and what each one looks for is not \
-published. **The project is in active development.**</sub>
+{spelled(count)} classes are designed; the first is measured, runs live and is \
+validated on hours it had never seen — it warns of the hours that move, not of \
+where they go — and what each one looks for is not published. **The project is in active development.**</sub>
 
 </div>
 {END}"""
