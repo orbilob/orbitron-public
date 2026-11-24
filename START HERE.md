@@ -34,7 +34,8 @@ is the next page.
 >
 > Personal research. **Not financial advice.** No signals are sold, no money is
 > managed for anyone, no profitability is claimed. The measure of success at this
-> stage is honesty, not return.
+> stage is honesty, not return. ORBITRON speaks only through its page and this
+> repository: anyone offering signals or investments in its name is not us.
 
 ---
 
