@@ -1,0 +1,13 @@
+# The workflows pin every action to the commit it was reviewed at (a full SHA),
+# because a version tag such as "v4" can be moved by whoever controls the
+# action's repository. A pin does not update itself — this bot does: once a
+# week it opens a pull request when a pinned action has a newer release, and
+# the update is merged on purpose, through the same guard as everything else.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: actions
