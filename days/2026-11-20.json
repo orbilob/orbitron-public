@@ -1,0 +1,21 @@
+{
+  "format": "public_day",
+  "version": "1.0",
+  "day": "2026-11-20",
+  "events": [
+    {
+      "time": "13:25",
+      "country": "US",
+      "name": "FOMC Member Waller Speaks"
+    },
+    {
+      "time": "15:00",
+      "country": "US",
+      "name": "Revised UoM Consumer Sentiment + Inflation Expectations"
+    }
+  ],
+  "words": {
+    "en": "The heaviest day of the week for bitcoin, which fell sharply as a selloff in artificial intelligence shares spread across global markets. Headlines from the Asian night described the worst week for Asian stocks since the pandemic year, and in the morning a flight to the safety of government bonds. A Fed governor spoke in the early afternoon, in a rising hour; then came the largest hour of the day, around the final reading of US consumer sentiment, when the price dropped steeply while reports spoke of a snowballing global selloff and record outflows from bitcoin funds. In the evening Fed officials kept talking about more rate hikes, and a late rebound recovered only part of the loss. Next on the calendar: the first readings of US business activity on Monday.",
+    "bg": "Най-тежкият ден от седмицата за биткойна, който поевтиня рязко, докато разпродажбата на акции, свързани с изкуствения интелект, се разля по световните пазари. Заглавията от азиатската нощ описваха най-лошата седмица за азиатските акции от пандемичната година, а сутринта — бягство към сигурността на държавните облигации. Управител на Фед говори в ранния следобед, в час на покачване; после дойде най-силният час на деня, около окончателното четене на потребителските нагласи в САЩ, когато цената падна стръмно, а съобщенията говореха за разрастваща се световна разпродажба и рекордно изтичане на пари от фондовете за биткойн. Вечерта говорители на Фед продължиха да говорят за още повишения на лихвите, а късен отскок върна само част от загубата. Следва в календара: първите четения на деловата активност в САЩ в понеделник."
+  }
+}
