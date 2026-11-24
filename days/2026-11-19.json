@@ -1,0 +1,16 @@
+{
+  "format": "public_day",
+  "version": "1.0",
+  "day": "2026-11-19",
+  "events": [
+    {
+      "time": "13:30",
+      "country": "US",
+      "name": "Initial Jobless Claims"
+    }
+  ],
+  "words": {
+    "en": "Another lower day for bitcoin. In the Asian night headlines spoke of possible new US strikes on Iran and the price slipped; it recovered in the early hours as stocks rose after the pricing of a record listing by an artificial intelligence company, which made its debut on the stock market later that day. The weekly US jobless claims in the afternoon rose slightly, according to the wire, and the hour after the release was red. Through the afternoon and evening Federal Reserve officials said the boom in artificial intelligence is adding to inflation and could overheat the economy, and the selling went on into the night before a late rebound. Next on the calendar: a Fed governor speaks and the final reading of US consumer sentiment on Friday.",
+    "bg": "Още един ден надолу за биткойна. През азиатската нощ заглавията говореха за възможни нови удари на САЩ по Иран и цената се плъзна надолу; в ранните часове се възстанови, докато акциите растяха след определянето на цената при рекордното пускане на акции на компания за изкуствен интелект, която дебютира на фондовия пазар по-късно същия ден. Седмичните молби за помощи при безработица в САЩ следобед леко се увеличиха, според агенциите, а часът след публикуването беше червен. През следобеда и вечерта говорители на Федералния резерв казаха, че бумът на изкуствения интелект добавя към инфлацията и може да прегрее икономиката, а продажбите продължиха до нощта преди късен отскок. Следва в календара: управител на Фед говори и окончателното четене на потребителските нагласи в САЩ в петък."
+  }
+}
