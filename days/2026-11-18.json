@@ -1,0 +1,16 @@
+{
+  "format": "public_day",
+  "version": "1.0",
+  "day": "2026-11-18",
+  "events": [
+    {
+      "time": "19:00",
+      "country": "US",
+      "name": "FOMC Meeting Minutes"
+    }
+  ],
+  "words": {
+    "en": "A falling Wednesday for bitcoin, which lost ground for most of the day. Headlines in the Asian night had the dollar near its highest level in more than a year and a half on bets of US rate hikes. In the afternoon a Federal Reserve governor warned that inflation is getting worse and floated a larger rate rise in December, and the selling picked up in the hours that followed. In the evening the minutes of the last Fed meeting showed policymakers focused on inflation risks, a couple of them open to a bigger hike; the hour of the release was one of the weakest of the day. The largest hour came late at night, a rise, but it did not erase the losses. Next on the calendar: US jobless claims on Thursday.",
+    "bg": "Падаща сряда за биткойна, който губеше почва през по-голямата част от деня. Заглавията от азиатската нощ поставиха долара близо до най-високото му ниво от повече от година и половина, на фона на залози за повишения на лихвите в САЩ. Следобед управител във Федералния резерв предупреди, че инфлацията се влошава, и подхвърли идеята за по-голямо повишение през декември, а продажбите се засилиха в следващите часове. Вечерта протоколът от последното заседание на Фед показа, че инфлационните рискове са във фокуса на членовете му, а двама от тях са отворени за по-голямо повишение; часът на публикуването беше сред най-слабите за деня. Най-силният час дойде късно през нощта — покачване, но то не изтри загубите. Следва в календара: молбите за помощи при безработица в САЩ в четвъртък."
+  }
+}

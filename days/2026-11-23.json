@@ -1,0 +1,16 @@
+{
+  "format": "public_day",
+  "version": "1.0",
+  "day": "2026-11-23",
+  "events": [
+    {
+      "time": "14:45",
+      "country": "US",
+      "name": "S&P Global Flash Manufacturing PMI + Flash Services PMI"
+    }
+  ],
+  "words": {
+    "en": "A Monday of big swings that ended almost where it began for bitcoin. The morning brought a rebound after the weekend's forced selling, according to the headlines. In the early afternoon came the largest hour of the day, a steep rise packed into a few minutes, in an hour that also brought news of new purchases by a company that holds bitcoin on its balance sheet. The hour of the first readings of US business activity, which followed, gave back part of the gains, while a major chipmaker reinstated its chief executive and lifted technology shares. More declines followed in the late afternoon. Next on the calendar: US consumer confidence on Tuesday.",
+    "bg": "Понеделник с големи люшкания, който завърши почти там, откъдето започна, за биткойна. Сутринта донесе отскок след принудителните продажби през уикенда, според заглавията. В ранния следобед дойде най-силният час на деня — стръмно покачване, събрано в няколко минути, в час, който донесе и новина за нови покупки от компания, която държи биткойн в баланса си. Часът на първите четения на деловата активност в САЩ, който последва, върна част от ръста, докато голям производител на чипове върна изпълнителния си директор и повдигна технологичните акции. В късния следобед последваха още спадове. Следва в календара: потребителското доверие в САЩ във вторник."
+  }
+}
