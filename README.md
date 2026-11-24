@@ -183,6 +183,9 @@ Full map: **[START HERE](START%20HERE.md)**
 - Any numbers you find are illustrations of method, not a track record.
 - Large parts of what is described here are **designed, not built** — and where that
   is the case, the documents say so in a section titled *"what is not being claimed"*.
+- **ORBITRON speaks only through its page and this repository.** Anyone who offers
+  signals, investments or help in the name of ORBITRON or its author is not us —
+  do not send them money or personal data.
 
 If you came looking for a system that makes money, this is the wrong repository.
 If you came looking for how someone tries to understand a system that refuses to hold

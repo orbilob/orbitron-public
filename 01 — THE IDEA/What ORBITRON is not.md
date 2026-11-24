@@ -7,6 +7,8 @@
 >
 > **ORBITRON is personal research. Nothing in this vault is financial advice.**
 > No profitability is claimed. No number here is a track record.
+> ORBITRON speaks only through its page and this repository — anyone offering
+> signals or investments in its name is not us.
 
 ---
 
