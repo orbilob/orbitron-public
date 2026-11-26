@@ -18,8 +18,14 @@
     },
     {
       "name": "Draugr",
-      "version": "0.6"
+      "version": "0.6",
+      "also": [
+        {
+          "name": "Draugr-L",
+          "version": "0.1"
+        }
+      ]
     }
   ],
-  "generated": "2026-11-22"
+  "generated": "2026-11-26"
 }

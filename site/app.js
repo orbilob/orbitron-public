@@ -165,6 +165,14 @@
     });
   }
 
+  // The version, then the other templates on the class (vault D21) — the
+  // same line build_readme.shown() draws into the badges.
+  function shown(p) {
+    return [p.version].concat((p.also || []).map(function (a) {
+      return a.name + " " + a.version;
+    })).join(" · ");
+  }
+
   function renderMini(chain, patterns) {
     var names = document.getElementById("mini-chain");
     names.textContent = "";
@@ -177,7 +185,7 @@
     patterns.patterns.forEach(function (p) {
       var built = p.version && p.version !== "—";
       var orb = el("span", "orb" + (built ? " live" : ""));
-      orb.title = p.name + (built ? " " + p.version : "");
+      orb.title = p.name + (built ? " " + shown(p) : "");
       orbs.appendChild(orb);
     });
   }
@@ -190,7 +198,7 @@
       var li = el("li", built ? "live" : "");
       li.appendChild(el("span", "orb"));
       li.appendChild(el("span", "pname", p.name));
-      li.appendChild(el("span", "pver", built ? p.version : t("patterns.none")));
+      li.appendChild(el("span", "pver", built ? shown(p) : t("patterns.none")));
       box.appendChild(li);
     });
   }
