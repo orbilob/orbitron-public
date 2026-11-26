@@ -44,12 +44,12 @@
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/board-dark.svg">
-  <img src="assets/board-light.svg" alt="ORBITRON — state of the build: 43 working or proven, 14 partial, 2 not built, 12 decisions taken, 1 validated pattern" width="880">
+  <img src="assets/board-light.svg" alt="ORBITRON — state of the build: 44 working or proven, 14 partial, 2 not built, 12 decisions taken, 2 validated patterns" width="880">
 </picture>
 
-**43** working or proven &nbsp;·&nbsp; **14** partial &nbsp;·&nbsp; **2** not built &nbsp;·&nbsp; **12** decisions taken &nbsp;·&nbsp; **1** validated pattern
+**44** working or proven &nbsp;·&nbsp; **14** partial &nbsp;·&nbsp; **2** not built &nbsp;·&nbsp; **12** decisions taken &nbsp;·&nbsp; **2** validated patterns
 
-<sub>Generated from the project's live board on 2026-11-22 — not written by hand. The bar spans all 74 tracked rows; its unfilled tail is work that is deferred, archived or deliberately closed.</sub>
+<sub>Generated from the project's live board on 2026-11-26 — not written by hand. The bar spans all 75 tracked rows; its unfilled tail is work that is deferred, archived or deliberately closed.</sub>
 
 &nbsp;
 
@@ -81,12 +81,12 @@
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/patterns-dark.svg">
-  <img src="assets/patterns-light.svg" alt="Named pattern classes: Madriu —, Xolotl —, Hypatia —, Awohali —, Draugr 0.6">
+  <img src="assets/patterns-light.svg" alt="Named pattern classes: Madriu —, Xolotl —, Hypatia —, Awohali —, Draugr 0.6 · Draugr-L 0.1">
 </picture>
 
-**Madriu** — &nbsp;·&nbsp; **Xolotl** — &nbsp;·&nbsp; **Hypatia** — &nbsp;·&nbsp; **Awohali** — &nbsp;·&nbsp; **Draugr** 0.6
+**Madriu** — &nbsp;·&nbsp; **Xolotl** — &nbsp;·&nbsp; **Hypatia** — &nbsp;·&nbsp; **Awohali** — &nbsp;·&nbsp; **Draugr** 0.6 · Draugr-L 0.1
 
-<sub>Named after real exoplanets — one planet, one class. Five classes are designed; the first is measured, runs live and is validated on hours it had never seen — it warns of the hours that move, not of where they go — and what each one looks for is not published. **The project is in active development.**</sub>
+<sub>Named after real exoplanets — one planet, one class. Five classes are designed; the first is measured and runs live with two templates, each validated on hours it had never seen — they warn of the hours that move, not of where they go — and what each one looks for is not published. **The project is in active development.**</sub>
 
 </div>
 <!-- board:end -->

@@ -170,6 +170,15 @@ fill="{t['dim']}">{verdict}</text>
 """
 
 
+def shown(pattern: dict) -> str:
+    """What a badge says after the class's name: its version, then the other
+    templates on the same class, each with its own name and version — the
+    three things that leave the vault are a name, a version and a status, so
+    a second template is shown by exactly those (vault D21)."""
+    return " · ".join([pattern["version"]] + [
+        f'{t["name"]} {t["version"]}' for t in pattern.get("also", [])])
+
+
 def patterns_svg(data: dict, theme: str) -> str:
     """One strip of name badges, drawn rather than fetched.
 
@@ -186,7 +195,7 @@ def patterns_svg(data: dict, theme: str) -> str:
     # rendered strip rather than taken from the font metrics — close enough
     # that the padding stays visually even across all five names.
     widths = [
-        int(len(p["name"]) * 7.4 + len(p["version"]) * 6.1 + pad * 2 + 16)
+        int(len(p["name"]) * 7.4 + len(shown(p)) * 6.1 + pad * 2 + 16)
         for p in data["patterns"]
     ]
     width = sum(widths) + gap * (len(widths) - 1)
@@ -200,12 +209,12 @@ def patterns_svg(data: dict, theme: str) -> str:
             f'<text x="{pad}" y="20" font-size="13" font-weight="600" '
             f'fill="{PATTERN_INK}">{pattern["name"]}</text>'
             f'<text x="{w - pad}" y="20" text-anchor="end" font-size="11.5" '
-            f'fill="{t["dim"]}">{pattern["version"]}</text>'
+            f'fill="{t["dim"]}">{shown(pattern)}</text>'
             f"</g>"
         )
         x += w + gap
 
-    names = ", ".join(f'{p["name"]} {p["version"]}' for p in data["patterns"])
+    names = ", ".join(f'{p["name"]} {shown(p)}' for p in data["patterns"])
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-label="Named pattern classes: {names}">
 <style>text{{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}}</style>
 {''.join(badges)}
@@ -379,7 +388,7 @@ def block(data: dict, patterns: dict, chain: dict) -> str:
     """
     total = data["total_rows"]
     names = " &nbsp;·&nbsp; ".join(
-        f'**{p["name"]}** {p["version"]}' for p in patterns["patterns"]
+        f'**{p["name"]}** {shown(p)}' for p in patterns["patterns"]
     )
     count = len(patterns["patterns"])
     parts = " &nbsp;▸&nbsp; ".join(
@@ -455,15 +464,15 @@ Then four stages: {', '.join(chain['stages'])}." width="880">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/patterns-dark.svg">
   <img src="assets/patterns-light.svg" alt="Named pattern classes: \
-{', '.join(p['name'] + ' ' + p['version'] for p in patterns['patterns'])}">
+{', '.join(p['name'] + ' ' + shown(p) for p in patterns['patterns'])}">
 </picture>
 
 {names}
 
 <sub>Named after real exoplanets — one planet, one class. \
-{spelled(count)} classes are designed; the first is measured, runs live and is \
-validated on hours it had never seen — it warns of the hours that move, not of \
-where they go — and what each one looks for is not published. **The project is in active development.**</sub>
+{spelled(count)} classes are designed; the first is measured and runs live with \
+two templates, each validated on hours it had never seen — they warn of the hours \
+that move, not of where they go — and what each one looks for is not published. **The project is in active development.**</sub>
 
 </div>
 {END}"""
