@@ -1,0 +1,16 @@
+{
+  "format": "public_day",
+  "version": "1.0",
+  "day": "2026-11-25",
+  "events": [
+    {
+      "time": "13:30",
+      "country": "US",
+      "name": "Prelim GDP q/q + Prelim GDP Price Index q/q + Core PCE Price Index m/m"
+    }
+  ],
+  "words": {
+    "en": "A restless Wednesday for bitcoin, with a wide swing that ended the day higher. Through the night and the morning the price slid, while headlines spoke of fresh tariff threats and of outflows from bitcoin funds; during the day it touched its lowest level of the week. Shortly before the US growth and inflation readings came reports of new US tariffs on many partners, and the hour of the release brought a sharp drop; headlines then said inflation had risen further. The afternoon turned around, and the largest hour of the day, late in the afternoon, was a strong rise, while headlines described investors worn out by volatility. In the evening the Fed's regional survey pointed to slight growth and sticky inflation, and the day closed with more gains. Next on the calendar: a quiet Thursday, with the US on its Thanksgiving holiday.",
+    "bg": "Неспокойна сряда за биткойна, с широко люшкане, което завърши деня по-високо. През нощта и сутринта цената се плъзгаше надолу, докато заглавията говореха за нови заплахи с мита и за изтичане на пари от фондовете за биткойн; през деня тя докосна най-ниското си ниво за седмицата. Малко преди четенията на растежа и инфлацията в САЩ дойдоха съобщения за нови американски мита срещу много партньори, а часът на публикуването донесе рязък спад; после заглавията казаха, че инфлацията се е повишила още. Следобедът обърна посоката и най-силният час на деня, в късния следобед, беше силно покачване, докато заглавията описваха инвеститори, изтощени от колебанията. Вечерта регионалният преглед на Фед посочи слаб растеж и упорита инфлация, а денят приключи с още ръст. Следва в календара: тих четвъртък, с празника Денят на благодарността в САЩ."
+  }
+}
