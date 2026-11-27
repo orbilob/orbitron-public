@@ -153,6 +153,13 @@ for _name in build_qr.stale():
     findings.append(f"{_name}: not the QR code of the page's og:url — "
                     "run python3 scripts/build_qr.py")
 
+# 5c — the wide card carries the same address (2026-11-27)
+import build_card  # noqa: E402  — same folder; reads the PNG without an image library
+
+for _name in build_card.stale():
+    findings.append(f"{_name}: does not carry the page's og:url — "
+                    "run python3 scripts/build_card.py")
+
 # 6 — the public page, in both of its languages
 import build_site  # noqa: E402  — same folder, already on the path
 
@@ -167,5 +174,5 @@ if findings:
     sys.exit(1)
 
 print(f"✅ Clean — {count} documents, no broken links, "
-      f"GitHub-safe, nothing withheld leaked, every drawing and the QR code fresh, "
+      f"GitHub-safe, nothing withheld leaked, every drawing, the QR code and the card fresh, "
       f"the page whole in both languages.")
