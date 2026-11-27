@@ -1,0 +1,16 @@
+{
+  "format": "public_day",
+  "version": "1.0",
+  "day": "2026-11-24",
+  "events": [
+    {
+      "time": "15:00",
+      "country": "US",
+      "name": "CB Consumer Confidence"
+    }
+  ],
+  "words": {
+    "en": "A falling Tuesday for bitcoin, which ended lower after six strong hours that swung both ways. The steepest drop came in the night, while headlines spoke of a stronger dollar and of renewed enthusiasm for artificial intelligence shares after the return of a major chipmaker's chief executive. Late in the morning and in the early afternoon rises and falls alternated, as the rally in chip stocks faded on Wall Street. The hour of the US consumer confidence reading brought another drop, and a rebound followed later in the afternoon. Next on the calendar: the preliminary reading of US growth and a key inflation measure on Wednesday.",
+    "bg": "Падащ вторник за биткойна, който завърши по-ниско след шест силни часа в двете посоки. Най-стръмният спад дойде през нощта, докато заглавията говореха за по-силен долар и за нов прилив на ентусиазъм към акциите, свързани с изкуствения интелект, след завръщането на изпълнителния директор на голям производител на чипове. Към края на сутринта и в ранния следобед покачвания и спадове се редуваха, докато ръстът на акциите на чиповете на Уолстрийт избледняваше. Часът на четенето на потребителското доверие в САЩ донесе нов спад, а по-късно следобед последва отскок. Следва в календара: предварителното четене на растежа в САЩ и важен показател за инфлацията в сряда."
+  }
+}
